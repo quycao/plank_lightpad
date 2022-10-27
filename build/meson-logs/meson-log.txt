@@ -1,0 +1,256 @@
+Build started at 2022-10-27T09:35:54.716197
+Main binary: /usr/bin/python3
+Build Options: -Dprefix=/usr -Dbackend=ninja
+Python system: Linux
+The Meson build system
+Version: 0.56.2
+Source dir: /workspaces/plank
+Build dir: /workspaces/plank/build
+Build type: native build
+Project name: plank
+Project version: 0.11.89
+C compiler for the host machine: cc (gcc 10.2.1 "cc (Debian 10.2.1-6) 10.2.1 20210110")
+C linker for the host machine: cc ld.bfd 2.35.2
+None of 'AR' are defined in the environment, not changing global flags.
+Vala compiler for the host machine: valac (valac 0.48.17)
+C compiler for the build machine: cc (gcc 10.2.1 "cc (Debian 10.2.1-6) 10.2.1 20210110")
+C linker for the build machine: cc ld.bfd 2.35.2
+None of 'AR' are defined in the environment, not changing global flags.
+Vala compiler for the build machine: valac (valac 0.48.17)
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Configuring config.h using configuration
+Dependency gio-2.0 found: YES 2.66.8 (cached)
+Dependency gio-unix-2.0 found: YES 2.66.8 (cached)
+Dependency gmodule-2.0 found: YES 2.66.8 (cached)
+Dependency gtk+-3.0 found: YES 3.24.24 (cached)
+Dependency gdk-x11-3.0 found: YES 3.24.24 (cached)
+Dependency gdk-pixbuf-2.0 found: YES 2.42.2 (cached)
+Dependency gee-0.8 found: YES 0.20.4 (cached)
+Dependency libbamf3 found: YES 0.5.4 (cached)
+Dependency cairo found: YES 1.16.0 (cached)
+Dependency libwnck-3.0 found: YES 3.36.0 (cached)
+Dependency x11 found: YES 1.7.2 (cached)
+Dependency libgnome-menu-3.0 found: YES 3.36.0 (cached)
+Using cached compile:
+Cached command line:   
+
+Code:
+ class MesonFindLibrary : Object { }
+Cached compiler stdout:
+ 
+Cached compiler stderr:
+ 
+Library posix found: YES
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /workspaces/plank/build/meson-private/tmpeg7tv2w4
+Command line:  cc /workspaces/plank/build/meson-private/tmpeg7tv2w4/testfile.c -o /workspaces/plank/build/meson-private/tmpeg7tv2w4/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library m found: YES
+Pkg-config binary for MachineChoice.HOST is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: /usr/bin/pkg-config (0.29.2)
+Determining dependency 'dbusmenu-glib-0.4' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion dbusmenu-glib-0.4` -> 1
+
+CMake binary for MachineChoice.HOST is not cached
+None of 'CMAKE' are defined in the environment, not changing global flags.
+CMake binary missing from cross or native file, or env var undefined.
+Trying a default CMake fallback at cmake
+Did not find CMake 'cmake'
+Found CMake: NO
+No CMake binary for machine 1 not found. Giving up.
+Run-time dependency dbusmenu-glib-0.4 found: NO (tried pkgconfig and cmake)
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'dbusmenu-gtk3-0.4' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion dbusmenu-gtk3-0.4` -> 1
+
+CMake binary for MachineChoice.HOST is cached as not found
+No CMake binary for machine 1 not found. Giving up.
+Run-time dependency dbusmenu-gtk3-0.4 found: NO (tried pkgconfig and cmake)
+Dependency xi found: YES 1.7.10 (cached)
+Dependency xfixes found: YES 5.0.3 (cached)
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Using cached compile:
+Cached command line:   
+
+Code:
+ 
+        #define XIBarrierReleasePointer meson_disable_define_of_XIBarrierReleasePointer
+        
+        #include <limits.h>
+        #undef XIBarrierReleasePointer
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char XIBarrierReleasePointer (void);
+        
+        #if defined __stub_XIBarrierReleasePointer || defined __stub___XIBarrierReleasePointer
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main(void) {
+          return XIBarrierReleasePointer ();
+        }
+Cached compiler stdout:
+ 
+Cached compiler stderr:
+ 
+Checking for function "XIBarrierReleasePointer" with dependency xi: YES (cached)
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Using cached compile:
+Cached command line:   
+
+Code:
+ 
+        #define XFixesDestroyPointerBarrier meson_disable_define_of_XFixesDestroyPointerBarrier
+        
+        #include <limits.h>
+        #undef XFixesDestroyPointerBarrier
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char XFixesDestroyPointerBarrier (void);
+        
+        #if defined __stub_XFixesDestroyPointerBarrier || defined __stub___XFixesDestroyPointerBarrier
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main(void) {
+          return XFixesDestroyPointerBarrier ();
+        }
+Cached compiler stdout:
+ 
+Cached compiler stderr:
+ 
+Checking for function "XFixesDestroyPointerBarrier" with dependency xfixes: YES (cached)
+Using cached compile:
+Cached command line:   
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/prctl.h")
+          #error "Header 'sys/prctl.h' could not be found"
+         #endif
+        #else
+         #include <sys/prctl.h>
+        #endif
+Cached compiler stdout:
+ 
+Cached compiler stderr:
+ 
+Has header "sys/prctl.h" : YES (cached)
+WARNING: Project targeting '>= 0.42.1' but tried to use feature introduced in '0.50.0': install arg in configure_file.
+Configuring net.launchpad.plank.gschema.xml using configuration
+Program glib-compile-schemas found: YES (/usr/bin/glib-compile-schemas)
+Configuring Version.vala using configuration
+Pkg-config binary for MachineChoice.BUILD is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: /usr/bin/pkg-config (0.29.2)
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion glib-2.0` -> 0
+2.66.8
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags glib-2.0` -> 0
+-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config glib-2.0 --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lglib-2.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config glib-2.0 --libs` -> 0
+-lglib-2.0
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /workspaces/plank/build/meson-private/tmpt82_x9ii
+Command line:  cc /workspaces/plank/build/meson-private/tmpt82_x9ii/testfile.c -o /workspaces/plank/build/meson-private/tmpt82_x9ii/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+
+Code:
+ #include<stdio.h>
+        
+        int main(void) {
+            printf("%ld\n", (long)(sizeof(void *)));
+            return 0;
+        };
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Program stdout:
+
+8
+
+Program stderr:
+
+
+Running compile:
+Working directory:  /workspaces/plank/build/meson-private/tmpcuhb42dz
+Command line:  cc /workspaces/plank/build/meson-private/tmpcuhb42dz/testfile.c -o /workspaces/plank/build/meson-private/tmpcuhb42dz/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-linux-gnu/10/
+programs: =/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/10/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/10/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
+Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
+Configuring plank.pc using configuration
+Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
+Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
+Dependency gio-unix-2.0 found: YES 2.66.8 (cached)
+Dependency glib-2.0 found: YES 2.66.8 (cached)
+Dependency gtk+-3.0 found: YES 3.24.24 (cached)
+Dependency gdk-3.0 found: YES 3.24.24 (cached)
+Dependency cairo found: YES 1.16.0 (cached)
+Dependency pango found: YES 1.46.2 (cached)
+Dependency gee-0.8 found: YES 0.20.4 (cached)
+Dependency libgnome-menu-3.0 found: YES 3.36.0 (cached)
+Library m found: YES
+Adding test "tests"
+Adding test "dock"
+Program help2man found: NO
+Build targets in project: 27
+WARNING: Project specifies a minimum meson_version '>= 0.42.1' but uses features which were added in newer versions:
+ * 0.50.0: {'install arg in configure_file'}
+
+Found ninja-1.10.1 at /usr/bin/ninja
+Running compile:
+Working directory:  /workspaces/plank/build/meson-private/tmpubsauvlf
+Command line:  cc /workspaces/plank/build/meson-private/tmpubsauvlf/testfile.c -o /workspaces/plank/build/meson-private/tmpubsauvlf/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-linux-gnu/10/
+programs: =/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/10/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/10/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
+None of 'STRIP' are defined in the environment, not changing global flags.
+None of 'STRIP' are defined in the environment, not changing global flags.

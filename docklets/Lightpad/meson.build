@@ -1,0 +1,39 @@
+docklet_lightpad_sources = [
+    'LightpadDockItem.vala',
+    'LightpadDocklet.vala',
+	'Application.vala',
+    'Color.vala',
+    'Config.vala',
+    'DesktopEntries.vala',
+    'Resources.vala',
+    'Utilities.vala',
+    'Widgets/AppItem.vala',
+    'Widgets/CompositedWindow.vala',
+    'Widgets/Indicators.vala',
+    'Widgets/Searchbar.vala'
+]
+
+docklet_lightpad = shared_module(
+	'docklet-lightpad',
+	docklet_lightpad_sources,
+	dependencies: [
+        plank_dep,
+        plank_base_dep,
+        dependency('gio-unix-2.0', version: '>=2.56.0'),
+        dependency('glib-2.0', version: '>=2.56.0'),
+        dependency('gtk+-3.0', version: '>=3.22'),
+        dependency('gdk-3.0', version: '>=3.22.0'),
+        dependency('cairo', version: '>=1.15.0'),
+        dependency('pango', version: '>=1.40.0'),
+        dependency('gee-0.8', version: '>=0.20.0'),
+        dependency('libgnome-menu-3.0', version: '>=3.13.0'),
+        # Similar to add options "-X -lm" in cmake to use Math.pow()
+        meson.get_compiler('c').find_library('m', required: false)
+    ],
+	install: true,
+	install_dir: docklets_dir,
+    vala_args: [
+		'--pkg', 'config',
+	],
+)
+

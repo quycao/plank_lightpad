@@ -1,0 +1,15 @@
+{
+    "name": "plank",
+    "image": "debian:bullseye",
+    "runArgs": [
+        "--name=plank"
+    ],
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "remoteEnv": {
+    },
+    "extensions": [
+        "prince781.vala"
+    ]
+}
