@@ -65,9 +65,10 @@ namespace Docky
                 } else {
                     print ("Show!\n");
                     // lightpad_window.pages.set_active (0);
+                    lightpad_window.searchbar.hint ();
                     lightpad_window.show_all ();
                     lightpad_window.wasShowed = true;
-                    // dock.set_type_hint (Gdk.WindowTypeHint.DOCK);
+                    //  this.get_dock ().window.set_type_hint (Gdk.WindowTypeHint.DOCK);
                     this.get_dock ().window.set_transient_for (lightpad_window);
                 }
 

@@ -103,7 +103,7 @@ public class LightPadWindow : Widgets.CompositedWindow {
                 primary_monitor_number = i;
             }
         }
-        this.fullscreen_on_monitor (monitor.get_display ().get_default_screen (), primary_monitor_number);
+        //  this.fullscreen_on_monitor (monitor.get_display ().get_default_screen (), primary_monitor_number);
         this.set_default_size (monitor_dimensions.width,  monitor_dimensions.height);
         //  this.set_size_request (monitor_dimensions.width, monitor_dimensions.height);
 
