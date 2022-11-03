@@ -161,7 +161,7 @@ public class LightPadWindow : Widgets.CompositedWindow {
         container.pack_start (this.pages_wrapper, false, true, 15);
 
         bottom = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        container.pack_start (bottom, false, true, 0); // 60
+        container.pack_start (bottom, false, true, 60);
 
         // Find number of pages and populate
         // First order the apps alphabetically
