@@ -1,6 +1,6 @@
-Build started at 2022-10-27T09:35:54.716197
+Build started at 2022-11-03T05:33:20.572424
 Main binary: /usr/bin/python3
-Build Options: -Dprefix=/usr -Dbackend=ninja
+Build Options: -Dbackend=ninja
 Python system: Linux
 The Meson build system
 Version: 0.56.2
@@ -48,8 +48,8 @@ Cached compiler stderr:
 Library posix found: YES
 None of 'CC_LD' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /workspaces/plank/build/meson-private/tmpeg7tv2w4
-Command line:  cc /workspaces/plank/build/meson-private/tmpeg7tv2w4/testfile.c -o /workspaces/plank/build/meson-private/tmpeg7tv2w4/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /workspaces/plank/build/meson-private/tmpskfo51v_
+Command line:  cc /workspaces/plank/build/meson-private/tmpskfo51v_/testfile.c -o /workspaces/plank/build/meson-private/tmpskfo51v_/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }
@@ -59,31 +59,8 @@ Compiler stdout:
 Compiler stderr:
  
 Library m found: YES
-Pkg-config binary for MachineChoice.HOST is not cached.
-None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
-Pkg-config binary missing from cross or native file, or env var undefined.
-Trying a default Pkg-config fallback at pkg-config
-Found pkg-config: /usr/bin/pkg-config (0.29.2)
-Determining dependency 'dbusmenu-glib-0.4' with pkg-config executable '/usr/bin/pkg-config'
-PKG_CONFIG_PATH: 
-Called `/usr/bin/pkg-config --modversion dbusmenu-glib-0.4` -> 1
-
-CMake binary for MachineChoice.HOST is not cached
-None of 'CMAKE' are defined in the environment, not changing global flags.
-CMake binary missing from cross or native file, or env var undefined.
-Trying a default CMake fallback at cmake
-Did not find CMake 'cmake'
-Found CMake: NO
-No CMake binary for machine 1 not found. Giving up.
-Run-time dependency dbusmenu-glib-0.4 found: NO (tried pkgconfig and cmake)
-Pkg-config binary for MachineChoice.HOST is cached.
-Determining dependency 'dbusmenu-gtk3-0.4' with pkg-config executable '/usr/bin/pkg-config'
-PKG_CONFIG_PATH: 
-Called `/usr/bin/pkg-config --modversion dbusmenu-gtk3-0.4` -> 1
-
-CMake binary for MachineChoice.HOST is cached as not found
-No CMake binary for machine 1 not found. Giving up.
-Run-time dependency dbusmenu-gtk3-0.4 found: NO (tried pkgconfig and cmake)
+Dependency dbusmenu-glib-0.4 found: YES 16.04.0 (cached)
+Dependency dbusmenu-gtk3-0.4 found: YES 16.04.0 (cached)
 Dependency xi found: YES 1.7.10 (cached)
 Dependency xfixes found: YES 5.0.3 (cached)
 None of 'CC_LD' are defined in the environment, not changing global flags.
@@ -184,8 +161,8 @@ Called `/usr/bin/pkg-config glib-2.0 --libs` -> 0
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 None of 'CC_LD' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /workspaces/plank/build/meson-private/tmpt82_x9ii
-Command line:  cc /workspaces/plank/build/meson-private/tmpt82_x9ii/testfile.c -o /workspaces/plank/build/meson-private/tmpt82_x9ii/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /workspaces/plank/build/meson-private/tmp839vhj3y
+Command line:  cc /workspaces/plank/build/meson-private/tmp839vhj3y/testfile.c -o /workspaces/plank/build/meson-private/tmp839vhj3y/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -206,8 +183,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /workspaces/plank/build/meson-private/tmpcuhb42dz
-Command line:  cc /workspaces/plank/build/meson-private/tmpcuhb42dz/testfile.c -o /workspaces/plank/build/meson-private/tmpcuhb42dz/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /workspaces/plank/build/meson-private/tmpc0my1shn
+Command line:  cc /workspaces/plank/build/meson-private/tmpc0my1shn/testfile.c -o /workspaces/plank/build/meson-private/tmpc0my1shn/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -222,6 +199,9 @@ Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
 Configuring plank.pc using configuration
 Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
 Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
+Configuring config.h using configuration
+Library config found: YES
+Program glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
 Dependency gio-unix-2.0 found: YES 2.66.8 (cached)
 Dependency glib-2.0 found: YES 2.66.8 (cached)
 Dependency gtk+-3.0 found: YES 3.24.24 (cached)
@@ -233,15 +213,15 @@ Dependency libgnome-menu-3.0 found: YES 3.36.0 (cached)
 Library m found: YES
 Adding test "tests"
 Adding test "dock"
-Program help2man found: NO
-Build targets in project: 27
+Program help2man found: YES (/usr/bin/help2man)
+Build targets in project: 30
 WARNING: Project specifies a minimum meson_version '>= 0.42.1' but uses features which were added in newer versions:
  * 0.50.0: {'install arg in configure_file'}
 
 Found ninja-1.10.1 at /usr/bin/ninja
 Running compile:
-Working directory:  /workspaces/plank/build/meson-private/tmpubsauvlf
-Command line:  cc /workspaces/plank/build/meson-private/tmpubsauvlf/testfile.c -o /workspaces/plank/build/meson-private/tmpubsauvlf/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /workspaces/plank/build/meson-private/tmp54csm05k
+Command line:  cc /workspaces/plank/build/meson-private/tmp54csm05k/testfile.c -o /workspaces/plank/build/meson-private/tmp54csm05k/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  

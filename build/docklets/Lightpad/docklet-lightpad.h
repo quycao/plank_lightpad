@@ -6,11 +6,11 @@
 #include "plank.h"
 #include <glib-object.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
-#include <gee.h>
 #include <stdlib.h>
 #include <string.h>
 #include <glib.h>
+#include <gtk/gtk.h>
+#include <gee.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <float.h>
 #include <math.h>
@@ -164,6 +164,10 @@ struct _LightPadWindow {
 	cairo_pattern_t* pattern;
 	cairo_surface_t* image_sf;
 	GdkPixbuf* image_pf;
+	cairo_surface_t* surface;
+	cairo_surface_t* cache_surface;
+	gdouble cache_width;
+	gdouble cache_height;
 	gboolean wasShowed;
 };
 
@@ -227,6 +231,7 @@ DockyLightpadDockItem* docky_lightpad_dock_item_construct_with_dockitem_file (GT
 DockyLightpadDockItem* docky_lightpad_dock_item_new (void);
 DockyLightpadDockItem* docky_lightpad_dock_item_construct (GType object_type);
 void docklet_init (PlankDockletManager* manager);
+#define DOCKY_G_RESOURCE_PATH "/net/launchpad/plank/docklets/lightpad"
 GType docky_lightpad_docklet_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (DockyLightpadDocklet, g_object_unref)
 DockyLightpadDocklet* docky_lightpad_docklet_new (void);
@@ -244,6 +249,11 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (LightPadFrontendSearchbar, g_object_unref)
 extern gchar* light_pad_window_user_home;
 LightPadWindow* light_pad_window_new (void);
 LightPadWindow* light_pad_window_construct (GType object_type);
+void light_pad_window_draw_at_size (LightPadWindow* self,
+                                    cairo_t* ctx,
+                                    cairo_surface_t* cs,
+                                    gdouble width,
+                                    gdouble height);
 void light_pad_window_destroy (LightPadWindow* self);
 void light_pad_window_refresh_apps (LightPadWindow* self);
 GType light_pad_frontend_color_get_type (void) G_GNUC_CONST;
@@ -271,6 +281,43 @@ LightPadBackendDesktopEntries* light_pad_backend_desktop_entries_construct (GTyp
 #define RESOURCES_LIGHTPAD_CONFIG_DIR "/.lightpad"
 #define RESOURCES_BLACKLIST_FILE RESOURCES_LIGHTPAD_CONFIG_DIR "/blacklist"
 #define RESOURCES_CONFIG_FILE RESOURCES_LIGHTPAD_CONFIG_DIR "/config"
+void light_pad_frontend_blurinner (guchar* pixel,
+                                   gint* zR,
+                                   gint* zG,
+                                   gint* zB,
+                                   gint* zA,
+                                   gint alpha,
+                                   gint aprec,
+                                   gint zprec);
+void light_pad_frontend_blurrow (guchar* pixels,
+                                 gint width,
+                                 gint height,
+                                 gint rowstride,
+                                 gint channels,
+                                 gint line,
+                                 gint alpha,
+                                 gint aprec,
+                                 gint zprec);
+void light_pad_frontend_blurcol (guchar* pixels,
+                                 gint width,
+                                 gint height,
+                                 gint rowstride,
+                                 gint channels,
+                                 gint x,
+                                 gint alpha,
+                                 gint aprec,
+                                 gint zprec);
+void light_pad_frontend_expblur (guchar* pixels,
+                                 gint width,
+                                 gint height,
+                                 gint rowstride,
+                                 gint channels,
+                                 gdouble radius,
+                                 gint aprec,
+                                 gint zprec);
+void light_pad_frontend_gtk_cairo_blur_surface (cairo_surface_t* surface,
+                                                gdouble radius);
+gint light_pad_frontend_gtk_cairo_blur_compute_pixels (gdouble radius);
 LightPadFrontendAppItem* light_pad_frontend_app_item_new (gint size,
                                                           gdouble font_size,
                                                           gint box_width,

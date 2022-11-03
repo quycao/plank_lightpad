@@ -11,6 +11,8 @@ namespace Docky {
 	public class LightpadDocklet : GLib.Object, Plank.Docklet {
 		public LightpadDocklet ();
 	}
+	[CCode (cheader_filename = "docklet-lightpad.h")]
+	public const string G_RESOURCE_PATH;
 }
 namespace LightPad {
 	namespace Backend {
@@ -61,6 +63,18 @@ namespace LightPad {
 			public LightPad.Frontend.Color multiply_sat (double amount);
 			public LightPad.Frontend.Color set_val (double val);
 		}
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static void blurcol (uchar* pixels, int width, int height, int rowstride, int channels, int x, int alpha, int aprec, int zprec);
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static void blurinner (uchar* pixel, int* zR, int* zG, int* zB, int* zA, int alpha, int aprec, int zprec);
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static void blurrow (uchar* pixels, int width, int height, int rowstride, int channels, int line, int alpha, int aprec, int zprec);
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static void expblur (uchar* pixels, int width, int height, int rowstride, int channels, double radius, int aprec, int zprec);
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static int gtk_cairo_blur_compute_pixels (double radius);
+		[CCode (cheader_filename = "docklet-lightpad.h")]
+		public static void gtk_cairo_blur_surface (Cairo.Surface* surface, double radius);
 	}
 }
 namespace Resources {
@@ -82,6 +96,9 @@ namespace Widgets {
 public class LightPadWindow : Widgets.CompositedWindow {
 	public int SCROLL_SENSITIVITY;
 	public Gee.ArrayList<Gee.HashMap<string,string>> apps;
+	public double cache_height;
+	public Cairo.Surface* cache_surface;
+	public double cache_width;
 	public GLib.List<LightPad.Frontend.AppItem> children;
 	public bool dynamic_background;
 	public double factor_scaling;
@@ -102,12 +119,14 @@ public class LightPadWindow : Widgets.CompositedWindow {
 	public Cairo.Pattern pattern;
 	public int scroll_times;
 	public LightPad.Frontend.Searchbar searchbar;
+	public Cairo.Surface* surface;
 	public Gtk.Box top_spacer;
 	public int total_pages;
 	public static string user_home;
 	public bool wasShowed;
 	public LightPadWindow ();
 	public new void destroy ();
+	public void draw_at_size (Cairo.Context* ctx, Cairo.Surface* cs, double width, double height);
 	public override bool key_press_event (Gdk.EventKey event);
 	public void refresh_apps ();
 	public override bool scroll_event (Gdk.EventScroll event);

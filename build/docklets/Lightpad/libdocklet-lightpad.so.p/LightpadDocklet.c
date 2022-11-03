@@ -50,6 +50,7 @@ static PlankDockletIface * docky_lightpad_docklet_plank_docklet_parent_iface = N
 void docklet_init (PlankDockletManager* manager);
 GType docky_lightpad_docklet_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (DockyLightpadDocklet, g_object_unref)
+#define DOCKY_G_RESOURCE_PATH "/net/launchpad/plank/docklets/lightpad"
 static const gchar* docky_lightpad_docklet_real_get_id (PlankDocklet* base);
 static const gchar* docky_lightpad_docklet_real_get_name (PlankDocklet* base);
 static const gchar* docky_lightpad_docklet_real_get_description (PlankDocklet* base);
@@ -74,7 +75,7 @@ docklet_init (PlankDockletManager* manager)
 	g_return_if_fail (manager != NULL);
 #line 3 "../docklets/Lightpad/LightpadDocklet.vala"
 	plank_docklet_manager_register_docklet (manager, DOCKY_TYPE_LIGHTPAD_DOCKLET);
-#line 78 "LightpadDocklet.c"
+#line 79 "LightpadDocklet.c"
 }
 
 static const gchar*
@@ -88,7 +89,7 @@ docky_lightpad_docklet_real_get_id (PlankDocklet* base)
 	result = "lightpad";
 #line 14 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 92 "LightpadDocklet.c"
+#line 93 "LightpadDocklet.c"
 }
 
 static const gchar*
@@ -102,7 +103,7 @@ docky_lightpad_docklet_real_get_name (PlankDocklet* base)
 	result = _ ("Lightpad");
 #line 19 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 106 "LightpadDocklet.c"
+#line 107 "LightpadDocklet.c"
 }
 
 static const gchar*
@@ -116,7 +117,7 @@ docky_lightpad_docklet_real_get_description (PlankDocklet* base)
 	result = _ ("Applications Launcher.");
 #line 24 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 120 "LightpadDocklet.c"
+#line 121 "LightpadDocklet.c"
 }
 
 static const gchar*
@@ -126,11 +127,11 @@ docky_lightpad_docklet_real_get_icon (PlankDocklet* base)
 	const gchar* result = NULL;
 #line 27 "../docklets/Lightpad/LightpadDocklet.vala"
 	self = (DockyLightpadDocklet*) base;
-#line 30 "../docklets/Lightpad/LightpadDocklet.vala"
-	result = "start-here-symbolic";
-#line 30 "../docklets/Lightpad/LightpadDocklet.vala"
+#line 29 "../docklets/Lightpad/LightpadDocklet.vala"
+	result = "lightpad;;resource://" DOCKY_G_RESOURCE_PATH "/data/icons/24/lightpad.svg";
+#line 29 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 134 "LightpadDocklet.c"
+#line 135 "LightpadDocklet.c"
 }
 
 static gboolean
@@ -144,7 +145,7 @@ docky_lightpad_docklet_real_is_supported (PlankDocklet* base)
 	result = TRUE;
 #line 35 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 148 "LightpadDocklet.c"
+#line 149 "LightpadDocklet.c"
 }
 
 static PlankDockElement*
@@ -167,7 +168,7 @@ docky_lightpad_docklet_real_make_element (PlankDocklet* base,
 	result = (PlankDockElement*) _tmp0_;
 #line 40 "../docklets/Lightpad/LightpadDocklet.vala"
 	return result;
-#line 171 "LightpadDocklet.c"
+#line 172 "LightpadDocklet.c"
 }
 
 DockyLightpadDocklet*
@@ -178,7 +179,7 @@ docky_lightpad_docklet_construct (GType object_type)
 	self = (DockyLightpadDocklet*) g_object_new (object_type, NULL);
 #line 10 "../docklets/Lightpad/LightpadDocklet.vala"
 	return self;
-#line 182 "LightpadDocklet.c"
+#line 183 "LightpadDocklet.c"
 }
 
 DockyLightpadDocklet*
@@ -186,7 +187,7 @@ docky_lightpad_docklet_new (void)
 {
 #line 10 "../docklets/Lightpad/LightpadDocklet.vala"
 	return docky_lightpad_docklet_construct (DOCKY_TYPE_LIGHTPAD_DOCKLET);
-#line 190 "LightpadDocklet.c"
+#line 191 "LightpadDocklet.c"
 }
 
 static void
@@ -195,7 +196,7 @@ docky_lightpad_docklet_class_init (DockyLightpadDockletClass * klass,
 {
 #line 10 "../docklets/Lightpad/LightpadDocklet.vala"
 	docky_lightpad_docklet_parent_class = g_type_class_peek_parent (klass);
-#line 199 "LightpadDocklet.c"
+#line 200 "LightpadDocklet.c"
 }
 
 static void
@@ -216,7 +217,7 @@ docky_lightpad_docklet_plank_docklet_interface_init (PlankDockletIface * iface,
 	iface->is_supported = (gboolean (*) (PlankDocklet*)) docky_lightpad_docklet_real_is_supported;
 #line 10 "../docklets/Lightpad/LightpadDocklet.vala"
 	iface->make_element = (PlankDockElement* (*) (PlankDocklet*, const gchar*, GFile*)) docky_lightpad_docklet_real_make_element;
-#line 220 "LightpadDocklet.c"
+#line 221 "LightpadDocklet.c"
 }
 
 static void

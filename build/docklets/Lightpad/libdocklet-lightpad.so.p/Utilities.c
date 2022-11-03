@@ -342,57 +342,57 @@ string_slice (const gchar* self,
 	gboolean _tmp3_ = FALSE;
 	gchar* _tmp4_;
 	gchar* result = NULL;
-#line 1480 "glib-2.0.vapi"
+#line 1488 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	_tmp0_ = strlen (self);
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	_tmp1_ = _tmp0_;
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	string_length = (glong) _tmp1_;
-#line 1482 "glib-2.0.vapi"
+#line 1490 "glib-2.0.vapi"
 	if (start < ((glong) 0)) {
-#line 1483 "glib-2.0.vapi"
+#line 1491 "glib-2.0.vapi"
 		start = string_length + start;
 #line 358 "Utilities.c"
 	}
-#line 1485 "glib-2.0.vapi"
+#line 1493 "glib-2.0.vapi"
 	if (end < ((glong) 0)) {
-#line 1486 "glib-2.0.vapi"
+#line 1494 "glib-2.0.vapi"
 		end = string_length + end;
 #line 364 "Utilities.c"
 	}
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 	if (start >= ((glong) 0)) {
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 		_tmp2_ = start <= string_length;
 #line 370 "Utilities.c"
 	} else {
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 		_tmp2_ = FALSE;
 #line 374 "Utilities.c"
 	}
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 	g_return_val_if_fail (_tmp2_, NULL);
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 	if (end >= ((glong) 0)) {
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 		_tmp3_ = end <= string_length;
 #line 382 "Utilities.c"
 	} else {
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 		_tmp3_ = FALSE;
 #line 386 "Utilities.c"
 	}
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 	g_return_val_if_fail (_tmp3_, NULL);
-#line 1490 "glib-2.0.vapi"
+#line 1498 "glib-2.0.vapi"
 	g_return_val_if_fail (start <= end, NULL);
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	_tmp4_ = g_strndup (((gchar*) self) + start, (gsize) (end - start));
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	result = _tmp4_;
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	return result;
 #line 398 "Utilities.c"
 }

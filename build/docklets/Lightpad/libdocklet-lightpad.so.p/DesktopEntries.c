@@ -559,11 +559,11 @@ static const gchar*
 string_to_string (const gchar* self)
 {
 	const gchar* result = NULL;
-#line 1570 "glib-2.0.vapi"
+#line 1578 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1571 "glib-2.0.vapi"
+#line 1579 "glib-2.0.vapi"
 	result = self;
-#line 1571 "glib-2.0.vapi"
+#line 1579 "glib-2.0.vapi"
 	return result;
 #line 569 "DesktopEntries.c"
 }
