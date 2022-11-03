@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gresources>
+    <gresource prefix="/net/launchpad/plank/docklets/lightpad">
+        <file compressed="true" preprocess="xml-stripblanks">data/icons/24/lightpad.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks">data/icons/32/lightpad.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks">data/icons/48/lightpad.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks">data/icons/64/lightpad.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks">data/icons/128/lightpad.svg</file>
+        <file>data/application.css</file>
+    </gresource>
+</gresources>

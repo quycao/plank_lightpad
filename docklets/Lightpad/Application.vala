@@ -21,6 +21,7 @@
 
 public class LightPadWindow : Widgets.CompositedWindow {
 
+    //  public GLib.Settings settings = new GLib.Settings ("org.gnome.desktop.background");
     public static string user_home = GLib.Environment.get_variable ("HOME");
     public Gee.ArrayList<Gee.HashMap<string, string>> apps = new Gee.ArrayList<Gee.HashMap<string, string>> ();
     public Gee.HashMap<string, Gdk.Pixbuf> icons = new Gee.HashMap<string, Gdk.Pixbuf>();
@@ -55,6 +56,10 @@ public class LightPadWindow : Widgets.CompositedWindow {
     public Cairo.Pattern pattern;
     public Cairo.ImageSurface image_sf;
     public Gdk.Pixbuf image_pf;
+    public Cairo.Surface* surface;
+    public Cairo.Surface* cache_surface;
+    public double cache_width = -1;
+    public double cache_height = -1;
     public bool wasShowed;
 
     public LightPadWindow () {
@@ -156,7 +161,7 @@ public class LightPadWindow : Widgets.CompositedWindow {
         container.pack_start (this.pages_wrapper, false, true, 15);
 
         bottom = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        container.pack_start (bottom, false, true, 60);
+        container.pack_start (bottom, false, true, 0); // 60
 
         // Find number of pages and populate
         // First order the apps alphabetically
@@ -175,23 +180,56 @@ public class LightPadWindow : Widgets.CompositedWindow {
         // Signals and callbacks
         this.add_events (Gdk.EventMask.SCROLL_MASK);
         //this.button_release_event.connect ( () => { this.destroy(); return false; });
+
         // Dynamic Background
+        // Get wallpaper
+        //  string wallpaper = settings.get_string ("picture-uri");
+        //  info ("Get wallpaper %s", wallpaper);
+        //  if (wallpaper != null) {
+        //      if (wallpaper.has_suffix (".jpg")) {
+        //          file_jpg = wallpaper;
+        //      } else if (wallpaper.has_suffix (".png")) {
+        //          file_png = wallpaper;
+        //      }
+        //  }
+
+        //  if (GLib.File.new_for_path (file_jpg).query_exists ()) {
+        //      this.dynamic_background = true;
+        //      try {
+        //          image_pf = new Gdk.Pixbuf.from_file (file_jpg);
+        //          int w = image_pf.get_width ();
+	    //          factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);
+        //      } catch (GLib.Error e) {
+        //          warning ("Cant create Pixbuf background!");
+        //      }
+        //  } else if (GLib.File.new_for_path (file_png).query_exists ()) {
+        //      this.dynamic_background = true;
+        //      image_sf = new Cairo.ImageSurface.from_png (file_png);
+        //      pattern = new Cairo.Pattern.for_surface (image_sf);
+	    //      pattern.set_extend (Cairo.Extend.PAD);
+	    //      int w = image_sf.get_width ();
+	    //      factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);
+        //  }
+
+        
         if (GLib.File.new_for_path (file_jpg).query_exists ()) {
             this.dynamic_background = true;
+
             try {
                 image_pf = new Gdk.Pixbuf.from_file (file_jpg);
+                surface = Gdk.cairo_surface_create_from_pixbuf (image_pf, 1, null);
+                LightPad.Frontend.gtk_cairo_blur_surface (surface, 20);
                 int w = image_pf.get_width ();
-	            factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);
-            } catch (GLib.Error e) {
+                factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);
+            }catch (GLib.Error e) {
                 warning ("Cant create Pixbuf background!");
             }
         } else if (GLib.File.new_for_path (file_png).query_exists ()) {
             this.dynamic_background = true;
             image_sf = new Cairo.ImageSurface.from_png (file_png);
-            pattern = new Cairo.Pattern.for_surface (image_sf);
-	        pattern.set_extend (Cairo.Extend.PAD);
-	        int w = image_sf.get_width ();
-	        factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);
+            LightPad.Frontend.gtk_cairo_blur_surface (image_sf, 20);
+            int w = image_sf.get_width ();
+	        factor_scaling = (double) ((double) ((monitor_dimensions.width * 100) / w) / 100);            
         }
 
         this.draw.connect (this.draw_background);
@@ -370,32 +408,93 @@ public class LightPadWindow : Widgets.CompositedWindow {
         }
     }
 
+    //  private bool draw_background (Gtk.Widget widget, Cairo.Context ctx) {
+    //      var context = Gdk.cairo_create (widget.get_window ());
+
+    //      if (this.dynamic_background) {
+    //          if (image_pf != null) { // If JPG exist, prefer this
+	//              context.scale (factor_scaling, factor_scaling);
+    //              Gdk.cairo_set_source_pixbuf (context, image_pf, 0, 0);
+    //          } else { // Is PNG image
+	//              context.scale (factor_scaling, factor_scaling);
+	//              context.set_source (pattern);
+                
+    //          }
+
+    //          context.paint ();
+    //      } else {
+    //          // Semi-dark background
+    //          Gtk.Allocation size;
+    //          widget.get_allocation (out size);
+
+    //          var linear_gradient = new Cairo.Pattern.linear (size.x, size.y, size.x, size.y + size.height);
+    //          linear_gradient.add_color_stop_rgba (0.0, 0.4235, 0.4784, 0.5373, 0.99);
+
+    //          context.set_source (linear_gradient);
+    //          context.paint ();
+    //      }
+
+    //      return false;
+    //  }
+
     private bool draw_background (Gtk.Widget widget, Cairo.Context ctx) {
         var context = Gdk.cairo_create (widget.get_window ());
 
         if (this.dynamic_background) {
-            if (image_pf != null) { // If JPG exist, prefer this
-	            context.scale (factor_scaling, factor_scaling);
-                Gdk.cairo_set_source_pixbuf (context, image_pf, 0, 0);
+            if (image_pf != null) { // If JPG exist, prefer this	            
+	            //  context.scale (factor_scaling, factor_scaling);
+                // Gdk.cairo_set_source_pixbuf (context, image_pf, 0, 0);
+                context.set_source_surface ((Cairo.Surface)surface, 0, 0);
             } else { // Is PNG image
-	            context.scale (factor_scaling, factor_scaling);
-	            context.set_source (pattern);
+	            //  context.scale (factor_scaling, factor_scaling);
+                // context.set_source (pattern);
+                context.set_source_surface (image_sf, 0, 0);
             }
 
             context.paint ();
+
+            //  if (image_pf != null) {
+            //      draw_at_size (context, surface, monitor_dimensions.width, monitor_dimensions.height);
+            //  } else {
+            //      draw_at_size (context, image_sf, monitor_dimensions.width, monitor_dimensions.height);
+            //  }
         } else {
             // Semi-dark background
             Gtk.Allocation size;
             widget.get_allocation (out size);
 
             var linear_gradient = new Cairo.Pattern.linear (size.x, size.y, size.x, size.y + size.height);
-            linear_gradient.add_color_stop_rgba (0.0, 0.30, 0.30, 0.30, 1);
+            linear_gradient.add_color_stop_rgba (0.0, 0.4235, 0.4784, 0.5373, 0.99);
 
             context.set_source (linear_gradient);
             context.paint ();
         }
 
         return false;
+    }
+
+    public void draw_at_size(Cairo.Context *ctx, Cairo.Surface *cs, double width, double height) {
+        double diagram_width = ((Cairo.ImageSurface)cs).get_width ();
+        double diagram_height = ((Cairo.ImageSurface)cs).get_height ();
+        ((Cairo.Context)ctx).set_operator (Cairo.Operator.SOURCE);
+
+        if(width == cache_width && height == cache_height) {
+            ((Cairo.Context)ctx).set_source_surface ((Cairo.Surface)cache_surface, 0, 0);
+            ((Cairo.Context)ctx).paint ();
+        } else {
+            ((Cairo.Context)ctx).push_group ();
+            ((Cairo.Context)ctx).scale (width / diagram_width, height / diagram_height);
+            ((Cairo.Context)ctx).set_source_surface ((Cairo.Surface)cs, 0, 0);
+            ((Cairo.Context)ctx).paint ();
+
+            cache_surface = null;
+            cache_surface = ((Cairo.Context)ctx).get_group_target ();
+            cache_width = width;
+            cache_height = height;
+
+            ((Cairo.Context)ctx).pop_group_to_source ();
+            ((Cairo.Context)ctx).paint ();
+        }
     }
 
     // Keyboard shortcuts
@@ -518,9 +617,7 @@ static int main (string[] args) {
 
     // CSS Style Provider
     // Path where takes the CSS file
-    string css_file = // Build.DOCKLETSDIR +
-        //  "/" + Build.PACKAGE_NAME +
-        "/" + "application.css";
+    string css_file = /* Build.DOCKLETSDIR + */ "/lightpad/application.css";
     var css_provider = new Gtk.CssProvider ();
 
     try {

@@ -1,0 +1,13 @@
+Install for dev
+
+gettext
+
+
+- build
+mkdir build
+cd build
+meson configure
+ninja
+
+- Install for user
+    

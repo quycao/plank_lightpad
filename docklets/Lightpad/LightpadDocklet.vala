@@ -5,7 +5,7 @@ public static void docklet_init (Plank.DockletManager manager)
 
 namespace Docky
 {
-	//  public const string G_RESOURCE_PATH = "/net/launchpad/plank/docklets/desktop";
+	public const string G_RESOURCE_PATH = "/net/launchpad/plank/docklets/lightpad";
 	
 	public class LightpadDocklet : Object, Plank.Docklet
 	{
@@ -26,8 +26,8 @@ namespace Docky
 		
 		public unowned string get_icon ()
 		{
-			//  return "show-desktop;;resource://" + Docky.G_RESOURCE_PATH + "/icons/show-desktop.svg";
-            return "start-here-symbolic";
+			return "lightpad;;resource://" + Docky.G_RESOURCE_PATH + "/data/icons/24/lightpad.svg";
+            //  return "start-here-symbolic";
 		}
 		
 		public bool is_supported ()

@@ -19,9 +19,28 @@ namespace Docky
 
         construct
 		{
-			//  Icon = "show-desktop;;resource://" + Docky.G_RESOURCE_PATH + "/icons/show-desktop.svg";
-            Icon = "start-here-symbolic";
+			Icon = "lightpad;;resource://" + Docky.G_RESOURCE_PATH + "/data/icons/24/lightpad.svg";
+            //  Icon = "start-here-symbolic";
 			Text = _("Applications");
+
+            //  Gtk.init (ref args);
+            //  Gtk.Application app = new Gtk.Application ("org.libredeb.lightpad", GLib.ApplicationFlags.FLAGS_NONE);
+
+            // CSS Style Provider
+            // Path where takes the CSS file
+            // string css_file = Build.PKGDATADIR + "/docklets/lightpad/application.css";
+            var css_provider = new Gtk.CssProvider ();
+
+            try {
+                // css_provider.load_from_path (css_file);
+                css_provider.load_from_resource (Docky.G_RESOURCE_PATH + "/data/application.css");
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default(), css_provider,
+                                                                Gtk.STYLE_PROVIDER_PRIORITY_USER);
+                //  info ("Loaded CSS file: %s",css_file);
+            } catch (GLib.Error e) {
+                // warning ("Could not load CSS file: %s",css_file);
+                warning ("Could not load CSS from resource: %s", "application.css");
+            }
 
             lightpad_window = new LightPadWindow ();
             //  lightpad_window.show_all ();
@@ -48,7 +67,7 @@ namespace Docky
                     // lightpad_window.pages.set_active (0);
                     lightpad_window.show_all ();
                     lightpad_window.wasShowed = true;
-                    // dock.set_type_hint (Gdk.WindowTypeHint.UTILITY);
+                    // dock.set_type_hint (Gdk.WindowTypeHint.DOCK);
                     this.get_dock ().window.set_transient_for (lightpad_window);
                 }
 
