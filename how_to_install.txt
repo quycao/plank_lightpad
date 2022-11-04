@@ -1,13 +1,17 @@
-Install for dev
+How to build and install
 
-gettext
+* Build
+    - Install meson
+    - Run "meson build" to check and install missing dependencies (must install *-dev packages)
+    - After install all dependencies, process to build
+        $ cd ./build
+        $ ninja
 
+* Install (for Debian base)
+    - Copy ./build/docklets/Lightpad/docket-lightpad.so to /usr/lib/x86_64-linux-gnu/plank/docklets/
+    - Restart Plank
 
-- build
-mkdir build
-cd build
-meson configure
-ninja
-
-- Install for user
-    
+* Install for coding
+    - Install vala-language-server
+    - Install vala plugin for vscode
+    - The meson.build in each folder must be correct for hightlight and code intelligent/suggestion work

@@ -71,6 +71,8 @@ namespace Docky
                     //  this.get_dock ().window.set_type_hint (Gdk.WindowTypeHint.DOCK);
                     this.get_dock ().window.set_transient_for (lightpad_window);
                 }
+                    
+                return AnimationType.DARKEN;
 
                 //  try {
                 //      if (wasShowed == true) {
