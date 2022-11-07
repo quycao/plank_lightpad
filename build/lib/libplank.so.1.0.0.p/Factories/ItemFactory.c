@@ -2050,26 +2050,26 @@ string_strnlen (gchar* str,
 	gchar* _tmp0_;
 	gchar* _tmp1_;
 	glong result = 0L;
-#line 1447 "glib-2.0.vapi"
+#line 1455 "glib-2.0.vapi"
 	_tmp0_ = memchr (str, 0, (gsize) maxlen);
-#line 1447 "glib-2.0.vapi"
+#line 1455 "glib-2.0.vapi"
 	end = _tmp0_;
-#line 1448 "glib-2.0.vapi"
+#line 1456 "glib-2.0.vapi"
 	_tmp1_ = end;
-#line 1448 "glib-2.0.vapi"
+#line 1456 "glib-2.0.vapi"
 	if (_tmp1_ == NULL) {
-#line 1449 "glib-2.0.vapi"
+#line 1457 "glib-2.0.vapi"
 		result = maxlen;
-#line 1449 "glib-2.0.vapi"
+#line 1457 "glib-2.0.vapi"
 		return result;
 #line 2064 "ItemFactory.c"
 	} else {
 		gchar* _tmp2_;
-#line 1451 "glib-2.0.vapi"
+#line 1459 "glib-2.0.vapi"
 		_tmp2_ = end;
-#line 1451 "glib-2.0.vapi"
+#line 1459 "glib-2.0.vapi"
 		result = (glong) (_tmp2_ - str);
-#line 1451 "glib-2.0.vapi"
+#line 1459 "glib-2.0.vapi"
 		return result;
 #line 2073 "ItemFactory.c"
 	}
@@ -2084,59 +2084,59 @@ string_substring (const gchar* self,
 	gboolean _tmp0_ = FALSE;
 	gchar* _tmp3_;
 	gchar* result = NULL;
-#line 1458 "glib-2.0.vapi"
+#line 1466 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1460 "glib-2.0.vapi"
+#line 1468 "glib-2.0.vapi"
 	if (offset >= ((glong) 0)) {
-#line 1460 "glib-2.0.vapi"
+#line 1468 "glib-2.0.vapi"
 		_tmp0_ = len >= ((glong) 0);
 #line 2092 "ItemFactory.c"
 	} else {
-#line 1460 "glib-2.0.vapi"
+#line 1468 "glib-2.0.vapi"
 		_tmp0_ = FALSE;
 #line 2096 "ItemFactory.c"
 	}
-#line 1460 "glib-2.0.vapi"
+#line 1468 "glib-2.0.vapi"
 	if (_tmp0_) {
-#line 1462 "glib-2.0.vapi"
+#line 1470 "glib-2.0.vapi"
 		string_length = string_strnlen ((gchar*) self, offset + len);
 #line 2102 "ItemFactory.c"
 	} else {
 		gint _tmp1_;
 		gint _tmp2_;
-#line 1464 "glib-2.0.vapi"
+#line 1472 "glib-2.0.vapi"
 		_tmp1_ = strlen (self);
-#line 1464 "glib-2.0.vapi"
+#line 1472 "glib-2.0.vapi"
 		_tmp2_ = _tmp1_;
-#line 1464 "glib-2.0.vapi"
+#line 1472 "glib-2.0.vapi"
 		string_length = (glong) _tmp2_;
 #line 2112 "ItemFactory.c"
 	}
-#line 1467 "glib-2.0.vapi"
+#line 1475 "glib-2.0.vapi"
 	if (offset < ((glong) 0)) {
-#line 1468 "glib-2.0.vapi"
+#line 1476 "glib-2.0.vapi"
 		offset = string_length + offset;
-#line 1469 "glib-2.0.vapi"
+#line 1477 "glib-2.0.vapi"
 		g_return_val_if_fail (offset >= ((glong) 0), NULL);
 #line 2120 "ItemFactory.c"
 	} else {
-#line 1471 "glib-2.0.vapi"
+#line 1479 "glib-2.0.vapi"
 		g_return_val_if_fail (offset <= string_length, NULL);
 #line 2124 "ItemFactory.c"
 	}
-#line 1473 "glib-2.0.vapi"
+#line 1481 "glib-2.0.vapi"
 	if (len < ((glong) 0)) {
-#line 1474 "glib-2.0.vapi"
+#line 1482 "glib-2.0.vapi"
 		len = string_length - offset;
 #line 2130 "ItemFactory.c"
 	}
-#line 1476 "glib-2.0.vapi"
+#line 1484 "glib-2.0.vapi"
 	g_return_val_if_fail ((offset + len) <= string_length, NULL);
-#line 1477 "glib-2.0.vapi"
+#line 1485 "glib-2.0.vapi"
 	_tmp3_ = g_strndup (((gchar*) self) + offset, (gsize) len);
-#line 1477 "glib-2.0.vapi"
+#line 1485 "glib-2.0.vapi"
 	result = _tmp3_;
-#line 1477 "glib-2.0.vapi"
+#line 1485 "glib-2.0.vapi"
 	return result;
 #line 2140 "ItemFactory.c"
 }
@@ -2150,31 +2150,31 @@ string_last_index_of (const gchar* self,
 	gchar* _tmp0_;
 	gchar* _tmp1_;
 	gint result = 0;
-#line 1143 "glib-2.0.vapi"
+#line 1151 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, 0);
-#line 1143 "glib-2.0.vapi"
+#line 1151 "glib-2.0.vapi"
 	g_return_val_if_fail (needle != NULL, 0);
-#line 1144 "glib-2.0.vapi"
+#line 1152 "glib-2.0.vapi"
 	_tmp0_ = g_strrstr (((gchar*) self) + start_index, (gchar*) needle);
-#line 1144 "glib-2.0.vapi"
+#line 1152 "glib-2.0.vapi"
 	_result_ = _tmp0_;
-#line 1146 "glib-2.0.vapi"
+#line 1154 "glib-2.0.vapi"
 	_tmp1_ = _result_;
-#line 1146 "glib-2.0.vapi"
+#line 1154 "glib-2.0.vapi"
 	if (_tmp1_ != NULL) {
 #line 2164 "ItemFactory.c"
 		gchar* _tmp2_;
-#line 1147 "glib-2.0.vapi"
+#line 1155 "glib-2.0.vapi"
 		_tmp2_ = _result_;
-#line 1147 "glib-2.0.vapi"
+#line 1155 "glib-2.0.vapi"
 		result = (gint) (_tmp2_ - ((gchar*) self));
-#line 1147 "glib-2.0.vapi"
+#line 1155 "glib-2.0.vapi"
 		return result;
 #line 2172 "ItemFactory.c"
 	} else {
-#line 1149 "glib-2.0.vapi"
+#line 1157 "glib-2.0.vapi"
 		result = -1;
-#line 1149 "glib-2.0.vapi"
+#line 1157 "glib-2.0.vapi"
 		return result;
 #line 2178 "ItemFactory.c"
 	}
@@ -2192,57 +2192,57 @@ string_slice (const gchar* self,
 	gboolean _tmp3_ = FALSE;
 	gchar* _tmp4_;
 	gchar* result = NULL;
-#line 1480 "glib-2.0.vapi"
+#line 1488 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	_tmp0_ = strlen (self);
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	_tmp1_ = _tmp0_;
-#line 1481 "glib-2.0.vapi"
+#line 1489 "glib-2.0.vapi"
 	string_length = (glong) _tmp1_;
-#line 1482 "glib-2.0.vapi"
+#line 1490 "glib-2.0.vapi"
 	if (start < ((glong) 0)) {
-#line 1483 "glib-2.0.vapi"
+#line 1491 "glib-2.0.vapi"
 		start = string_length + start;
 #line 2206 "ItemFactory.c"
 	}
-#line 1485 "glib-2.0.vapi"
+#line 1493 "glib-2.0.vapi"
 	if (end < ((glong) 0)) {
-#line 1486 "glib-2.0.vapi"
+#line 1494 "glib-2.0.vapi"
 		end = string_length + end;
 #line 2212 "ItemFactory.c"
 	}
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 	if (start >= ((glong) 0)) {
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 		_tmp2_ = start <= string_length;
 #line 2218 "ItemFactory.c"
 	} else {
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 		_tmp2_ = FALSE;
 #line 2222 "ItemFactory.c"
 	}
-#line 1488 "glib-2.0.vapi"
+#line 1496 "glib-2.0.vapi"
 	g_return_val_if_fail (_tmp2_, NULL);
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 	if (end >= ((glong) 0)) {
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 		_tmp3_ = end <= string_length;
 #line 2230 "ItemFactory.c"
 	} else {
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 		_tmp3_ = FALSE;
 #line 2234 "ItemFactory.c"
 	}
-#line 1489 "glib-2.0.vapi"
+#line 1497 "glib-2.0.vapi"
 	g_return_val_if_fail (_tmp3_, NULL);
-#line 1490 "glib-2.0.vapi"
+#line 1498 "glib-2.0.vapi"
 	g_return_val_if_fail (start <= end, NULL);
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	_tmp4_ = g_strndup (((gchar*) self) + start, (gsize) (end - start));
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	result = _tmp4_;
-#line 1491 "glib-2.0.vapi"
+#line 1499 "glib-2.0.vapi"
 	return result;
 #line 2246 "ItemFactory.c"
 }

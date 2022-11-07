@@ -468,50 +468,50 @@ _vala_g_strjoinv (const gchar* separator,
 {
 	gboolean _tmp0_ = FALSE;
 	gchar* result = NULL;
-#line 1200 "glib-2.0.vapi"
+#line 1208 "glib-2.0.vapi"
 	if (separator == NULL) {
-#line 1201 "glib-2.0.vapi"
+#line 1209 "glib-2.0.vapi"
 		separator = "";
 #line 476 "DrawingService.c"
 	}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 	if (str_array != NULL) {
 #line 480 "DrawingService.c"
 		gboolean _tmp1_ = FALSE;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		if (str_array_length1 > 0) {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			_tmp1_ = TRUE;
 #line 486 "DrawingService.c"
 		} else {
 			gboolean _tmp2_ = FALSE;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			if (str_array_length1 == -1) {
 #line 491 "DrawingService.c"
 				const gchar* _tmp3_;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp3_ = str_array[0];
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp2_ = _tmp3_ != NULL;
 #line 497 "DrawingService.c"
 			} else {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp2_ = FALSE;
 #line 501 "DrawingService.c"
 			}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			_tmp1_ = _tmp2_;
 #line 505 "DrawingService.c"
 		}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		_tmp0_ = _tmp1_;
 #line 509 "DrawingService.c"
 	} else {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		_tmp0_ = FALSE;
 #line 513 "DrawingService.c"
 	}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 	if (_tmp0_) {
 #line 517 "DrawingService.c"
 		gint i = 0;
@@ -520,222 +520,237 @@ _vala_g_strjoinv (const gchar* separator,
 		gint _tmp17_;
 		const gchar* res = NULL;
 		void* _tmp18_;
-		void* ptr = NULL;
-		const gchar* _tmp19_;
+		const gchar* _tmp19_ = NULL;
 		const gchar* _tmp20_;
-		void* _tmp21_;
-		const gchar* _tmp31_;
-#line 1205 "glib-2.0.vapi"
+		void* ptr = NULL;
+		const gchar* _tmp22_;
+		void* _tmp23_;
+		const gchar* _tmp33_;
+#line 1213 "glib-2.0.vapi"
 		len = (gsize) 1;
-#line 531 "DrawingService.c"
+#line 532 "DrawingService.c"
 		{
 			gboolean _tmp4_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			i = 0;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			_tmp4_ = TRUE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			while (TRUE) {
-#line 540 "DrawingService.c"
+#line 541 "DrawingService.c"
 				gboolean _tmp6_ = FALSE;
 				gboolean _tmp7_ = FALSE;
 				gint _tmp10_ = 0;
 				const gchar* _tmp11_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (!_tmp4_) {
-#line 547 "DrawingService.c"
+#line 548 "DrawingService.c"
 					gint _tmp5_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp5_ = i;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					i = _tmp5_ + 1;
-#line 553 "DrawingService.c"
+#line 554 "DrawingService.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				_tmp4_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (str_array_length1 != -1) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp7_ = i < str_array_length1;
-#line 561 "DrawingService.c"
+#line 562 "DrawingService.c"
 				} else {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp7_ = FALSE;
-#line 565 "DrawingService.c"
+#line 566 "DrawingService.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (_tmp7_) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp6_ = TRUE;
-#line 571 "DrawingService.c"
+#line 572 "DrawingService.c"
 				} else {
 					gboolean _tmp8_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					if (str_array_length1 == -1) {
-#line 576 "DrawingService.c"
+#line 577 "DrawingService.c"
 						const gchar* _tmp9_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp9_ = str_array[i];
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp8_ = _tmp9_ != NULL;
-#line 582 "DrawingService.c"
+#line 583 "DrawingService.c"
 					} else {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp8_ = FALSE;
-#line 586 "DrawingService.c"
+#line 587 "DrawingService.c"
 					}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp6_ = _tmp8_;
-#line 590 "DrawingService.c"
+#line 591 "DrawingService.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (!_tmp6_) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					break;
-#line 596 "DrawingService.c"
+#line 597 "DrawingService.c"
 				}
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				_tmp11_ = str_array[i];
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				if (_tmp11_ != NULL) {
-#line 602 "DrawingService.c"
+#line 603 "DrawingService.c"
 					const gchar* _tmp12_;
 					gint _tmp13_;
 					gint _tmp14_;
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp12_ = str_array[i];
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp13_ = strlen ((const gchar*) _tmp12_);
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp14_ = _tmp13_;
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp10_ = _tmp14_;
-#line 614 "DrawingService.c"
+#line 615 "DrawingService.c"
 				} else {
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp10_ = 0;
-#line 618 "DrawingService.c"
+#line 619 "DrawingService.c"
 				}
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				len += (gsize) _tmp10_;
-#line 622 "DrawingService.c"
+#line 623 "DrawingService.c"
 			}
 		}
-#line 1209 "glib-2.0.vapi"
+#line 1217 "glib-2.0.vapi"
 		if (i == 0) {
-#line 627 "DrawingService.c"
+#line 628 "DrawingService.c"
 			gchar* _tmp15_;
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			_tmp15_ = g_strdup ("");
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			result = _tmp15_;
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			return result;
-#line 635 "DrawingService.c"
+#line 636 "DrawingService.c"
 		}
-#line 1212 "glib-2.0.vapi"
+#line 1220 "glib-2.0.vapi"
 		str_array_length1 = i;
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		_tmp16_ = strlen ((const gchar*) separator);
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		_tmp17_ = _tmp16_;
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		len += (gsize) (_tmp17_ * (i - 1));
-#line 1215 "glib-2.0.vapi"
+#line 1223 "glib-2.0.vapi"
 		_tmp18_ = g_malloc (len);
-#line 1215 "glib-2.0.vapi"
+#line 1223 "glib-2.0.vapi"
 		res = _tmp18_;
-#line 1216 "glib-2.0.vapi"
-		_tmp19_ = res;
-#line 1216 "glib-2.0.vapi"
+#line 1224 "glib-2.0.vapi"
 		_tmp20_ = str_array[0];
-#line 1216 "glib-2.0.vapi"
-		_tmp21_ = g_stpcpy ((void*) _tmp19_, (const gchar*) _tmp20_);
-#line 1216 "glib-2.0.vapi"
-		ptr = _tmp21_;
-#line 657 "DrawingService.c"
+#line 1224 "glib-2.0.vapi"
+		if (_tmp20_ != NULL) {
+#line 654 "DrawingService.c"
+			const gchar* _tmp21_;
+#line 1224 "glib-2.0.vapi"
+			_tmp21_ = str_array[0];
+#line 1224 "glib-2.0.vapi"
+			_tmp19_ = (const gchar*) _tmp21_;
+#line 660 "DrawingService.c"
+		} else {
+#line 1224 "glib-2.0.vapi"
+			_tmp19_ = "";
+#line 664 "DrawingService.c"
+		}
+#line 1224 "glib-2.0.vapi"
+		_tmp22_ = res;
+#line 1224 "glib-2.0.vapi"
+		_tmp23_ = g_stpcpy ((void*) _tmp22_, _tmp19_);
+#line 1224 "glib-2.0.vapi"
+		ptr = _tmp23_;
+#line 672 "DrawingService.c"
 		{
-			gboolean _tmp22_ = FALSE;
-#line 1217 "glib-2.0.vapi"
+			gboolean _tmp24_ = FALSE;
+#line 1225 "glib-2.0.vapi"
 			i = 1;
-#line 1217 "glib-2.0.vapi"
-			_tmp22_ = TRUE;
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
+			_tmp24_ = TRUE;
+#line 1225 "glib-2.0.vapi"
 			while (TRUE) {
-#line 666 "DrawingService.c"
-				void* _tmp24_;
-				void* _tmp25_;
-				const gchar* _tmp26_ = NULL;
-				const gchar* _tmp27_;
-				void* _tmp29_;
-				void* _tmp30_;
-#line 1217 "glib-2.0.vapi"
-				if (!_tmp22_) {
-#line 675 "DrawingService.c"
-					gint _tmp23_;
-#line 1217 "glib-2.0.vapi"
-					_tmp23_ = i;
-#line 1217 "glib-2.0.vapi"
-					i = _tmp23_ + 1;
 #line 681 "DrawingService.c"
+				void* _tmp26_;
+				void* _tmp27_;
+				const gchar* _tmp28_ = NULL;
+				const gchar* _tmp29_;
+				void* _tmp31_;
+				void* _tmp32_;
+#line 1225 "glib-2.0.vapi"
+				if (!_tmp24_) {
+#line 690 "DrawingService.c"
+					gint _tmp25_;
+#line 1225 "glib-2.0.vapi"
+					_tmp25_ = i;
+#line 1225 "glib-2.0.vapi"
+					i = _tmp25_ + 1;
+#line 696 "DrawingService.c"
 				}
-#line 1217 "glib-2.0.vapi"
-				_tmp22_ = FALSE;
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
+				_tmp24_ = FALSE;
+#line 1225 "glib-2.0.vapi"
 				if (!(i < str_array_length1)) {
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
 					break;
-#line 689 "DrawingService.c"
+#line 704 "DrawingService.c"
 				}
-#line 1218 "glib-2.0.vapi"
-				_tmp24_ = ptr;
-#line 1218 "glib-2.0.vapi"
-				_tmp25_ = g_stpcpy (_tmp24_, (const gchar*) separator);
-#line 1218 "glib-2.0.vapi"
-				ptr = _tmp25_;
-#line 1219 "glib-2.0.vapi"
-				_tmp27_ = str_array[i];
-#line 1219 "glib-2.0.vapi"
-				if (_tmp27_ != NULL) {
-#line 701 "DrawingService.c"
-					const gchar* _tmp28_;
-#line 1219 "glib-2.0.vapi"
-					_tmp28_ = str_array[i];
-#line 1219 "glib-2.0.vapi"
-					_tmp26_ = (const gchar*) _tmp28_;
-#line 707 "DrawingService.c"
+#line 1226 "glib-2.0.vapi"
+				_tmp26_ = ptr;
+#line 1226 "glib-2.0.vapi"
+				_tmp27_ = g_stpcpy (_tmp26_, (const gchar*) separator);
+#line 1226 "glib-2.0.vapi"
+				ptr = _tmp27_;
+#line 1227 "glib-2.0.vapi"
+				_tmp29_ = str_array[i];
+#line 1227 "glib-2.0.vapi"
+				if (_tmp29_ != NULL) {
+#line 716 "DrawingService.c"
+					const gchar* _tmp30_;
+#line 1227 "glib-2.0.vapi"
+					_tmp30_ = str_array[i];
+#line 1227 "glib-2.0.vapi"
+					_tmp28_ = (const gchar*) _tmp30_;
+#line 722 "DrawingService.c"
 				} else {
-#line 1219 "glib-2.0.vapi"
-					_tmp26_ = "";
-#line 711 "DrawingService.c"
+#line 1227 "glib-2.0.vapi"
+					_tmp28_ = "";
+#line 726 "DrawingService.c"
 				}
-#line 1219 "glib-2.0.vapi"
-				_tmp29_ = ptr;
-#line 1219 "glib-2.0.vapi"
-				_tmp30_ = g_stpcpy (_tmp29_, _tmp26_);
-#line 1219 "glib-2.0.vapi"
-				ptr = _tmp30_;
-#line 719 "DrawingService.c"
+#line 1227 "glib-2.0.vapi"
+				_tmp31_ = ptr;
+#line 1227 "glib-2.0.vapi"
+				_tmp32_ = g_stpcpy (_tmp31_, _tmp28_);
+#line 1227 "glib-2.0.vapi"
+				ptr = _tmp32_;
+#line 734 "DrawingService.c"
 			}
 		}
-#line 1222 "glib-2.0.vapi"
-		_tmp31_ = res;
-#line 1222 "glib-2.0.vapi"
+#line 1230 "glib-2.0.vapi"
+		_tmp33_ = res;
+#line 1230 "glib-2.0.vapi"
 		res = NULL;
-#line 1222 "glib-2.0.vapi"
-		result = (gchar*) _tmp31_;
-#line 1222 "glib-2.0.vapi"
+#line 1230 "glib-2.0.vapi"
+		result = (gchar*) _tmp33_;
+#line 1230 "glib-2.0.vapi"
 		return result;
-#line 730 "DrawingService.c"
+#line 745 "DrawingService.c"
 	} else {
-		gchar* _tmp32_;
-#line 1224 "glib-2.0.vapi"
-		_tmp32_ = g_strdup ("");
-#line 1224 "glib-2.0.vapi"
-		result = _tmp32_;
-#line 1224 "glib-2.0.vapi"
+		gchar* _tmp34_;
+#line 1232 "glib-2.0.vapi"
+		_tmp34_ = g_strdup ("");
+#line 1232 "glib-2.0.vapi"
+		result = _tmp34_;
+#line 1232 "glib-2.0.vapi"
 		return result;
-#line 739 "DrawingService.c"
+#line 754 "DrawingService.c"
 	}
 }
 
@@ -748,43 +763,43 @@ string_replace (const gchar* self,
 	gboolean _tmp1_ = FALSE;
 	GError* _inner_error0_ = NULL;
 	gchar* result = NULL;
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (old != NULL, NULL);
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (replacement != NULL, NULL);
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if ((*((gchar*) self)) == '\0') {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp1_ = TRUE;
-#line 762 "DrawingService.c"
+#line 777 "DrawingService.c"
 	} else {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp1_ = (*((gchar*) old)) == '\0';
-#line 766 "DrawingService.c"
+#line 781 "DrawingService.c"
 	}
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if (_tmp1_) {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp0_ = TRUE;
-#line 772 "DrawingService.c"
+#line 787 "DrawingService.c"
 	} else {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp0_ = g_strcmp0 (old, replacement) == 0;
-#line 776 "DrawingService.c"
+#line 791 "DrawingService.c"
 	}
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if (_tmp0_) {
-#line 780 "DrawingService.c"
+#line 795 "DrawingService.c"
 		gchar* _tmp2_;
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		_tmp2_ = g_strdup (self);
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		result = _tmp2_;
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		return result;
-#line 788 "DrawingService.c"
+#line 803 "DrawingService.c"
 	}
 	{
 		GRegex* regex = NULL;
@@ -796,93 +811,93 @@ string_replace (const gchar* self,
 		GRegex* _tmp8_;
 		gchar* _tmp9_;
 		gchar* _tmp10_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp3_ = g_regex_escape_string (old, -1);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp4_ = _tmp3_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp5_ = g_regex_new (_tmp4_, 0, 0, &_inner_error0_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp6_ = _tmp5_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_g_free0 (_tmp4_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		regex = _tmp6_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			_g_free0 (_tmp7_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			_g_regex_unref0 (regex);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			if (_inner_error0_->domain == G_REGEX_ERROR) {
-#line 820 "DrawingService.c"
+#line 835 "DrawingService.c"
 				goto __catch0_g_regex_error;
 			}
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			g_clear_error (&_inner_error0_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			return NULL;
-#line 829 "DrawingService.c"
+#line 844 "DrawingService.c"
 		}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp8_ = regex;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp9_ = g_regex_replace_literal (_tmp8_, self, (gssize) -1, 0, replacement, 0, &_inner_error0_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp7_ = _tmp9_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			_g_free0 (_tmp7_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			_g_regex_unref0 (regex);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			if (_inner_error0_->domain == G_REGEX_ERROR) {
-#line 845 "DrawingService.c"
+#line 860 "DrawingService.c"
 				goto __catch0_g_regex_error;
 			}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			g_clear_error (&_inner_error0_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			return NULL;
-#line 854 "DrawingService.c"
+#line 869 "DrawingService.c"
 		}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp10_ = _tmp7_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp7_ = NULL;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		result = _tmp10_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_g_free0 (_tmp7_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_g_regex_unref0 (regex);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		return result;
-#line 868 "DrawingService.c"
+#line 883 "DrawingService.c"
 	}
 	goto __finally0;
 	__catch0_g_regex_error:
 	{
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 		g_clear_error (&_inner_error0_);
-#line 1542 "glib-2.0.vapi"
+#line 1550 "glib-2.0.vapi"
 		g_assert_not_reached ();
-#line 877 "DrawingService.c"
+#line 892 "DrawingService.c"
 	}
 	__finally0:
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	g_clear_error (&_inner_error0_);
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	return NULL;
-#line 886 "DrawingService.c"
+#line 901 "DrawingService.c"
 }
 
 gchar*
@@ -891,7 +906,7 @@ plank_drawing_service_get_icon_from_gicon (GIcon* icon)
 	gchar* result = NULL;
 #line 104 "../lib/Drawing/DrawingService.vala"
 	if (G_TYPE_CHECK_INSTANCE_TYPE (icon, g_themed_icon_get_type ())) {
-#line 895 "DrawingService.c"
+#line 910 "DrawingService.c"
 		gchar* icons = NULL;
 		gchar** _tmp0_;
 		gchar** _tmp1_;
@@ -914,11 +929,11 @@ plank_drawing_service_get_icon_from_gicon (GIcon* icon)
 		_g_free0 (icons);
 #line 107 "../lib/Drawing/DrawingService.vala"
 		return result;
-#line 918 "DrawingService.c"
+#line 933 "DrawingService.c"
 	}
 #line 110 "../lib/Drawing/DrawingService.vala"
 	if (G_TYPE_CHECK_INSTANCE_TYPE (icon, g_file_icon_get_type ())) {
-#line 922 "DrawingService.c"
+#line 937 "DrawingService.c"
 		GFile* _tmp5_;
 		gchar* _tmp6_;
 #line 111 "../lib/Drawing/DrawingService.vala"
@@ -929,13 +944,13 @@ plank_drawing_service_get_icon_from_gicon (GIcon* icon)
 		result = _tmp6_;
 #line 111 "../lib/Drawing/DrawingService.vala"
 		return result;
-#line 933 "DrawingService.c"
+#line 948 "DrawingService.c"
 	}
 #line 113 "../lib/Drawing/DrawingService.vala"
 	result = NULL;
 #line 113 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 939 "DrawingService.c"
+#line 954 "DrawingService.c"
 }
 
 /**
@@ -958,13 +973,13 @@ _vala_array_add3 (gchar** * array,
 		*size = (*size) ? (2 * (*size)) : 4;
 #line 129 "../lib/Drawing/DrawingService.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
-#line 962 "DrawingService.c"
+#line 977 "DrawingService.c"
 	}
 #line 129 "../lib/Drawing/DrawingService.vala"
 	(*array)[(*length)++] = value;
 #line 129 "../lib/Drawing/DrawingService.vala"
 	(*array)[*length] = NULL;
-#line 968 "DrawingService.c"
+#line 983 "DrawingService.c"
 }
 
 GdkPixbuf*
@@ -1005,7 +1020,7 @@ plank_drawing_service_load_icon (const gchar* names,
 	_tmp3_ = all_names;
 #line 131 "../lib/Drawing/DrawingService.vala"
 	_tmp3__length1 = all_names_length1;
-#line 1009 "DrawingService.c"
+#line 1024 "DrawingService.c"
 	{
 		gchar** name_collection = NULL;
 		gint name_collection_length1 = 0;
@@ -1017,11 +1032,11 @@ plank_drawing_service_load_icon (const gchar* names,
 		name_collection_length1 = _tmp3__length1;
 #line 131 "../lib/Drawing/DrawingService.vala"
 		for (name_it = 0; name_it < name_collection_length1; name_it = name_it + 1) {
-#line 1021 "DrawingService.c"
+#line 1036 "DrawingService.c"
 			const gchar* name = NULL;
 #line 131 "../lib/Drawing/DrawingService.vala"
 			name = name_collection[name_it];
-#line 1025 "DrawingService.c"
+#line 1040 "DrawingService.c"
 			{
 				GFile* file = NULL;
 				const gchar* _tmp4_;
@@ -1041,7 +1056,7 @@ plank_drawing_service_load_icon (const gchar* names,
 				_tmp6_ = file;
 #line 133 "../lib/Drawing/DrawingService.vala"
 				if (_tmp6_ != NULL) {
-#line 1045 "DrawingService.c"
+#line 1060 "DrawingService.c"
 					GFile* _tmp7_;
 					GdkPixbuf* _tmp8_;
 					GdkPixbuf* _tmp9_;
@@ -1061,7 +1076,7 @@ plank_drawing_service_load_icon (const gchar* names,
 						_g_object_unref0 (file);
 #line 136 "../lib/Drawing/DrawingService.vala"
 						break;
-#line 1065 "DrawingService.c"
+#line 1080 "DrawingService.c"
 					}
 				}
 #line 139 "../lib/Drawing/DrawingService.vala"
@@ -1080,23 +1095,23 @@ plank_drawing_service_load_icon (const gchar* names,
 					_g_object_unref0 (file);
 #line 141 "../lib/Drawing/DrawingService.vala"
 					break;
-#line 1084 "DrawingService.c"
+#line 1099 "DrawingService.c"
 				}
 #line 143 "../lib/Drawing/DrawingService.vala"
 				_tmp13_ = name;
 #line 143 "../lib/Drawing/DrawingService.vala"
 				if (g_strcmp0 (_tmp13_, PLANK_DRAWING_SERVICE_DEFAULT_ICON) != 0) {
-#line 1090 "DrawingService.c"
+#line 1105 "DrawingService.c"
 					const gchar* _tmp14_;
 #line 144 "../lib/Drawing/DrawingService.vala"
 					_tmp14_ = name;
 #line 144 "../lib/Drawing/DrawingService.vala"
 					g_message ("DrawingService.vala:144: Could not find icon '%s'", _tmp14_);
-#line 1096 "DrawingService.c"
+#line 1111 "DrawingService.c"
 				}
 #line 131 "../lib/Drawing/DrawingService.vala"
 				_g_object_unref0 (file);
-#line 1100 "DrawingService.c"
+#line 1115 "DrawingService.c"
 			}
 		}
 	}
@@ -1104,7 +1119,7 @@ plank_drawing_service_load_icon (const gchar* names,
 	_tmp15_ = pbuf;
 #line 148 "../lib/Drawing/DrawingService.vala"
 	if (_tmp15_ == NULL) {
-#line 1108 "DrawingService.c"
+#line 1123 "DrawingService.c"
 		GdkPixbuf* _tmp16_;
 #line 149 "../lib/Drawing/DrawingService.vala"
 		_tmp16_ = plank_drawing_service_load_pixbuf_from_resource (PLANK_G_RESOURCE_PATH "/img/application-default-icon.svg", width, height);
@@ -1112,28 +1127,28 @@ plank_drawing_service_load_icon (const gchar* names,
 		_g_object_unref0 (pbuf);
 #line 149 "../lib/Drawing/DrawingService.vala"
 		pbuf = _tmp16_;
-#line 1116 "DrawingService.c"
+#line 1131 "DrawingService.c"
 	}
 #line 151 "../lib/Drawing/DrawingService.vala"
 	_tmp17_ = pbuf;
 #line 151 "../lib/Drawing/DrawingService.vala"
 	if (_tmp17_ != NULL) {
-#line 1122 "DrawingService.c"
+#line 1137 "DrawingService.c"
 		gboolean _tmp18_ = FALSE;
 		gboolean _tmp19_ = FALSE;
 #line 152 "../lib/Drawing/DrawingService.vala"
 		if (width != -1) {
 #line 152 "../lib/Drawing/DrawingService.vala"
 			_tmp19_ = height != -1;
-#line 1129 "DrawingService.c"
+#line 1144 "DrawingService.c"
 		} else {
 #line 152 "../lib/Drawing/DrawingService.vala"
 			_tmp19_ = FALSE;
-#line 1133 "DrawingService.c"
+#line 1148 "DrawingService.c"
 		}
 #line 152 "../lib/Drawing/DrawingService.vala"
 		if (_tmp19_) {
-#line 1137 "DrawingService.c"
+#line 1152 "DrawingService.c"
 			gboolean _tmp20_ = FALSE;
 			GdkPixbuf* _tmp21_;
 			gint _tmp22_;
@@ -1148,7 +1163,7 @@ plank_drawing_service_load_icon (const gchar* names,
 			if (width != _tmp23_) {
 #line 152 "../lib/Drawing/DrawingService.vala"
 				_tmp20_ = TRUE;
-#line 1152 "DrawingService.c"
+#line 1167 "DrawingService.c"
 			} else {
 				GdkPixbuf* _tmp24_;
 				gint _tmp25_;
@@ -1161,19 +1176,19 @@ plank_drawing_service_load_icon (const gchar* names,
 				_tmp26_ = _tmp25_;
 #line 152 "../lib/Drawing/DrawingService.vala"
 				_tmp20_ = height != _tmp26_;
-#line 1165 "DrawingService.c"
+#line 1180 "DrawingService.c"
 			}
 #line 152 "../lib/Drawing/DrawingService.vala"
 			_tmp18_ = _tmp20_;
-#line 1169 "DrawingService.c"
+#line 1184 "DrawingService.c"
 		} else {
 #line 152 "../lib/Drawing/DrawingService.vala"
 			_tmp18_ = FALSE;
-#line 1173 "DrawingService.c"
+#line 1188 "DrawingService.c"
 		}
 #line 152 "../lib/Drawing/DrawingService.vala"
 		if (_tmp18_) {
-#line 1177 "DrawingService.c"
+#line 1192 "DrawingService.c"
 			GdkPixbuf* _tmp27_;
 			GdkPixbuf* _tmp28_;
 #line 153 "../lib/Drawing/DrawingService.vala"
@@ -1188,7 +1203,7 @@ plank_drawing_service_load_icon (const gchar* names,
 			_g_object_unref0 (pbuf);
 #line 153 "../lib/Drawing/DrawingService.vala"
 			return result;
-#line 1192 "DrawingService.c"
+#line 1207 "DrawingService.c"
 		}
 #line 154 "../lib/Drawing/DrawingService.vala"
 		result = pbuf;
@@ -1196,7 +1211,7 @@ plank_drawing_service_load_icon (const gchar* names,
 		all_names = (_vala_array_free (all_names, all_names_length1, (GDestroyNotify) g_free), NULL);
 #line 154 "../lib/Drawing/DrawingService.vala"
 		return result;
-#line 1200 "DrawingService.c"
+#line 1215 "DrawingService.c"
 	}
 #line 157 "../lib/Drawing/DrawingService.vala"
 	g_warning ("DrawingService.vala:157: No icon found, return empty pixbuf");
@@ -1210,7 +1225,7 @@ plank_drawing_service_load_icon (const gchar* names,
 	_g_object_unref0 (pbuf);
 #line 159 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1214 "DrawingService.c"
+#line 1229 "DrawingService.c"
 }
 
 static GdkPixbuf*
@@ -1230,7 +1245,7 @@ plank_drawing_service_get_empty_pixbuf (gint width,
 	result = pbuf;
 #line 166 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1234 "DrawingService.c"
+#line 1249 "DrawingService.c"
 }
 
 /**
@@ -1261,7 +1276,7 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 	_tmp1_ = name_down;
 #line 180 "../lib/Drawing/DrawingService.vala"
 	if (g_str_has_prefix (_tmp1_, "resource://")) {
-#line 1265 "DrawingService.c"
+#line 1280 "DrawingService.c"
 		GFile* _tmp2_;
 #line 181 "../lib/Drawing/DrawingService.vala"
 		_tmp2_ = g_file_new_for_uri (name);
@@ -1269,14 +1284,14 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 		_g_object_unref0 (file);
 #line 181 "../lib/Drawing/DrawingService.vala"
 		file = _tmp2_;
-#line 1273 "DrawingService.c"
+#line 1288 "DrawingService.c"
 	} else {
 		const gchar* _tmp3_;
 #line 182 "../lib/Drawing/DrawingService.vala"
 		_tmp3_ = name_down;
 #line 182 "../lib/Drawing/DrawingService.vala"
 		if (g_str_has_prefix (_tmp3_, "file://")) {
-#line 1280 "DrawingService.c"
+#line 1295 "DrawingService.c"
 			GFile* _tmp4_;
 #line 183 "../lib/Drawing/DrawingService.vala"
 			_tmp4_ = g_file_new_for_uri (name);
@@ -1284,11 +1299,11 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 			_g_object_unref0 (file);
 #line 183 "../lib/Drawing/DrawingService.vala"
 			file = _tmp4_;
-#line 1288 "DrawingService.c"
+#line 1303 "DrawingService.c"
 		} else {
 #line 184 "../lib/Drawing/DrawingService.vala"
 			if (g_str_has_prefix (name, "~/")) {
-#line 1292 "DrawingService.c"
+#line 1307 "DrawingService.c"
 				const gchar* _tmp5_;
 				gchar* _tmp6_;
 				gchar* _tmp7_;
@@ -1307,11 +1322,11 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 				file = _tmp8_;
 #line 185 "../lib/Drawing/DrawingService.vala"
 				_g_free0 (_tmp7_);
-#line 1311 "DrawingService.c"
+#line 1326 "DrawingService.c"
 			} else {
 #line 186 "../lib/Drawing/DrawingService.vala"
 				if (g_str_has_prefix (name, "/")) {
-#line 1315 "DrawingService.c"
+#line 1330 "DrawingService.c"
 					GFile* _tmp9_;
 #line 187 "../lib/Drawing/DrawingService.vala"
 					_tmp9_ = g_file_new_for_path (name);
@@ -1319,7 +1334,7 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 					_g_object_unref0 (file);
 #line 187 "../lib/Drawing/DrawingService.vala"
 					file = _tmp9_;
-#line 1323 "DrawingService.c"
+#line 1338 "DrawingService.c"
 				}
 			}
 		}
@@ -1328,17 +1343,17 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 	_tmp11_ = file;
 #line 189 "../lib/Drawing/DrawingService.vala"
 	if (_tmp11_ != NULL) {
-#line 1332 "DrawingService.c"
+#line 1347 "DrawingService.c"
 		GFile* _tmp12_;
 #line 189 "../lib/Drawing/DrawingService.vala"
 		_tmp12_ = file;
 #line 189 "../lib/Drawing/DrawingService.vala"
 		_tmp10_ = g_file_query_exists (_tmp12_, NULL);
-#line 1338 "DrawingService.c"
+#line 1353 "DrawingService.c"
 	} else {
 #line 189 "../lib/Drawing/DrawingService.vala"
 		_tmp10_ = FALSE;
-#line 1342 "DrawingService.c"
+#line 1357 "DrawingService.c"
 	}
 #line 189 "../lib/Drawing/DrawingService.vala"
 	if (_tmp10_) {
@@ -1348,7 +1363,7 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 		_g_free0 (name_down);
 #line 190 "../lib/Drawing/DrawingService.vala"
 		return result;
-#line 1352 "DrawingService.c"
+#line 1367 "DrawingService.c"
 	}
 #line 192 "../lib/Drawing/DrawingService.vala"
 	result = NULL;
@@ -1358,7 +1373,7 @@ plank_drawing_service_try_get_icon_file (const gchar* name)
 	_g_object_unref0 (file);
 #line 192 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1362 "DrawingService.c"
+#line 1377 "DrawingService.c"
 }
 
 static GdkPixbuf*
@@ -1373,7 +1388,7 @@ plank_drawing_service_load_pixbuf_from_file (GFile* file,
 	g_return_val_if_fail (file != NULL, NULL);
 #line 197 "../lib/Drawing/DrawingService.vala"
 	pbuf = NULL;
-#line 1377 "DrawingService.c"
+#line 1392 "DrawingService.c"
 	{
 		GFileInputStream* fis = NULL;
 		GFileInputStream* _tmp0_;
@@ -1387,7 +1402,7 @@ plank_drawing_service_load_pixbuf_from_file (GFile* file,
 		fis = _tmp0_;
 #line 200 "../lib/Drawing/DrawingService.vala"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1391 "DrawingService.c"
+#line 1406 "DrawingService.c"
 			goto __catch0_g_error;
 		}
 #line 201 "../lib/Drawing/DrawingService.vala"
@@ -1400,7 +1415,7 @@ plank_drawing_service_load_pixbuf_from_file (GFile* file,
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
 #line 201 "../lib/Drawing/DrawingService.vala"
 			_g_object_unref0 (fis);
-#line 1404 "DrawingService.c"
+#line 1419 "DrawingService.c"
 			goto __catch0_g_error;
 		}
 #line 201 "../lib/Drawing/DrawingService.vala"
@@ -1415,14 +1430,14 @@ plank_drawing_service_load_pixbuf_from_file (GFile* file,
 		_g_object_unref0 (_tmp1_);
 #line 199 "../lib/Drawing/DrawingService.vala"
 		_g_object_unref0 (fis);
-#line 1419 "DrawingService.c"
+#line 1434 "DrawingService.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
 	{
 #line 199 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 1426 "DrawingService.c"
+#line 1441 "DrawingService.c"
 	}
 	__finally0:
 #line 199 "../lib/Drawing/DrawingService.vala"
@@ -1435,13 +1450,13 @@ plank_drawing_service_load_pixbuf_from_file (GFile* file,
 		g_clear_error (&_inner_error0_);
 #line 199 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 1439 "DrawingService.c"
+#line 1454 "DrawingService.c"
 	}
 #line 204 "../lib/Drawing/DrawingService.vala"
 	result = pbuf;
 #line 204 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1445 "DrawingService.c"
+#line 1460 "DrawingService.c"
 }
 
 static GdkPixbuf*
@@ -1456,7 +1471,7 @@ plank_drawing_service_load_pixbuf_from_resource (const gchar* resource,
 	g_return_val_if_fail (resource != NULL, NULL);
 #line 209 "../lib/Drawing/DrawingService.vala"
 	pbuf = NULL;
-#line 1460 "DrawingService.c"
+#line 1475 "DrawingService.c"
 	{
 		GdkPixbuf* _tmp0_ = NULL;
 		GdkPixbuf* _tmp1_;
@@ -1467,7 +1482,7 @@ plank_drawing_service_load_pixbuf_from_resource (const gchar* resource,
 		_tmp0_ = _tmp1_;
 #line 212 "../lib/Drawing/DrawingService.vala"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1471 "DrawingService.c"
+#line 1486 "DrawingService.c"
 			goto __catch0_g_error;
 		}
 #line 212 "../lib/Drawing/DrawingService.vala"
@@ -1480,14 +1495,14 @@ plank_drawing_service_load_pixbuf_from_resource (const gchar* resource,
 		pbuf = _tmp2_;
 #line 211 "../lib/Drawing/DrawingService.vala"
 		_g_object_unref0 (_tmp0_);
-#line 1484 "DrawingService.c"
+#line 1499 "DrawingService.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
 	{
 #line 211 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 1491 "DrawingService.c"
+#line 1506 "DrawingService.c"
 	}
 	__finally0:
 #line 211 "../lib/Drawing/DrawingService.vala"
@@ -1500,13 +1515,13 @@ plank_drawing_service_load_pixbuf_from_resource (const gchar* resource,
 		g_clear_error (&_inner_error0_);
 #line 211 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 1504 "DrawingService.c"
+#line 1519 "DrawingService.c"
 	}
 #line 215 "../lib/Drawing/DrawingService.vala"
 	result = pbuf;
 #line 215 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1510 "DrawingService.c"
+#line 1525 "DrawingService.c"
 }
 
 static gboolean
@@ -1515,17 +1530,17 @@ string_contains (const gchar* self,
 {
 	gchar* _tmp0_;
 	gboolean result = FALSE;
-#line 1530 "glib-2.0.vapi"
+#line 1538 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, FALSE);
-#line 1530 "glib-2.0.vapi"
+#line 1538 "glib-2.0.vapi"
 	g_return_val_if_fail (needle != NULL, FALSE);
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	_tmp0_ = strstr ((gchar*) self, (gchar*) needle);
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	result = _tmp0_ != NULL;
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	return result;
-#line 1529 "DrawingService.c"
+#line 1544 "DrawingService.c"
 }
 
 static GdkPixbuf*
@@ -1547,7 +1562,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 	icon_theme = _tmp0_;
 #line 223 "../lib/Drawing/DrawingService.vala"
 	g_mutex_lock (&plank_drawing_service_icon_theme_mutex);
-#line 1551 "DrawingService.c"
+#line 1566 "DrawingService.c"
 	{
 		GdkPixbuf* _tmp1_ = NULL;
 		GdkPixbuf* _tmp2_;
@@ -1558,7 +1573,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 		_tmp1_ = _tmp2_;
 #line 226 "../lib/Drawing/DrawingService.vala"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1562 "DrawingService.c"
+#line 1577 "DrawingService.c"
 			goto __catch0_g_error;
 		}
 #line 226 "../lib/Drawing/DrawingService.vala"
@@ -1571,14 +1586,14 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 		pbuf = _tmp3_;
 #line 225 "../lib/Drawing/DrawingService.vala"
 		_g_object_unref0 (_tmp1_);
-#line 1575 "DrawingService.c"
+#line 1590 "DrawingService.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
 	{
 #line 225 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 1582 "DrawingService.c"
+#line 1597 "DrawingService.c"
 	}
 	__finally0:
 #line 225 "../lib/Drawing/DrawingService.vala"
@@ -1591,7 +1606,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 		g_clear_error (&_inner_error0_);
 #line 225 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 1595 "DrawingService.c"
+#line 1610 "DrawingService.c"
 	}
 	{
 		gboolean _tmp4_ = FALSE;
@@ -1602,15 +1617,15 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 		if (_tmp5_ == NULL) {
 #line 230 "../lib/Drawing/DrawingService.vala"
 			_tmp4_ = string_contains (icon, ".");
-#line 1606 "DrawingService.c"
+#line 1621 "DrawingService.c"
 		} else {
 #line 230 "../lib/Drawing/DrawingService.vala"
 			_tmp4_ = FALSE;
-#line 1610 "DrawingService.c"
+#line 1625 "DrawingService.c"
 		}
 #line 230 "../lib/Drawing/DrawingService.vala"
 		if (_tmp4_) {
-#line 1614 "DrawingService.c"
+#line 1629 "DrawingService.c"
 			gchar** parts = NULL;
 			gchar** _tmp6_;
 			gchar** _tmp7_;
@@ -1644,7 +1659,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 			if (G_UNLIKELY (_inner_error0_ != NULL)) {
 #line 232 "../lib/Drawing/DrawingService.vala"
 				parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_free), NULL);
-#line 1648 "DrawingService.c"
+#line 1663 "DrawingService.c"
 				goto __catch1_g_error;
 			}
 #line 232 "../lib/Drawing/DrawingService.vala"
@@ -1659,7 +1674,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 			_g_object_unref0 (_tmp8_);
 #line 230 "../lib/Drawing/DrawingService.vala"
 			parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_free), NULL);
-#line 1663 "DrawingService.c"
+#line 1678 "DrawingService.c"
 		}
 	}
 	goto __finally1;
@@ -1667,7 +1682,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 	{
 #line 229 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 1671 "DrawingService.c"
+#line 1686 "DrawingService.c"
 	}
 	__finally1:
 #line 229 "../lib/Drawing/DrawingService.vala"
@@ -1680,7 +1695,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 		g_clear_error (&_inner_error0_);
 #line 229 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 1684 "DrawingService.c"
+#line 1699 "DrawingService.c"
 	}
 #line 236 "../lib/Drawing/DrawingService.vala"
 	g_mutex_unlock (&plank_drawing_service_icon_theme_mutex);
@@ -1688,7 +1703,7 @@ plank_drawing_service_load_pixbuf (const gchar* icon,
 	result = pbuf;
 #line 238 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1692 "DrawingService.c"
+#line 1707 "DrawingService.c"
 }
 
 /**
@@ -1712,13 +1727,13 @@ _vala_array_add4 (gchar** * array,
 		*size = (*size) ? (2 * (*size)) : 4;
 #line 255 "../lib/Drawing/DrawingService.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
-#line 1716 "DrawingService.c"
+#line 1731 "DrawingService.c"
 	}
 #line 255 "../lib/Drawing/DrawingService.vala"
 	(*array)[(*length)++] = value;
 #line 255 "../lib/Drawing/DrawingService.vala"
 	(*array)[*length] = NULL;
-#line 1722 "DrawingService.c"
+#line 1737 "DrawingService.c"
 }
 
 cairo_surface_t*
@@ -1758,7 +1773,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 	_tmp3_ = all_names;
 #line 257 "../lib/Drawing/DrawingService.vala"
 	_tmp3__length1 = all_names_length1;
-#line 1762 "DrawingService.c"
+#line 1777 "DrawingService.c"
 	{
 		gchar** name_collection = NULL;
 		gint name_collection_length1 = 0;
@@ -1770,11 +1785,11 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 		name_collection_length1 = _tmp3__length1;
 #line 257 "../lib/Drawing/DrawingService.vala"
 		for (name_it = 0; name_it < name_collection_length1; name_it = name_it + 1) {
-#line 1774 "DrawingService.c"
+#line 1789 "DrawingService.c"
 			const gchar* name = NULL;
 #line 257 "../lib/Drawing/DrawingService.vala"
 			name = name_collection[name_it];
-#line 1778 "DrawingService.c"
+#line 1793 "DrawingService.c"
 			{
 				GFile* file = NULL;
 				const gchar* _tmp4_;
@@ -1794,7 +1809,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 				_tmp6_ = file;
 #line 259 "../lib/Drawing/DrawingService.vala"
 				if (_tmp6_ != NULL) {
-#line 1798 "DrawingService.c"
+#line 1813 "DrawingService.c"
 					GdkPixbuf* pbuf = NULL;
 					GFile* _tmp7_;
 					GdkPixbuf* _tmp8_;
@@ -1809,7 +1824,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 					_tmp9_ = pbuf;
 #line 261 "../lib/Drawing/DrawingService.vala"
 					if (_tmp9_ != NULL) {
-#line 1813 "DrawingService.c"
+#line 1828 "DrawingService.c"
 						cairo_surface_t* _tmp10_;
 						cairo_t* cr = NULL;
 						cairo_surface_t* _tmp11_;
@@ -1870,11 +1885,11 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 						_g_object_unref0 (file);
 #line 267 "../lib/Drawing/DrawingService.vala"
 						break;
-#line 1874 "DrawingService.c"
+#line 1889 "DrawingService.c"
 					}
 #line 259 "../lib/Drawing/DrawingService.vala"
 					_g_object_unref0 (pbuf);
-#line 1878 "DrawingService.c"
+#line 1893 "DrawingService.c"
 				}
 #line 271 "../lib/Drawing/DrawingService.vala"
 				_tmp23_ = name;
@@ -1892,23 +1907,23 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 					_g_object_unref0 (file);
 #line 273 "../lib/Drawing/DrawingService.vala"
 					break;
-#line 1896 "DrawingService.c"
+#line 1911 "DrawingService.c"
 				}
 #line 275 "../lib/Drawing/DrawingService.vala"
 				_tmp26_ = name;
 #line 275 "../lib/Drawing/DrawingService.vala"
 				if (g_strcmp0 (_tmp26_, PLANK_DRAWING_SERVICE_DEFAULT_ICON) != 0) {
-#line 1902 "DrawingService.c"
+#line 1917 "DrawingService.c"
 					const gchar* _tmp27_;
 #line 276 "../lib/Drawing/DrawingService.vala"
 					_tmp27_ = name;
 #line 276 "../lib/Drawing/DrawingService.vala"
 					g_message ("DrawingService.vala:276: Could not find icon '%s'", _tmp27_);
-#line 1908 "DrawingService.c"
+#line 1923 "DrawingService.c"
 				}
 #line 257 "../lib/Drawing/DrawingService.vala"
 				_g_object_unref0 (file);
-#line 1912 "DrawingService.c"
+#line 1927 "DrawingService.c"
 			}
 		}
 	}
@@ -1916,7 +1931,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 	_tmp28_ = surface;
 #line 280 "../lib/Drawing/DrawingService.vala"
 	if (_tmp28_ == NULL) {
-#line 1920 "DrawingService.c"
+#line 1935 "DrawingService.c"
 		cairo_surface_t* _tmp29_;
 #line 281 "../lib/Drawing/DrawingService.vala"
 		_tmp29_ = plank_drawing_service_load_surface_from_resource_at_scale (PLANK_G_RESOURCE_PATH "/img/application-default-icon.svg", width, height, scale);
@@ -1924,7 +1939,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 		_cairo_surface_destroy0 (surface);
 #line 281 "../lib/Drawing/DrawingService.vala"
 		surface = _tmp29_;
-#line 1928 "DrawingService.c"
+#line 1943 "DrawingService.c"
 	}
 #line 283 "../lib/Drawing/DrawingService.vala"
 	result = surface;
@@ -1932,7 +1947,7 @@ plank_drawing_service_load_icon_for_scale (const gchar* names,
 	all_names = (_vala_array_free (all_names, all_names_length1, (GDestroyNotify) g_free), NULL);
 #line 283 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 1936 "DrawingService.c"
+#line 1951 "DrawingService.c"
 }
 
 static cairo_surface_t*
@@ -1952,7 +1967,7 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 	pbuf = NULL;
 #line 289 "../lib/Drawing/DrawingService.vala"
 	surface = NULL;
-#line 1956 "DrawingService.c"
+#line 1971 "DrawingService.c"
 	{
 		GdkPixbuf* _tmp0_ = NULL;
 		GdkPixbuf* _tmp1_;
@@ -1963,7 +1978,7 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 		_tmp0_ = _tmp1_;
 #line 292 "../lib/Drawing/DrawingService.vala"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1967 "DrawingService.c"
+#line 1982 "DrawingService.c"
 			goto __catch0_g_error;
 		}
 #line 292 "../lib/Drawing/DrawingService.vala"
@@ -1976,14 +1991,14 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 		pbuf = _tmp2_;
 #line 291 "../lib/Drawing/DrawingService.vala"
 		_g_object_unref0 (_tmp0_);
-#line 1980 "DrawingService.c"
+#line 1995 "DrawingService.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
 	{
 #line 291 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 1987 "DrawingService.c"
+#line 2002 "DrawingService.c"
 	}
 	__finally0:
 #line 291 "../lib/Drawing/DrawingService.vala"
@@ -1998,13 +2013,13 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 		g_clear_error (&_inner_error0_);
 #line 291 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 2002 "DrawingService.c"
+#line 2017 "DrawingService.c"
 	}
 #line 295 "../lib/Drawing/DrawingService.vala"
 	_tmp3_ = pbuf;
 #line 295 "../lib/Drawing/DrawingService.vala"
 	if (_tmp3_ != NULL) {
-#line 2008 "DrawingService.c"
+#line 2023 "DrawingService.c"
 		cairo_surface_t* _tmp4_;
 		cairo_t* cr = NULL;
 		cairo_surface_t* _tmp5_;
@@ -2059,7 +2074,7 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 		cairo_surface_set_device_scale (_tmp16_, (gdouble) scale, (gdouble) scale);
 #line 295 "../lib/Drawing/DrawingService.vala"
 		_cairo_destroy0 (cr);
-#line 2063 "DrawingService.c"
+#line 2078 "DrawingService.c"
 	}
 #line 303 "../lib/Drawing/DrawingService.vala"
 	result = surface;
@@ -2067,7 +2082,7 @@ plank_drawing_service_load_surface_from_resource_at_scale (const gchar* resource
 	_g_object_unref0 (pbuf);
 #line 303 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 2071 "DrawingService.c"
+#line 2086 "DrawingService.c"
 }
 
 static cairo_surface_t*
@@ -2093,7 +2108,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 	icon_theme = _tmp0_;
 #line 312 "../lib/Drawing/DrawingService.vala"
 	g_mutex_lock (&plank_drawing_service_icon_theme_mutex);
-#line 2097 "DrawingService.c"
+#line 2112 "DrawingService.c"
 	{
 		GtkIconTheme* _tmp1_;
 		GtkIconInfo* _tmp2_;
@@ -2110,7 +2125,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 		_tmp3_ = info;
 #line 316 "../lib/Drawing/DrawingService.vala"
 		if (_tmp3_ != NULL) {
-#line 2114 "DrawingService.c"
+#line 2129 "DrawingService.c"
 			cairo_surface_t* _tmp4_ = NULL;
 			GtkIconInfo* _tmp5_;
 			cairo_surface_t* _tmp6_;
@@ -2123,7 +2138,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 			_tmp4_ = _tmp6_;
 #line 317 "../lib/Drawing/DrawingService.vala"
 			if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 2127 "DrawingService.c"
+#line 2142 "DrawingService.c"
 				goto __catch0_g_error;
 			}
 #line 317 "../lib/Drawing/DrawingService.vala"
@@ -2136,7 +2151,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 			surface = _tmp7_;
 #line 316 "../lib/Drawing/DrawingService.vala"
 			_cairo_surface_destroy0 (_tmp4_);
-#line 2140 "DrawingService.c"
+#line 2155 "DrawingService.c"
 		}
 	}
 	goto __finally0;
@@ -2144,7 +2159,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 	{
 #line 314 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 2148 "DrawingService.c"
+#line 2163 "DrawingService.c"
 	}
 	__finally0:
 #line 314 "../lib/Drawing/DrawingService.vala"
@@ -2159,7 +2174,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 		g_clear_error (&_inner_error0_);
 #line 314 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 2163 "DrawingService.c"
+#line 2178 "DrawingService.c"
 	}
 	{
 		gboolean _tmp8_ = FALSE;
@@ -2170,15 +2185,15 @@ plank_drawing_service_load_surface (const gchar* icon,
 		if (_tmp9_ == NULL) {
 #line 321 "../lib/Drawing/DrawingService.vala"
 			_tmp8_ = string_contains (icon, ".");
-#line 2174 "DrawingService.c"
+#line 2189 "DrawingService.c"
 		} else {
 #line 321 "../lib/Drawing/DrawingService.vala"
 			_tmp8_ = FALSE;
-#line 2178 "DrawingService.c"
+#line 2193 "DrawingService.c"
 		}
 #line 321 "../lib/Drawing/DrawingService.vala"
 		if (_tmp8_) {
-#line 2182 "DrawingService.c"
+#line 2197 "DrawingService.c"
 			gchar** parts = NULL;
 			gchar** _tmp10_;
 			gchar** _tmp11_;
@@ -2216,7 +2231,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 			_tmp16_ = info;
 #line 324 "../lib/Drawing/DrawingService.vala"
 			if (_tmp16_ != NULL) {
-#line 2220 "DrawingService.c"
+#line 2235 "DrawingService.c"
 				cairo_surface_t* _tmp17_ = NULL;
 				GtkIconInfo* _tmp18_;
 				cairo_surface_t* _tmp19_;
@@ -2231,7 +2246,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 				if (G_UNLIKELY (_inner_error0_ != NULL)) {
 #line 325 "../lib/Drawing/DrawingService.vala"
 					parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_free), NULL);
-#line 2235 "DrawingService.c"
+#line 2250 "DrawingService.c"
 					goto __catch1_g_error;
 				}
 #line 325 "../lib/Drawing/DrawingService.vala"
@@ -2244,11 +2259,11 @@ plank_drawing_service_load_surface (const gchar* icon,
 				surface = _tmp20_;
 #line 324 "../lib/Drawing/DrawingService.vala"
 				_cairo_surface_destroy0 (_tmp17_);
-#line 2248 "DrawingService.c"
+#line 2263 "DrawingService.c"
 			}
 #line 321 "../lib/Drawing/DrawingService.vala"
 			parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_free), NULL);
-#line 2252 "DrawingService.c"
+#line 2267 "DrawingService.c"
 		}
 	}
 	goto __finally1;
@@ -2256,7 +2271,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 	{
 #line 320 "../lib/Drawing/DrawingService.vala"
 		g_clear_error (&_inner_error0_);
-#line 2260 "DrawingService.c"
+#line 2275 "DrawingService.c"
 	}
 	__finally1:
 #line 320 "../lib/Drawing/DrawingService.vala"
@@ -2271,7 +2286,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 		g_clear_error (&_inner_error0_);
 #line 320 "../lib/Drawing/DrawingService.vala"
 		return NULL;
-#line 2275 "DrawingService.c"
+#line 2290 "DrawingService.c"
 	}
 #line 329 "../lib/Drawing/DrawingService.vala"
 	g_mutex_unlock (&plank_drawing_service_icon_theme_mutex);
@@ -2281,7 +2296,7 @@ plank_drawing_service_load_surface (const gchar* icon,
 	_g_object_unref0 (info);
 #line 331 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 2285 "DrawingService.c"
+#line 2300 "DrawingService.c"
 }
 
 /**
@@ -2332,7 +2347,7 @@ plank_drawing_service_ar_scale (GdkPixbuf* source,
 	scale = MIN (x_scale, y_scale);
 #line 351 "../lib/Drawing/DrawingService.vala"
 	if (scale == ((gdouble) 1)) {
-#line 2336 "DrawingService.c"
+#line 2351 "DrawingService.c"
 		GdkPixbuf* _tmp4_;
 #line 352 "../lib/Drawing/DrawingService.vala"
 		_tmp4_ = _g_object_ref0 (source);
@@ -2340,7 +2355,7 @@ plank_drawing_service_ar_scale (GdkPixbuf* source,
 		result = _tmp4_;
 #line 352 "../lib/Drawing/DrawingService.vala"
 		return result;
-#line 2344 "DrawingService.c"
+#line 2359 "DrawingService.c"
 	}
 #line 354 "../lib/Drawing/DrawingService.vala"
 	scaled_width = MAX (1, (gint) (source_width * scale));
@@ -2352,7 +2367,7 @@ plank_drawing_service_ar_scale (GdkPixbuf* source,
 	result = _tmp5_;
 #line 357 "../lib/Drawing/DrawingService.vala"
 	return result;
-#line 2356 "DrawingService.c"
+#line 2371 "DrawingService.c"
 }
 
 /**
@@ -2451,19 +2466,19 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 	pixels = (height * rowstride) / n_channels;
 #line 390 "../lib/Drawing/DrawingService.vala"
 	scoreTotal = 0.0;
-#line 2455 "DrawingService.c"
+#line 2470 "DrawingService.c"
 	{
 		gint i = 0;
 #line 392 "../lib/Drawing/DrawingService.vala"
 		i = 0;
-#line 2460 "DrawingService.c"
+#line 2475 "DrawingService.c"
 		{
 			gboolean _tmp9_ = FALSE;
 #line 392 "../lib/Drawing/DrawingService.vala"
 			_tmp9_ = TRUE;
 #line 392 "../lib/Drawing/DrawingService.vala"
 			while (TRUE) {
-#line 2467 "DrawingService.c"
+#line 2482 "DrawingService.c"
 				guint8* _tmp11_;
 				guint8 _tmp12_;
 				guint8* _tmp13_;
@@ -2477,13 +2492,13 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 				guint8* _tmp22_;
 #line 392 "../lib/Drawing/DrawingService.vala"
 				if (!_tmp9_) {
-#line 2481 "DrawingService.c"
+#line 2496 "DrawingService.c"
 					gint _tmp10_;
 #line 392 "../lib/Drawing/DrawingService.vala"
 					_tmp10_ = i;
 #line 392 "../lib/Drawing/DrawingService.vala"
 					i = _tmp10_ + 1;
-#line 2487 "DrawingService.c"
+#line 2502 "DrawingService.c"
 				}
 #line 392 "../lib/Drawing/DrawingService.vala"
 				_tmp9_ = FALSE;
@@ -2491,7 +2506,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 				if (!(i < pixels)) {
 #line 392 "../lib/Drawing/DrawingService.vala"
 					break;
-#line 2495 "DrawingService.c"
+#line 2510 "DrawingService.c"
 				}
 #line 393 "../lib/Drawing/DrawingService.vala"
 				_tmp11_ = dataPtr;
@@ -2519,7 +2534,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 				a = _tmp18_;
 #line 399 "../lib/Drawing/DrawingService.vala"
 				if (a <= PLANK_DRAWING_SERVICE_ALPHA_THRESHOLD) {
-#line 2523 "DrawingService.c"
+#line 2538 "DrawingService.c"
 					gint _tmp19_;
 					guint8* _tmp20_;
 #line 400 "../lib/Drawing/DrawingService.vala"
@@ -2532,7 +2547,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 					dataPtr = _tmp20_ + n_channels;
 #line 402 "../lib/Drawing/DrawingService.vala"
 					continue;
-#line 2536 "DrawingService.c"
+#line 2551 "DrawingService.c"
 				}
 #line 405 "../lib/Drawing/DrawingService.vala"
 				min = MIN (r, MIN (g, b));
@@ -2544,11 +2559,11 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 				if (delta == ((gdouble) 0)) {
 #line 410 "../lib/Drawing/DrawingService.vala"
 					_tmp21_ = 0.0;
-#line 2548 "DrawingService.c"
+#line 2563 "DrawingService.c"
 				} else {
 #line 410 "../lib/Drawing/DrawingService.vala"
 					_tmp21_ = delta / max;
-#line 2552 "DrawingService.c"
+#line 2567 "DrawingService.c"
 				}
 #line 410 "../lib/Drawing/DrawingService.vala"
 				score = PLANK_DRAWING_SERVICE_SATURATION_WEIGHT * _tmp21_;
@@ -2572,13 +2587,13 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 				_tmp22_ = dataPtr;
 #line 424 "../lib/Drawing/DrawingService.vala"
 				dataPtr = _tmp22_ + n_channels;
-#line 2576 "DrawingService.c"
+#line 2591 "DrawingService.c"
 			}
 		}
 	}
 #line 428 "../lib/Drawing/DrawingService.vala"
 	if (length <= 0) {
-#line 2582 "DrawingService.c"
+#line 2597 "DrawingService.c"
 		PlankColor _tmp23_ = {0};
 #line 429 "../lib/Drawing/DrawingService.vala"
 		_tmp23_.red = 0.0;
@@ -2592,7 +2607,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 		*result = _tmp23_;
 #line 429 "../lib/Drawing/DrawingService.vala"
 		return;
-#line 2596 "DrawingService.c"
+#line 2611 "DrawingService.c"
 	}
 #line 431 "../lib/Drawing/DrawingService.vala"
 	scoreTotal /= (gdouble) length;
@@ -2610,7 +2625,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 		gTotal /= scoreTotal;
 #line 439 "../lib/Drawing/DrawingService.vala"
 		rTotal /= scoreTotal;
-#line 2614 "DrawingService.c"
+#line 2629 "DrawingService.c"
 	}
 #line 442 "../lib/Drawing/DrawingService.vala"
 	bTotal2 /= (gdouble) (length * G_MAXUINT8);
@@ -2622,7 +2637,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 	aTotal2 /= (gdouble) (length * G_MAXUINT8);
 #line 450 "../lib/Drawing/DrawingService.vala"
 	if (scoreTotal <= PLANK_DRAWING_SERVICE_WEIGHT_THRESHOLD) {
-#line 2626 "DrawingService.c"
+#line 2641 "DrawingService.c"
 		gdouble f = 0.0;
 		gdouble rf = 0.0;
 #line 451 "../lib/Drawing/DrawingService.vala"
@@ -2635,7 +2650,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 		gTotal = (gTotal * f) + (gTotal2 * rf);
 #line 455 "../lib/Drawing/DrawingService.vala"
 		rTotal = (rTotal * f) + (rTotal2 * rf);
-#line 2639 "DrawingService.c"
+#line 2654 "DrawingService.c"
 	}
 #line 459 "../lib/Drawing/DrawingService.vala"
 	max_val = MAX (rTotal, MAX (gTotal, bTotal));
@@ -2647,7 +2662,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 		gTotal /= max_val;
 #line 463 "../lib/Drawing/DrawingService.vala"
 		rTotal /= max_val;
-#line 2651 "DrawingService.c"
+#line 2666 "DrawingService.c"
 	}
 #line 466 "../lib/Drawing/DrawingService.vala"
 	_tmp24_.red = rTotal;
@@ -2661,7 +2676,7 @@ plank_drawing_service_average_color (GdkPixbuf* source,
 	*result = _tmp24_;
 #line 466 "../lib/Drawing/DrawingService.vala"
 	return;
-#line 2665 "DrawingService.c"
+#line 2680 "DrawingService.c"
 }
 
 static void
@@ -2672,7 +2687,7 @@ plank_drawing_service_class_init (PlankDrawingServiceClass * klass,
 	plank_drawing_service_parent_class = g_type_class_peek_parent (klass);
 #line 25 "../lib/Drawing/DrawingService.vala"
 	G_OBJECT_CLASS (klass)->finalize = plank_drawing_service_finalize;
-#line 2676 "DrawingService.c"
+#line 2691 "DrawingService.c"
 }
 
 static void
@@ -2689,7 +2704,7 @@ plank_drawing_service_finalize (GObject * obj)
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, PLANK_TYPE_DRAWING_SERVICE, PlankDrawingService);
 #line 25 "../lib/Drawing/DrawingService.vala"
 	G_OBJECT_CLASS (plank_drawing_service_parent_class)->finalize (obj);
-#line 2693 "DrawingService.c"
+#line 2708 "DrawingService.c"
 }
 
 /**
@@ -2723,7 +2738,7 @@ _vala_array_destroy (gpointer array,
 {
 #line 52 "../lib/Docklets/DockletManager.vala"
 	if ((array != NULL) && (destroy_func != NULL)) {
-#line 2727 "DrawingService.c"
+#line 2742 "DrawingService.c"
 		gint i;
 #line 52 "../lib/Docklets/DockletManager.vala"
 		for (i = 0; i < array_length; i = i + 1) {
@@ -2731,7 +2746,7 @@ _vala_array_destroy (gpointer array,
 			if (((gpointer*) array)[i] != NULL) {
 #line 52 "../lib/Docklets/DockletManager.vala"
 				destroy_func (((gpointer*) array)[i]);
-#line 2735 "DrawingService.c"
+#line 2750 "DrawingService.c"
 			}
 		}
 	}
@@ -2746,7 +2761,7 @@ _vala_array_free (gpointer array,
 	_vala_array_destroy (array, array_length, destroy_func);
 #line 52 "../lib/Docklets/DockletManager.vala"
 	g_free (array);
-#line 2750 "DrawingService.c"
+#line 2765 "DrawingService.c"
 }
 
 static gint
@@ -2760,11 +2775,11 @@ _vala_array_length (gpointer array)
 		while (((gpointer*) array)[length]) {
 #line 52 "../lib/Docklets/DockletManager.vala"
 			length++;
-#line 2764 "DrawingService.c"
+#line 2779 "DrawingService.c"
 		}
 	}
 #line 52 "../lib/Docklets/DockletManager.vala"
 	return length;
-#line 2769 "DrawingService.c"
+#line 2784 "DrawingService.c"
 }
 

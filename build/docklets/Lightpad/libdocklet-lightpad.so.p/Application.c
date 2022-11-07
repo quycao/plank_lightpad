@@ -3328,29 +3328,29 @@ __lambda24_ (LightPadWindow* self,
 	gchar* _tmp4_;
 	gint _tmp5_;
 	gint result = 0;
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	g_return_val_if_fail (a != NULL, 0);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	g_return_val_if_fail (b != NULL, 0);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp0_ = ((GCompareFunc) g_strcmp0);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp1_ = gee_abstract_map_get ((GeeAbstractMap*) a, "name");
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp2_ = (gchar*) _tmp1_;
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp3_ = gee_abstract_map_get ((GeeAbstractMap*) b, "name");
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp4_ = (gchar*) _tmp3_;
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_tmp5_ = _tmp0_ (_tmp2_, _tmp4_);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_g_free0 (_tmp4_);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	_g_free0 (_tmp2_);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	result = _tmp5_;
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	return result;
 #line 3356 "Application.c"
 }
@@ -3362,7 +3362,7 @@ ___lambda24__gcompare_data_func (gconstpointer a,
 {
 	gint result;
 	result = __lambda24_ ((LightPadWindow*) self, (GeeHashMap*) a, (GeeHashMap*) b);
-#line 582 "../docklets/Lightpad/Application.vala"
+#line 588 "../docklets/Lightpad/Application.vala"
 	return result;
 #line 3368 "Application.c"
 }
@@ -3370,221 +3370,112 @@ ___lambda24__gcompare_data_func (gconstpointer a,
 void
 light_pad_window_refresh_apps (LightPadWindow* self)
 {
-	GeeHashMap* _tmp0_;
-	const gchar* _tmp1_;
-	GeeArrayList* _tmp2_ = NULL;
-	GeeArrayList* _tmp3_;
-	GeeArrayList* _tmp4_;
-	GList* childPages = NULL;
+	GeeArrayList* _tmp0_;
+	GeeHashMap* _tmp1_;
+	const gchar* _tmp2_;
+	GeeArrayList* _tmp3_ = NULL;
+	LightPadFrontendIndicators* _tmp4_;
 	GtkBox* _tmp5_;
-	GList* _tmp6_;
-	GList* childIndicators = NULL;
-	LightPadFrontendIndicators* _tmp7_;
-	GList* _tmp8_;
-	GList* _tmp9_;
-	GList* _tmp16_;
-	LightPadFrontendIndicators* _tmp28_;
+	GeeArrayList* _tmp6_;
+	GeeArrayList* _tmp7_;
+	LightPadFrontendIndicators* _tmp13_;
 #line 574 "../docklets/Lightpad/Application.vala"
 	g_return_if_fail (self != NULL);
-#line 576 "../docklets/Lightpad/Application.vala"
-	_tmp0_ = self->icons;
-#line 576 "../docklets/Lightpad/Application.vala"
-	_tmp1_ = light_pad_window_user_home;
-#line 576 "../docklets/Lightpad/Application.vala"
-	light_pad_backend_desktop_entries_enumerate_apps (_tmp0_, self->icon_size, _tmp1_, &_tmp2_);
-#line 576 "../docklets/Lightpad/Application.vala"
+#line 575 "../docklets/Lightpad/Application.vala"
+	_tmp0_ = self->apps;
+#line 575 "../docklets/Lightpad/Application.vala"
+	gee_abstract_collection_clear ((GeeAbstractCollection*) _tmp0_);
+#line 577 "../docklets/Lightpad/Application.vala"
+	_tmp1_ = self->icons;
+#line 577 "../docklets/Lightpad/Application.vala"
+	_tmp2_ = light_pad_window_user_home;
+#line 577 "../docklets/Lightpad/Application.vala"
+	light_pad_backend_desktop_entries_enumerate_apps (_tmp1_, self->icon_size, _tmp2_, &_tmp3_);
+#line 577 "../docklets/Lightpad/Application.vala"
 	_g_object_unref0 (self->apps);
-#line 576 "../docklets/Lightpad/Application.vala"
-	self->apps = _tmp2_;
-#line 582 "../docklets/Lightpad/Application.vala"
-	_tmp3_ = self->apps;
-#line 582 "../docklets/Lightpad/Application.vala"
-	gee_list_sort ((GeeList*) _tmp3_, ___lambda24__gcompare_data_func, g_object_ref (self), g_object_unref);
+#line 577 "../docklets/Lightpad/Application.vala"
+	self->apps = _tmp3_;
+#line 580 "../docklets/Lightpad/Application.vala"
+	_tmp4_ = light_pad_frontend_indicators_new ();
+#line 580 "../docklets/Lightpad/Application.vala"
+	g_object_ref_sink (_tmp4_);
+#line 580 "../docklets/Lightpad/Application.vala"
+	_g_object_unref0 (self->pages);
+#line 580 "../docklets/Lightpad/Application.vala"
+	self->pages = _tmp4_;
 #line 583 "../docklets/Lightpad/Application.vala"
-	_tmp4_ = self->apps;
+	_tmp5_ = (GtkBox*) gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 #line 583 "../docklets/Lightpad/Application.vala"
-	light_pad_window_update_pages (self, _tmp4_);
-#line 585 "../docklets/Lightpad/Application.vala"
-	_tmp5_ = self->pages_wrapper;
-#line 585 "../docklets/Lightpad/Application.vala"
-	_tmp6_ = gtk_container_get_children ((GtkContainer*) _tmp5_);
-#line 585 "../docklets/Lightpad/Application.vala"
-	childPages = _tmp6_;
-#line 586 "../docklets/Lightpad/Application.vala"
-	_tmp7_ = self->pages;
-#line 586 "../docklets/Lightpad/Application.vala"
-	_tmp8_ = gtk_container_get_children ((GtkContainer*) _tmp7_);
-#line 586 "../docklets/Lightpad/Application.vala"
-	childIndicators = _tmp8_;
+	g_object_ref_sink (_tmp5_);
+#line 583 "../docklets/Lightpad/Application.vala"
+	_g_object_unref0 (self->pages_wrapper);
+#line 583 "../docklets/Lightpad/Application.vala"
+	self->pages_wrapper = _tmp5_;
 #line 588 "../docklets/Lightpad/Application.vala"
-	_tmp9_ = childPages;
+	_tmp6_ = self->apps;
 #line 588 "../docklets/Lightpad/Application.vala"
-	if (_tmp9_ != NULL) {
-#line 3424 "Application.c"
+	gee_list_sort ((GeeList*) _tmp6_, ___lambda24__gcompare_data_func, g_object_ref (self), g_object_unref);
+#line 589 "../docklets/Lightpad/Application.vala"
+	_tmp7_ = self->apps;
+#line 589 "../docklets/Lightpad/Application.vala"
+	light_pad_window_update_pages (self, _tmp7_);
+#line 590 "../docklets/Lightpad/Application.vala"
+	if (self->total_pages > 1) {
+#line 3425 "Application.c"
+		GtkBox* _tmp8_;
+		LightPadFrontendIndicators* _tmp9_;
+#line 591 "../docklets/Lightpad/Application.vala"
+		_tmp8_ = self->pages_wrapper;
+#line 591 "../docklets/Lightpad/Application.vala"
+		_tmp9_ = self->pages;
+#line 591 "../docklets/Lightpad/Application.vala"
+		gtk_box_pack_start (_tmp8_, (GtkWidget*) _tmp9_, TRUE, FALSE, (guint) 0);
+#line 3434 "Application.c"
 		{
 			gint p = 0;
-#line 589 "../docklets/Lightpad/Application.vala"
-			p = 0;
-#line 3429 "Application.c"
+#line 592 "../docklets/Lightpad/Application.vala"
+			p = 1;
+#line 3439 "Application.c"
 			{
 				gboolean _tmp10_ = FALSE;
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 				_tmp10_ = TRUE;
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 				while (TRUE) {
-#line 3436 "Application.c"
-					GList* _tmp12_;
-					GtkBox* _tmp13_;
-					GList* _tmp14_;
-					gconstpointer _tmp15_;
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 3446 "Application.c"
+					LightPadFrontendIndicators* _tmp12_;
+#line 592 "../docklets/Lightpad/Application.vala"
 					if (!_tmp10_) {
-#line 3443 "Application.c"
+#line 3450 "Application.c"
 						gint _tmp11_;
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 						_tmp11_ = p;
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 						p = _tmp11_ + 1;
-#line 3449 "Application.c"
+#line 3456 "Application.c"
 					}
-#line 589 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 					_tmp10_ = FALSE;
-#line 589 "../docklets/Lightpad/Application.vala"
-					_tmp12_ = childPages;
-#line 589 "../docklets/Lightpad/Application.vala"
-					if (!(((guint) p) < g_list_length (_tmp12_))) {
-#line 589 "../docklets/Lightpad/Application.vala"
-						break;
-#line 3459 "Application.c"
-					}
-#line 590 "../docklets/Lightpad/Application.vala"
-					_tmp13_ = self->pages_wrapper;
-#line 590 "../docklets/Lightpad/Application.vala"
-					_tmp14_ = childPages;
-#line 590 "../docklets/Lightpad/Application.vala"
-					_tmp15_ = g_list_nth_data (_tmp14_, (guint) p);
-#line 590 "../docklets/Lightpad/Application.vala"
-					gtk_container_remove ((GtkContainer*) _tmp13_, (GtkWidget*) _tmp15_);
-#line 3469 "Application.c"
-				}
-			}
-		}
-	}
-#line 594 "../docklets/Lightpad/Application.vala"
-	_tmp16_ = childIndicators;
-#line 594 "../docklets/Lightpad/Application.vala"
-	if (_tmp16_ != NULL) {
-#line 3478 "Application.c"
-		{
-			gint p = 0;
-#line 595 "../docklets/Lightpad/Application.vala"
-			p = 0;
-#line 3483 "Application.c"
-			{
-				gboolean _tmp17_ = FALSE;
-#line 595 "../docklets/Lightpad/Application.vala"
-				_tmp17_ = TRUE;
-#line 595 "../docklets/Lightpad/Application.vala"
-				while (TRUE) {
-#line 3490 "Application.c"
-					GList* _tmp19_;
-					LightPadFrontendIndicators* _tmp20_;
-					GList* _tmp21_;
-					gconstpointer _tmp22_;
-#line 595 "../docklets/Lightpad/Application.vala"
-					if (!_tmp17_) {
-#line 3497 "Application.c"
-						gint _tmp18_;
-#line 595 "../docklets/Lightpad/Application.vala"
-						_tmp18_ = p;
-#line 595 "../docklets/Lightpad/Application.vala"
-						p = _tmp18_ + 1;
-#line 3503 "Application.c"
-					}
-#line 595 "../docklets/Lightpad/Application.vala"
-					_tmp17_ = FALSE;
-#line 595 "../docklets/Lightpad/Application.vala"
-					_tmp19_ = childIndicators;
-#line 595 "../docklets/Lightpad/Application.vala"
-					if (!(((guint) p) < g_list_length (_tmp19_))) {
-#line 595 "../docklets/Lightpad/Application.vala"
-						break;
-#line 3513 "Application.c"
-					}
-#line 596 "../docklets/Lightpad/Application.vala"
-					_tmp20_ = self->pages;
-#line 596 "../docklets/Lightpad/Application.vala"
-					_tmp21_ = childIndicators;
-#line 596 "../docklets/Lightpad/Application.vala"
-					_tmp22_ = g_list_nth_data (_tmp21_, (guint) p);
-#line 596 "../docklets/Lightpad/Application.vala"
-					gtk_container_remove ((GtkContainer*) _tmp20_, (GtkWidget*) _tmp22_);
-#line 3523 "Application.c"
-				}
-			}
-		}
-	}
-#line 600 "../docklets/Lightpad/Application.vala"
-	if (self->total_pages > 1) {
-#line 3530 "Application.c"
-		GtkBox* _tmp23_;
-		LightPadFrontendIndicators* _tmp24_;
-#line 601 "../docklets/Lightpad/Application.vala"
-		_tmp23_ = self->pages_wrapper;
-#line 601 "../docklets/Lightpad/Application.vala"
-		_tmp24_ = self->pages;
-#line 601 "../docklets/Lightpad/Application.vala"
-		gtk_box_pack_start (_tmp23_, (GtkWidget*) _tmp24_, TRUE, FALSE, (guint) 0);
-#line 3539 "Application.c"
-		{
-			gint p = 0;
-#line 602 "../docklets/Lightpad/Application.vala"
-			p = 1;
-#line 3544 "Application.c"
-			{
-				gboolean _tmp25_ = FALSE;
-#line 602 "../docklets/Lightpad/Application.vala"
-				_tmp25_ = TRUE;
-#line 602 "../docklets/Lightpad/Application.vala"
-				while (TRUE) {
-#line 3551 "Application.c"
-					LightPadFrontendIndicators* _tmp27_;
-#line 602 "../docklets/Lightpad/Application.vala"
-					if (!_tmp25_) {
-#line 3555 "Application.c"
-						gint _tmp26_;
-#line 602 "../docklets/Lightpad/Application.vala"
-						_tmp26_ = p;
-#line 602 "../docklets/Lightpad/Application.vala"
-						p = _tmp26_ + 1;
-#line 3561 "Application.c"
-					}
-#line 602 "../docklets/Lightpad/Application.vala"
-					_tmp25_ = FALSE;
-#line 602 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 					if (!(p <= self->total_pages)) {
-#line 602 "../docklets/Lightpad/Application.vala"
+#line 592 "../docklets/Lightpad/Application.vala"
 						break;
-#line 3569 "Application.c"
+#line 3464 "Application.c"
 					}
-#line 605 "../docklets/Lightpad/Application.vala"
-					_tmp27_ = self->pages;
-#line 605 "../docklets/Lightpad/Application.vala"
-					light_pad_frontend_indicators_append (_tmp27_, "⬤");
-#line 3575 "Application.c"
+#line 595 "../docklets/Lightpad/Application.vala"
+					_tmp12_ = self->pages;
+#line 595 "../docklets/Lightpad/Application.vala"
+					light_pad_frontend_indicators_append (_tmp12_, "⬤");
+#line 3470 "Application.c"
 				}
 			}
 		}
 	}
-#line 608 "../docklets/Lightpad/Application.vala"
-	_tmp28_ = self->pages;
-#line 608 "../docklets/Lightpad/Application.vala"
-	light_pad_frontend_indicators_set_active (_tmp28_, 0);
-#line 574 "../docklets/Lightpad/Application.vala"
-	(childIndicators == NULL) ? NULL : (childIndicators = (g_list_free (childIndicators), NULL));
-#line 574 "../docklets/Lightpad/Application.vala"
-	(childPages == NULL) ? NULL : (childPages = (g_list_free (childPages), NULL));
-#line 3588 "Application.c"
+#line 598 "../docklets/Lightpad/Application.vala"
+	_tmp13_ = self->pages;
+#line 598 "../docklets/Lightpad/Application.vala"
+	light_pad_frontend_indicators_set_active (_tmp13_, 0);
+#line 3479 "Application.c"
 }
 
 static void
@@ -3609,7 +3500,7 @@ light_pad_window_class_init (LightPadWindowClass * klass,
 	_tmp1_ = g_strdup (_tmp0_);
 #line 25 "../docklets/Lightpad/Application.vala"
 	light_pad_window_user_home = _tmp1_;
-#line 3613 "Application.c"
+#line 3504 "Application.c"
 }
 
 static void
@@ -3693,7 +3584,7 @@ light_pad_window_instance_init (LightPadWindow * self,
 	self->cache_width = (gdouble) -1;
 #line 62 "../docklets/Lightpad/Application.vala"
 	self->cache_height = (gdouble) -1;
-#line 3697 "Application.c"
+#line 3588 "Application.c"
 }
 
 static void
@@ -3732,7 +3623,7 @@ light_pad_window_finalize (GObject * obj)
 	_g_object_unref0 (self->image_pf);
 #line 22 "../docklets/Lightpad/Application.vala"
 	G_OBJECT_CLASS (light_pad_window_parent_class)->finalize (obj);
-#line 3736 "Application.c"
+#line 3627 "Application.c"
 }
 
 static GType
@@ -3760,11 +3651,11 @@ light_pad_window_get_type (void)
 static Block2Data*
 block2_data_ref (Block2Data* _data2_)
 {
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	g_atomic_int_inc (&_data2_->_ref_count_);
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	return _data2_;
-#line 3768 "Application.c"
+#line 3659 "Application.c"
 }
 
 static void
@@ -3772,13 +3663,13 @@ block2_data_unref (void * _userdata_)
 {
 	Block2Data* _data2_;
 	_data2_ = (Block2Data*) _userdata_;
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	if (g_atomic_int_dec_and_test (&_data2_->_ref_count_)) {
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 		_g_object_unref0 (_data2_->app);
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 		g_slice_free (Block2Data, _data2_);
-#line 3782 "Application.c"
+#line 3673 "Application.c"
 	}
 }
 
@@ -3786,34 +3677,34 @@ static void
 __lambda25_ (Block2Data* _data2_)
 {
 	GList* _tmp0_;
-#line 632 "../docklets/Lightpad/Application.vala"
+#line 622 "../docklets/Lightpad/Application.vala"
 	_tmp0_ = gtk_application_get_windows (_data2_->app);
-#line 632 "../docklets/Lightpad/Application.vala"
+#line 622 "../docklets/Lightpad/Application.vala"
 	if (g_list_length (_tmp0_) == ((guint) 0)) {
-#line 3794 "Application.c"
+#line 3685 "Application.c"
 		LightPadWindow* main_window = NULL;
 		LightPadWindow* _tmp1_;
 		LightPadWindow* _tmp2_;
 		LightPadWindow* _tmp3_;
-#line 633 "../docklets/Lightpad/Application.vala"
+#line 623 "../docklets/Lightpad/Application.vala"
 		_tmp1_ = light_pad_window_new ();
-#line 633 "../docklets/Lightpad/Application.vala"
+#line 623 "../docklets/Lightpad/Application.vala"
 		g_object_ref_sink (_tmp1_);
-#line 633 "../docklets/Lightpad/Application.vala"
+#line 623 "../docklets/Lightpad/Application.vala"
 		main_window = _tmp1_;
-#line 634 "../docklets/Lightpad/Application.vala"
+#line 624 "../docklets/Lightpad/Application.vala"
 		_tmp2_ = main_window;
-#line 634 "../docklets/Lightpad/Application.vala"
+#line 624 "../docklets/Lightpad/Application.vala"
 		gtk_window_set_application ((GtkWindow*) _tmp2_, _data2_->app);
-#line 635 "../docklets/Lightpad/Application.vala"
+#line 625 "../docklets/Lightpad/Application.vala"
 		_tmp3_ = main_window;
-#line 635 "../docklets/Lightpad/Application.vala"
+#line 625 "../docklets/Lightpad/Application.vala"
 		gtk_widget_show_all ((GtkWidget*) _tmp3_);
-#line 636 "../docklets/Lightpad/Application.vala"
+#line 626 "../docklets/Lightpad/Application.vala"
 		gtk_main ();
-#line 632 "../docklets/Lightpad/Application.vala"
+#line 622 "../docklets/Lightpad/Application.vala"
 		_g_object_unref0 (main_window);
-#line 3817 "Application.c"
+#line 3708 "Application.c"
 	}
 }
 
@@ -3821,9 +3712,9 @@ static void
 ___lambda25__g_application_activate (GApplication* _sender,
                                      gpointer self)
 {
-#line 631 "../docklets/Lightpad/Application.vala"
+#line 621 "../docklets/Lightpad/Application.vala"
 	__lambda25_ (self);
-#line 3827 "Application.c"
+#line 3718 "Application.c"
 }
 
 G_GNUC_INTERNAL gint
@@ -3838,95 +3729,95 @@ _vala_main (gchar** args,
 	GtkCssProvider* _tmp2_;
 	GError* _inner_error0_ = NULL;
 	gint result = 0;
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	_data2_ = g_slice_new0 (Block2Data);
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	_data2_->_ref_count_ = 1;
-#line 615 "../docklets/Lightpad/Application.vala"
+#line 605 "../docklets/Lightpad/Application.vala"
 	gtk_init ((gint*) (&args_length1), &args);
-#line 616 "../docklets/Lightpad/Application.vala"
+#line 606 "../docklets/Lightpad/Application.vala"
 	_tmp0_ = gtk_application_new ("org.libredeb.lightpad", G_APPLICATION_FLAGS_NONE);
-#line 616 "../docklets/Lightpad/Application.vala"
+#line 606 "../docklets/Lightpad/Application.vala"
 	_data2_->app = _tmp0_;
-#line 620 "../docklets/Lightpad/Application.vala"
+#line 610 "../docklets/Lightpad/Application.vala"
 	_tmp1_ = g_strdup ("/lightpad/application.css");
-#line 620 "../docklets/Lightpad/Application.vala"
+#line 610 "../docklets/Lightpad/Application.vala"
 	css_file = _tmp1_;
-#line 621 "../docklets/Lightpad/Application.vala"
+#line 611 "../docklets/Lightpad/Application.vala"
 	_tmp2_ = gtk_css_provider_new ();
-#line 621 "../docklets/Lightpad/Application.vala"
+#line 611 "../docklets/Lightpad/Application.vala"
 	css_provider = _tmp2_;
-#line 3860 "Application.c"
+#line 3751 "Application.c"
 	{
 		GdkScreen* _tmp3_;
-#line 624 "../docklets/Lightpad/Application.vala"
+#line 614 "../docklets/Lightpad/Application.vala"
 		gtk_css_provider_load_from_path (css_provider, css_file, &_inner_error0_);
-#line 624 "../docklets/Lightpad/Application.vala"
+#line 614 "../docklets/Lightpad/Application.vala"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 3867 "Application.c"
+#line 3758 "Application.c"
 			goto __catch0_g_error;
 		}
-#line 625 "../docklets/Lightpad/Application.vala"
+#line 615 "../docklets/Lightpad/Application.vala"
 		_tmp3_ = gdk_screen_get_default ();
-#line 625 "../docklets/Lightpad/Application.vala"
+#line 615 "../docklets/Lightpad/Application.vala"
 		gtk_style_context_add_provider_for_screen (_tmp3_, (GtkStyleProvider*) css_provider, (guint) GTK_STYLE_PROVIDER_PRIORITY_USER);
-#line 3874 "Application.c"
+#line 3765 "Application.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
 	{
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		g_clear_error (&_inner_error0_);
-#line 628 "../docklets/Lightpad/Application.vala"
-		g_warning ("Application.vala:628: Could not load CSS file: %s", css_file);
-#line 3883 "Application.c"
+#line 618 "../docklets/Lightpad/Application.vala"
+		g_warning ("Application.vala:618: Could not load CSS file: %s", css_file);
+#line 3774 "Application.c"
 	}
 	__finally0:
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 3888 "Application.c"
+#line 3779 "Application.c"
 		gint _tmp4_ = -1;
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		_g_object_unref0 (css_provider);
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		_g_free0 (css_file);
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		block2_data_unref (_data2_);
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		_data2_ = NULL;
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		g_clear_error (&_inner_error0_);
-#line 623 "../docklets/Lightpad/Application.vala"
+#line 613 "../docklets/Lightpad/Application.vala"
 		return _tmp4_;
-#line 3904 "Application.c"
+#line 3795 "Application.c"
 	}
-#line 631 "../docklets/Lightpad/Application.vala"
+#line 621 "../docklets/Lightpad/Application.vala"
 	g_signal_connect_data ((GApplication*) _data2_->app, "activate", (GCallback) ___lambda25__g_application_activate, block2_data_ref (_data2_), (GClosureNotify) block2_data_unref, 0);
-#line 639 "../docklets/Lightpad/Application.vala"
+#line 629 "../docklets/Lightpad/Application.vala"
 	g_application_run ((GApplication*) _data2_->app, (gint) args_length1, args);
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	result = 1;
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	_g_object_unref0 (css_provider);
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	_g_free0 (css_file);
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	block2_data_unref (_data2_);
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	_data2_ = NULL;
-#line 640 "../docklets/Lightpad/Application.vala"
+#line 630 "../docklets/Lightpad/Application.vala"
 	return result;
-#line 3922 "Application.c"
+#line 3813 "Application.c"
 }
 
 int
 main (int argc,
       char ** argv)
 {
-#line 613 "../docklets/Lightpad/Application.vala"
+#line 603 "../docklets/Lightpad/Application.vala"
 	return _vala_main (argv, argc);
-#line 3931 "Application.c"
+#line 3822 "Application.c"
 }
 

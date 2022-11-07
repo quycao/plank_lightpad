@@ -10,9 +10,6 @@ config_dep = declare_dependency(
 	sources: config_h
 )
 
-# cairoblur_lib = shared_library('cairoblur', sources: ['cairoblur/cairoblur.h', 'cairoblur/cairoblur.c'])
-# cairoblur_dep = declare_dependency(link_with: cairoblur_lib, include_directories: include_directories('cairoblur'))
-
 docklet_lightpad_sources = [
     'LightpadDockItem.vala',
     'LightpadDocklet.vala',
@@ -40,7 +37,6 @@ docklet_lightpad = shared_module(
 	docklet_lightpad_sources,
     docklet_lightpad_resources,
 	dependencies: [
-        # cairoblur_dep,
         plank_dep,
         plank_base_dep,
         dependency('gio-unix-2.0', version: '>=2.56.0'),

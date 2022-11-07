@@ -816,41 +816,41 @@ string_replace (const gchar* self,
 	gboolean _tmp1_ = FALSE;
 	GError* _inner_error0_ = NULL;
 	gchar* result = NULL;
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (old != NULL, NULL);
-#line 1534 "glib-2.0.vapi"
+#line 1542 "glib-2.0.vapi"
 	g_return_val_if_fail (replacement != NULL, NULL);
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if ((*((gchar*) self)) == '\0') {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp1_ = TRUE;
 #line 830 "ApplicationDockItemProvider.c"
 	} else {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp1_ = (*((gchar*) old)) == '\0';
 #line 834 "ApplicationDockItemProvider.c"
 	}
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if (_tmp1_) {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp0_ = TRUE;
 #line 840 "ApplicationDockItemProvider.c"
 	} else {
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 		_tmp0_ = g_strcmp0 (old, replacement) == 0;
 #line 844 "ApplicationDockItemProvider.c"
 	}
-#line 1535 "glib-2.0.vapi"
+#line 1543 "glib-2.0.vapi"
 	if (_tmp0_) {
 #line 848 "ApplicationDockItemProvider.c"
 		gchar* _tmp2_;
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		_tmp2_ = g_strdup (self);
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		result = _tmp2_;
-#line 1536 "glib-2.0.vapi"
+#line 1544 "glib-2.0.vapi"
 		return result;
 #line 856 "ApplicationDockItemProvider.c"
 	}
@@ -864,91 +864,91 @@ string_replace (const gchar* self,
 		GRegex* _tmp8_;
 		gchar* _tmp9_;
 		gchar* _tmp10_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp3_ = g_regex_escape_string (old, -1);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp4_ = _tmp3_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp5_ = g_regex_new (_tmp4_, 0, 0, &_inner_error0_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_tmp6_ = _tmp5_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		_g_free0 (_tmp4_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		regex = _tmp6_;
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			_g_free0 (_tmp7_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			_g_regex_unref0 (regex);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			if (_inner_error0_->domain == G_REGEX_ERROR) {
 #line 888 "ApplicationDockItemProvider.c"
 				goto __catch0_g_regex_error;
 			}
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			g_clear_error (&_inner_error0_);
-#line 1539 "glib-2.0.vapi"
+#line 1547 "glib-2.0.vapi"
 			return NULL;
 #line 897 "ApplicationDockItemProvider.c"
 		}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp8_ = regex;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp9_ = g_regex_replace_literal (_tmp8_, self, (gssize) -1, 0, replacement, 0, &_inner_error0_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp7_ = _tmp9_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			_g_free0 (_tmp7_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			_g_regex_unref0 (regex);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			if (_inner_error0_->domain == G_REGEX_ERROR) {
 #line 913 "ApplicationDockItemProvider.c"
 				goto __catch0_g_regex_error;
 			}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			g_clear_error (&_inner_error0_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 			return NULL;
 #line 922 "ApplicationDockItemProvider.c"
 		}
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp10_ = _tmp7_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_tmp7_ = NULL;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		result = _tmp10_;
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_g_free0 (_tmp7_);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		_g_regex_unref0 (regex);
-#line 1540 "glib-2.0.vapi"
+#line 1548 "glib-2.0.vapi"
 		return result;
 #line 936 "ApplicationDockItemProvider.c"
 	}
 	goto __finally0;
 	__catch0_g_regex_error:
 	{
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 		g_clear_error (&_inner_error0_);
-#line 1542 "glib-2.0.vapi"
+#line 1550 "glib-2.0.vapi"
 		g_assert_not_reached ();
 #line 945 "ApplicationDockItemProvider.c"
 	}
 	__finally0:
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	g_clear_error (&_inner_error0_);
-#line 1538 "glib-2.0.vapi"
+#line 1546 "glib-2.0.vapi"
 	return NULL;
 #line 954 "ApplicationDockItemProvider.c"
 }

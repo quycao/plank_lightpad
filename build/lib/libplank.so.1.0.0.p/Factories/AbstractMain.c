@@ -450,8 +450,8 @@ static void _vala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _vala_array_length (gpointer array);
 
-static const GOptionEntry PLANK_ABSTRACT_MAIN_options[6] = {{"debug", 'd', 0, G_OPTION_ARG_NONE, NULL, "Enable debug logging", NULL}, {"verbose", 'v', 0, G_OPTION_ARG_NONE, NULL, "Enable verbose logging", NULL}, {"name", 'n', 0, G_OPTION_ARG_STRING, NULL, "The name of this dock. Defaults to \"dock1\".", NULL}, {"preferences", (gchar) 0, 0, G_OPTION_ARG_NONE, NULL, "Show preferences dialog of the just started or already running instanc" \
-"e", NULL}, {"version", 'V', 0, G_OPTION_ARG_NONE, NULL, "Show the application's version", NULL}, {NULL}};
+static const GOptionEntry PLANK_ABSTRACT_MAIN_options[6] = {{"debug", 'd', (gint) 0, G_OPTION_ARG_NONE, NULL, "Enable debug logging", NULL}, {"verbose", 'v', (gint) 0, G_OPTION_ARG_NONE, NULL, "Enable verbose logging", NULL}, {"name", 'n', (gint) 0, G_OPTION_ARG_STRING, NULL, "The name of this dock. Defaults to \"dock1\".", NULL}, {"preferences", (gchar) 0, (gint) 0, G_OPTION_ARG_NONE, NULL, "Show preferences dialog of the just started or already running instanc" \
+"e", NULL}, {"version", 'V', (gint) 0, G_OPTION_ARG_NONE, NULL, "Show the application's version", NULL}, {NULL}};
 
 static inline gpointer
 plank_abstract_main_get_instance_private (PlankAbstractMain* self)
@@ -826,50 +826,50 @@ _vala_g_strjoinv (const gchar* separator,
 {
 	gboolean _tmp0_ = FALSE;
 	gchar* result = NULL;
-#line 1200 "glib-2.0.vapi"
+#line 1208 "glib-2.0.vapi"
 	if (separator == NULL) {
-#line 1201 "glib-2.0.vapi"
+#line 1209 "glib-2.0.vapi"
 		separator = "";
 #line 833 "AbstractMain.c"
 	}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 	if (str_array != NULL) {
 #line 837 "AbstractMain.c"
 		gboolean _tmp1_ = FALSE;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		if (str_array_length1 > 0) {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			_tmp1_ = TRUE;
 #line 843 "AbstractMain.c"
 		} else {
 			gboolean _tmp2_ = FALSE;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			if (str_array_length1 == -1) {
 #line 848 "AbstractMain.c"
 				const gchar* _tmp3_;
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp3_ = str_array[0];
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp2_ = _tmp3_ != NULL;
 #line 854 "AbstractMain.c"
 			} else {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 				_tmp2_ = FALSE;
 #line 858 "AbstractMain.c"
 			}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 			_tmp1_ = _tmp2_;
 #line 862 "AbstractMain.c"
 		}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		_tmp0_ = _tmp1_;
 #line 866 "AbstractMain.c"
 	} else {
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 		_tmp0_ = FALSE;
 #line 870 "AbstractMain.c"
 	}
-#line 1203 "glib-2.0.vapi"
+#line 1211 "glib-2.0.vapi"
 	if (_tmp0_) {
 #line 874 "AbstractMain.c"
 		gint i = 0;
@@ -878,222 +878,237 @@ _vala_g_strjoinv (const gchar* separator,
 		gint _tmp17_;
 		const gchar* res = NULL;
 		void* _tmp18_;
-		void* ptr = NULL;
-		const gchar* _tmp19_;
+		const gchar* _tmp19_ = NULL;
 		const gchar* _tmp20_;
-		void* _tmp21_;
-		const gchar* _tmp31_;
-#line 1205 "glib-2.0.vapi"
+		void* ptr = NULL;
+		const gchar* _tmp22_;
+		void* _tmp23_;
+		const gchar* _tmp33_;
+#line 1213 "glib-2.0.vapi"
 		len = (gsize) 1;
-#line 888 "AbstractMain.c"
+#line 889 "AbstractMain.c"
 		{
 			gboolean _tmp4_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			i = 0;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			_tmp4_ = TRUE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 			while (TRUE) {
-#line 897 "AbstractMain.c"
+#line 898 "AbstractMain.c"
 				gboolean _tmp6_ = FALSE;
 				gboolean _tmp7_ = FALSE;
 				gint _tmp10_ = 0;
 				const gchar* _tmp11_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (!_tmp4_) {
-#line 904 "AbstractMain.c"
+#line 905 "AbstractMain.c"
 					gint _tmp5_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp5_ = i;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					i = _tmp5_ + 1;
-#line 910 "AbstractMain.c"
+#line 911 "AbstractMain.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				_tmp4_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (str_array_length1 != -1) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp7_ = i < str_array_length1;
-#line 918 "AbstractMain.c"
+#line 919 "AbstractMain.c"
 				} else {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp7_ = FALSE;
-#line 922 "AbstractMain.c"
+#line 923 "AbstractMain.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (_tmp7_) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp6_ = TRUE;
-#line 928 "AbstractMain.c"
+#line 929 "AbstractMain.c"
 				} else {
 					gboolean _tmp8_ = FALSE;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					if (str_array_length1 == -1) {
-#line 933 "AbstractMain.c"
+#line 934 "AbstractMain.c"
 						const gchar* _tmp9_;
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp9_ = str_array[i];
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp8_ = _tmp9_ != NULL;
-#line 939 "AbstractMain.c"
+#line 940 "AbstractMain.c"
 					} else {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 						_tmp8_ = FALSE;
-#line 943 "AbstractMain.c"
+#line 944 "AbstractMain.c"
 					}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					_tmp6_ = _tmp8_;
-#line 947 "AbstractMain.c"
+#line 948 "AbstractMain.c"
 				}
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 				if (!_tmp6_) {
-#line 1206 "glib-2.0.vapi"
+#line 1214 "glib-2.0.vapi"
 					break;
-#line 953 "AbstractMain.c"
+#line 954 "AbstractMain.c"
 				}
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				_tmp11_ = str_array[i];
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				if (_tmp11_ != NULL) {
-#line 959 "AbstractMain.c"
+#line 960 "AbstractMain.c"
 					const gchar* _tmp12_;
 					gint _tmp13_;
 					gint _tmp14_;
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp12_ = str_array[i];
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp13_ = strlen ((const gchar*) _tmp12_);
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp14_ = _tmp13_;
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp10_ = _tmp14_;
-#line 971 "AbstractMain.c"
+#line 972 "AbstractMain.c"
 				} else {
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 					_tmp10_ = 0;
-#line 975 "AbstractMain.c"
+#line 976 "AbstractMain.c"
 				}
-#line 1207 "glib-2.0.vapi"
+#line 1215 "glib-2.0.vapi"
 				len += (gsize) _tmp10_;
-#line 979 "AbstractMain.c"
+#line 980 "AbstractMain.c"
 			}
 		}
-#line 1209 "glib-2.0.vapi"
+#line 1217 "glib-2.0.vapi"
 		if (i == 0) {
-#line 984 "AbstractMain.c"
+#line 985 "AbstractMain.c"
 			gchar* _tmp15_;
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			_tmp15_ = g_strdup ("");
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			result = _tmp15_;
-#line 1210 "glib-2.0.vapi"
+#line 1218 "glib-2.0.vapi"
 			return result;
-#line 992 "AbstractMain.c"
+#line 993 "AbstractMain.c"
 		}
-#line 1212 "glib-2.0.vapi"
+#line 1220 "glib-2.0.vapi"
 		str_array_length1 = i;
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		_tmp16_ = strlen ((const gchar*) separator);
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		_tmp17_ = _tmp16_;
-#line 1213 "glib-2.0.vapi"
+#line 1221 "glib-2.0.vapi"
 		len += (gsize) (_tmp17_ * (i - 1));
-#line 1215 "glib-2.0.vapi"
+#line 1223 "glib-2.0.vapi"
 		_tmp18_ = g_malloc (len);
-#line 1215 "glib-2.0.vapi"
+#line 1223 "glib-2.0.vapi"
 		res = _tmp18_;
-#line 1216 "glib-2.0.vapi"
-		_tmp19_ = res;
-#line 1216 "glib-2.0.vapi"
+#line 1224 "glib-2.0.vapi"
 		_tmp20_ = str_array[0];
-#line 1216 "glib-2.0.vapi"
-		_tmp21_ = g_stpcpy ((void*) _tmp19_, (const gchar*) _tmp20_);
-#line 1216 "glib-2.0.vapi"
-		ptr = _tmp21_;
-#line 1014 "AbstractMain.c"
+#line 1224 "glib-2.0.vapi"
+		if (_tmp20_ != NULL) {
+#line 1011 "AbstractMain.c"
+			const gchar* _tmp21_;
+#line 1224 "glib-2.0.vapi"
+			_tmp21_ = str_array[0];
+#line 1224 "glib-2.0.vapi"
+			_tmp19_ = (const gchar*) _tmp21_;
+#line 1017 "AbstractMain.c"
+		} else {
+#line 1224 "glib-2.0.vapi"
+			_tmp19_ = "";
+#line 1021 "AbstractMain.c"
+		}
+#line 1224 "glib-2.0.vapi"
+		_tmp22_ = res;
+#line 1224 "glib-2.0.vapi"
+		_tmp23_ = g_stpcpy ((void*) _tmp22_, _tmp19_);
+#line 1224 "glib-2.0.vapi"
+		ptr = _tmp23_;
+#line 1029 "AbstractMain.c"
 		{
-			gboolean _tmp22_ = FALSE;
-#line 1217 "glib-2.0.vapi"
+			gboolean _tmp24_ = FALSE;
+#line 1225 "glib-2.0.vapi"
 			i = 1;
-#line 1217 "glib-2.0.vapi"
-			_tmp22_ = TRUE;
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
+			_tmp24_ = TRUE;
+#line 1225 "glib-2.0.vapi"
 			while (TRUE) {
-#line 1023 "AbstractMain.c"
-				void* _tmp24_;
-				void* _tmp25_;
-				const gchar* _tmp26_ = NULL;
-				const gchar* _tmp27_;
-				void* _tmp29_;
-				void* _tmp30_;
-#line 1217 "glib-2.0.vapi"
-				if (!_tmp22_) {
-#line 1032 "AbstractMain.c"
-					gint _tmp23_;
-#line 1217 "glib-2.0.vapi"
-					_tmp23_ = i;
-#line 1217 "glib-2.0.vapi"
-					i = _tmp23_ + 1;
 #line 1038 "AbstractMain.c"
+				void* _tmp26_;
+				void* _tmp27_;
+				const gchar* _tmp28_ = NULL;
+				const gchar* _tmp29_;
+				void* _tmp31_;
+				void* _tmp32_;
+#line 1225 "glib-2.0.vapi"
+				if (!_tmp24_) {
+#line 1047 "AbstractMain.c"
+					gint _tmp25_;
+#line 1225 "glib-2.0.vapi"
+					_tmp25_ = i;
+#line 1225 "glib-2.0.vapi"
+					i = _tmp25_ + 1;
+#line 1053 "AbstractMain.c"
 				}
-#line 1217 "glib-2.0.vapi"
-				_tmp22_ = FALSE;
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
+				_tmp24_ = FALSE;
+#line 1225 "glib-2.0.vapi"
 				if (!(i < str_array_length1)) {
-#line 1217 "glib-2.0.vapi"
+#line 1225 "glib-2.0.vapi"
 					break;
-#line 1046 "AbstractMain.c"
+#line 1061 "AbstractMain.c"
 				}
-#line 1218 "glib-2.0.vapi"
-				_tmp24_ = ptr;
-#line 1218 "glib-2.0.vapi"
-				_tmp25_ = g_stpcpy (_tmp24_, (const gchar*) separator);
-#line 1218 "glib-2.0.vapi"
-				ptr = _tmp25_;
-#line 1219 "glib-2.0.vapi"
-				_tmp27_ = str_array[i];
-#line 1219 "glib-2.0.vapi"
-				if (_tmp27_ != NULL) {
-#line 1058 "AbstractMain.c"
-					const gchar* _tmp28_;
-#line 1219 "glib-2.0.vapi"
-					_tmp28_ = str_array[i];
-#line 1219 "glib-2.0.vapi"
-					_tmp26_ = (const gchar*) _tmp28_;
-#line 1064 "AbstractMain.c"
+#line 1226 "glib-2.0.vapi"
+				_tmp26_ = ptr;
+#line 1226 "glib-2.0.vapi"
+				_tmp27_ = g_stpcpy (_tmp26_, (const gchar*) separator);
+#line 1226 "glib-2.0.vapi"
+				ptr = _tmp27_;
+#line 1227 "glib-2.0.vapi"
+				_tmp29_ = str_array[i];
+#line 1227 "glib-2.0.vapi"
+				if (_tmp29_ != NULL) {
+#line 1073 "AbstractMain.c"
+					const gchar* _tmp30_;
+#line 1227 "glib-2.0.vapi"
+					_tmp30_ = str_array[i];
+#line 1227 "glib-2.0.vapi"
+					_tmp28_ = (const gchar*) _tmp30_;
+#line 1079 "AbstractMain.c"
 				} else {
-#line 1219 "glib-2.0.vapi"
-					_tmp26_ = "";
-#line 1068 "AbstractMain.c"
+#line 1227 "glib-2.0.vapi"
+					_tmp28_ = "";
+#line 1083 "AbstractMain.c"
 				}
-#line 1219 "glib-2.0.vapi"
-				_tmp29_ = ptr;
-#line 1219 "glib-2.0.vapi"
-				_tmp30_ = g_stpcpy (_tmp29_, _tmp26_);
-#line 1219 "glib-2.0.vapi"
-				ptr = _tmp30_;
-#line 1076 "AbstractMain.c"
+#line 1227 "glib-2.0.vapi"
+				_tmp31_ = ptr;
+#line 1227 "glib-2.0.vapi"
+				_tmp32_ = g_stpcpy (_tmp31_, _tmp28_);
+#line 1227 "glib-2.0.vapi"
+				ptr = _tmp32_;
+#line 1091 "AbstractMain.c"
 			}
 		}
-#line 1222 "glib-2.0.vapi"
-		_tmp31_ = res;
-#line 1222 "glib-2.0.vapi"
+#line 1230 "glib-2.0.vapi"
+		_tmp33_ = res;
+#line 1230 "glib-2.0.vapi"
 		res = NULL;
-#line 1222 "glib-2.0.vapi"
-		result = (gchar*) _tmp31_;
-#line 1222 "glib-2.0.vapi"
+#line 1230 "glib-2.0.vapi"
+		result = (gchar*) _tmp33_;
+#line 1230 "glib-2.0.vapi"
 		return result;
-#line 1087 "AbstractMain.c"
+#line 1102 "AbstractMain.c"
 	} else {
-		gchar* _tmp32_;
-#line 1224 "glib-2.0.vapi"
-		_tmp32_ = g_strdup ("");
-#line 1224 "glib-2.0.vapi"
-		result = _tmp32_;
-#line 1224 "glib-2.0.vapi"
+		gchar* _tmp34_;
+#line 1232 "glib-2.0.vapi"
+		_tmp34_ = g_strdup ("");
+#line 1232 "glib-2.0.vapi"
+		result = _tmp34_;
+#line 1232 "glib-2.0.vapi"
 		return result;
-#line 1096 "AbstractMain.c"
+#line 1111 "AbstractMain.c"
 	}
 }
 
@@ -1124,21 +1139,21 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 	_tmp1_ = self->priv->dock_name;
 #line 281 "../lib/Factories/AbstractMain.vala"
 	if (_tmp1_ != NULL) {
-#line 1127 "AbstractMain.c"
+#line 1142 "AbstractMain.c"
 		const gchar* _tmp2_;
 #line 281 "../lib/Factories/AbstractMain.vala"
 		_tmp2_ = self->priv->dock_name;
 #line 281 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strcmp0 (_tmp2_, "") != 0;
-#line 1133 "AbstractMain.c"
+#line 1148 "AbstractMain.c"
 	} else {
 #line 281 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = FALSE;
-#line 1137 "AbstractMain.c"
+#line 1152 "AbstractMain.c"
 	}
 #line 281 "../lib/Factories/AbstractMain.vala"
 	if (_tmp0_) {
-#line 1141 "AbstractMain.c"
+#line 1156 "AbstractMain.c"
 		const gchar* _tmp3_;
 		const gchar* _tmp4_;
 		PlankDockController* _tmp5_;
@@ -1159,7 +1174,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 		_g_object_unref0 (_tmp6_);
 #line 284 "../lib/Factories/AbstractMain.vala"
 		return;
-#line 1162 "AbstractMain.c"
+#line 1177 "AbstractMain.c"
 	}
 #line 287 "../lib/Factories/AbstractMain.vala"
 	_tmp7_ = plank_create_settings ("net.launchpad.plank", NULL);
@@ -1181,7 +1196,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 	_tmp11__length1 = enabled_docks_length1;
 #line 291 "../lib/Factories/AbstractMain.vala"
 	if (_tmp11__length1 <= 0) {
-#line 1184 "AbstractMain.c"
+#line 1199 "AbstractMain.c"
 		gchar* _tmp12_;
 		gchar** _tmp13_;
 		GSettings* _tmp14_;
@@ -1209,7 +1224,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 		_tmp15__length1 = enabled_docks_length1;
 #line 293 "../lib/Factories/AbstractMain.vala"
 		g_settings_set_strv (_tmp14_, "enabled-docks", _tmp15_);
-#line 1212 "AbstractMain.c"
+#line 1227 "AbstractMain.c"
 	} else {
 		gchar** _tmp16_;
 		gint _tmp16__length1;
@@ -1219,7 +1234,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 		_tmp16__length1 = enabled_docks_length1;
 #line 294 "../lib/Factories/AbstractMain.vala"
 		if (_tmp16__length1 > 8) {
-#line 1222 "AbstractMain.c"
+#line 1237 "AbstractMain.c"
 			gchar** _tmp17_;
 			gint _tmp17__length1;
 			gchar** _tmp18_;
@@ -1251,7 +1266,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 			_tmp20__length1 = enabled_docks_length1;
 #line 296 "../lib/Factories/AbstractMain.vala"
 			g_settings_set_strv (_tmp19_, "enabled-docks", _tmp20_);
-#line 1254 "AbstractMain.c"
+#line 1269 "AbstractMain.c"
 		}
 	}
 #line 299 "../lib/Factories/AbstractMain.vala"
@@ -1274,7 +1289,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 	_tmp25_ = enabled_docks;
 #line 300 "../lib/Factories/AbstractMain.vala"
 	_tmp25__length1 = enabled_docks_length1;
-#line 1277 "AbstractMain.c"
+#line 1292 "AbstractMain.c"
 	{
 		gchar** dock_name_collection = NULL;
 		gint dock_name_collection_length1 = 0;
@@ -1286,11 +1301,11 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 		dock_name_collection_length1 = _tmp25__length1;
 #line 300 "../lib/Factories/AbstractMain.vala"
 		for (dock_name_it = 0; dock_name_it < dock_name_collection_length1; dock_name_it = dock_name_it + 1) {
-#line 1289 "AbstractMain.c"
+#line 1304 "AbstractMain.c"
 			const gchar* dock_name = NULL;
 #line 300 "../lib/Factories/AbstractMain.vala"
 			dock_name = dock_name_collection[dock_name_it];
-#line 1293 "AbstractMain.c"
+#line 1308 "AbstractMain.c"
 			{
 				const gchar* _tmp26_;
 				PlankDockController* _tmp27_;
@@ -1305,7 +1320,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 				plank_abstract_main_add_dock (self, _tmp28_);
 #line 301 "../lib/Factories/AbstractMain.vala"
 				_g_object_unref0 (_tmp28_);
-#line 1308 "AbstractMain.c"
+#line 1323 "AbstractMain.c"
 			}
 		}
 	}
@@ -1313,7 +1328,7 @@ plank_abstract_main_real_create_docks (PlankAbstractMain* self)
 	enabled_docks = (_vala_array_free (enabled_docks, enabled_docks_length1, (GDestroyNotify) g_free), NULL);
 #line 279 "../lib/Factories/AbstractMain.vala"
 	_g_object_unref0 (settings);
-#line 1316 "AbstractMain.c"
+#line 1331 "AbstractMain.c"
 }
 
 void
@@ -1323,7 +1338,7 @@ plank_abstract_main_create_docks (PlankAbstractMain* self)
 	g_return_if_fail (self != NULL);
 #line 279 "../lib/Factories/AbstractMain.vala"
 	PLANK_ABSTRACT_MAIN_GET_CLASS (self)->create_docks (self);
-#line 1326 "AbstractMain.c"
+#line 1341 "AbstractMain.c"
 }
 
 static PlankDockController*
@@ -1363,7 +1378,7 @@ plank_abstract_main_create_dock (PlankAbstractMain* self,
 	_g_object_unref0 (config_folder);
 #line 313 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 1366 "AbstractMain.c"
+#line 1381 "AbstractMain.c"
 }
 
 static gpointer
@@ -1371,7 +1386,7 @@ _g_object_ref0 (gpointer self)
 {
 #line 321 "../lib/Factories/AbstractMain.vala"
 	return self ? g_object_ref (self) : NULL;
-#line 1374 "AbstractMain.c"
+#line 1389 "AbstractMain.c"
 }
 
 static void
@@ -1393,7 +1408,7 @@ plank_abstract_main_add_dock (PlankAbstractMain* self,
 	if (_tmp1_ == NULL) {
 #line 319 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = TRUE;
-#line 1396 "AbstractMain.c"
+#line 1411 "AbstractMain.c"
 	} else {
 		gboolean _tmp2_ = FALSE;
 		PlankDockController* _tmp3_;
@@ -1413,7 +1428,7 @@ plank_abstract_main_add_dock (PlankAbstractMain* self,
 		_tmp7_ = _tmp6_;
 #line 320 "../lib/Factories/AbstractMain.vala"
 		if (_tmp7_) {
-#line 1416 "AbstractMain.c"
+#line 1431 "AbstractMain.c"
 			PlankDockPreferences* _tmp8_;
 			PlankDockPreferences* _tmp9_;
 			gboolean _tmp10_;
@@ -1428,19 +1443,19 @@ plank_abstract_main_add_dock (PlankAbstractMain* self,
 			_tmp11_ = _tmp10_;
 #line 320 "../lib/Factories/AbstractMain.vala"
 			_tmp2_ = !_tmp11_;
-#line 1431 "AbstractMain.c"
+#line 1446 "AbstractMain.c"
 		} else {
 #line 320 "../lib/Factories/AbstractMain.vala"
 			_tmp2_ = FALSE;
-#line 1435 "AbstractMain.c"
+#line 1450 "AbstractMain.c"
 		}
 #line 320 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = _tmp2_;
-#line 1439 "AbstractMain.c"
+#line 1454 "AbstractMain.c"
 	}
 #line 319 "../lib/Factories/AbstractMain.vala"
 	if (_tmp0_) {
-#line 1443 "AbstractMain.c"
+#line 1458 "AbstractMain.c"
 		PlankDockController* _tmp12_;
 #line 321 "../lib/Factories/AbstractMain.vala"
 		_tmp12_ = _g_object_ref0 (dock);
@@ -1448,7 +1463,7 @@ plank_abstract_main_add_dock (PlankAbstractMain* self,
 		_g_object_unref0 (self->priv->primary_dock);
 #line 321 "../lib/Factories/AbstractMain.vala"
 		self->priv->primary_dock = _tmp12_;
-#line 1451 "AbstractMain.c"
+#line 1466 "AbstractMain.c"
 	}
 #line 323 "../lib/Factories/AbstractMain.vala"
 	_tmp13_ = self->priv->docks;
@@ -1460,7 +1475,7 @@ plank_abstract_main_add_dock (PlankAbstractMain* self,
 	_tmp15_ = _tmp14_;
 #line 324 "../lib/Factories/AbstractMain.vala"
 	gtk_application_add_window ((GtkApplication*) self, (GtkWindow*) _tmp15_);
-#line 1463 "AbstractMain.c"
+#line 1478 "AbstractMain.c"
 }
 
 static void
@@ -1488,7 +1503,7 @@ plank_abstract_main_remove_dock (PlankAbstractMain* self,
 	if (_tmp2_ == 1) {
 #line 330 "../lib/Factories/AbstractMain.vala"
 		return;
-#line 1491 "AbstractMain.c"
+#line 1506 "AbstractMain.c"
 	}
 #line 332 "../lib/Factories/AbstractMain.vala"
 	_tmp3_ = plank_dock_controller_get_window (dock);
@@ -1504,7 +1519,7 @@ plank_abstract_main_remove_dock (PlankAbstractMain* self,
 	_tmp6_ = self->priv->primary_dock;
 #line 335 "../lib/Factories/AbstractMain.vala"
 	if (_tmp6_ == dock) {
-#line 1507 "AbstractMain.c"
+#line 1522 "AbstractMain.c"
 		GeeArrayList* _tmp7_;
 		gpointer _tmp8_;
 #line 336 "../lib/Factories/AbstractMain.vala"
@@ -1515,7 +1530,7 @@ plank_abstract_main_remove_dock (PlankAbstractMain* self,
 		_g_object_unref0 (self->priv->primary_dock);
 #line 336 "../lib/Factories/AbstractMain.vala"
 		self->priv->primary_dock = (PlankDockController*) _tmp8_;
-#line 1518 "AbstractMain.c"
+#line 1533 "AbstractMain.c"
 	}
 }
 
@@ -1533,7 +1548,7 @@ __lambda30_ (PlankAbstractMain* self)
 	_tmp1_ = self->priv->_help_url;
 #line 348 "../lib/Factories/AbstractMain.vala"
 	plank_system_open_uri (_tmp0_, _tmp1_);
-#line 1536 "AbstractMain.c"
+#line 1551 "AbstractMain.c"
 }
 
 static void
@@ -1543,7 +1558,7 @@ ___lambda30__g_simple_action_activate (GSimpleAction* _sender,
 {
 #line 347 "../lib/Factories/AbstractMain.vala"
 	__lambda30_ ((PlankAbstractMain*) self);
-#line 1546 "AbstractMain.c"
+#line 1561 "AbstractMain.c"
 }
 
 static void
@@ -1557,7 +1572,7 @@ __lambda31_ (PlankAbstractMain* self)
 	_tmp1_ = self->priv->_translate_url;
 #line 354 "../lib/Factories/AbstractMain.vala"
 	plank_system_open_uri (_tmp0_, _tmp1_);
-#line 1560 "AbstractMain.c"
+#line 1575 "AbstractMain.c"
 }
 
 static void
@@ -1567,7 +1582,7 @@ ___lambda31__g_simple_action_activate (GSimpleAction* _sender,
 {
 #line 353 "../lib/Factories/AbstractMain.vala"
 	__lambda31_ ((PlankAbstractMain*) self);
-#line 1570 "AbstractMain.c"
+#line 1585 "AbstractMain.c"
 }
 
 static void
@@ -1578,7 +1593,7 @@ __lambda32_ (PlankAbstractMain* self)
 	_tmp0_ = self->priv->primary_dock;
 #line 360 "../lib/Factories/AbstractMain.vala"
 	plank_abstract_main_show_preferences (self, _tmp0_);
-#line 1581 "AbstractMain.c"
+#line 1596 "AbstractMain.c"
 }
 
 static void
@@ -1588,7 +1603,7 @@ ___lambda32__g_simple_action_activate (GSimpleAction* _sender,
 {
 #line 359 "../lib/Factories/AbstractMain.vala"
 	__lambda32_ ((PlankAbstractMain*) self);
-#line 1591 "AbstractMain.c"
+#line 1606 "AbstractMain.c"
 }
 
 static void
@@ -1596,7 +1611,7 @@ __lambda35_ (PlankAbstractMain* self)
 {
 #line 366 "../lib/Factories/AbstractMain.vala"
 	plank_abstract_main_show_about (self);
-#line 1599 "AbstractMain.c"
+#line 1614 "AbstractMain.c"
 }
 
 static void
@@ -1606,7 +1621,7 @@ ___lambda35__g_simple_action_activate (GSimpleAction* _sender,
 {
 #line 365 "../lib/Factories/AbstractMain.vala"
 	__lambda35_ ((PlankAbstractMain*) self);
-#line 1609 "AbstractMain.c"
+#line 1624 "AbstractMain.c"
 }
 
 static void
@@ -1614,7 +1629,7 @@ __lambda38_ (PlankAbstractMain* self)
 {
 #line 372 "../lib/Factories/AbstractMain.vala"
 	g_application_quit ((GApplication*) self);
-#line 1617 "AbstractMain.c"
+#line 1632 "AbstractMain.c"
 }
 
 static void
@@ -1624,7 +1639,7 @@ ___lambda38__g_simple_action_activate (GSimpleAction* _sender,
 {
 #line 371 "../lib/Factories/AbstractMain.vala"
 	__lambda38_ ((PlankAbstractMain*) self);
-#line 1627 "AbstractMain.c"
+#line 1642 "AbstractMain.c"
 }
 
 static void
@@ -1718,7 +1733,7 @@ plank_abstract_main_real_create_actions (PlankAbstractMain* self)
 	g_action_map_add_action ((GActionMap*) self, (GAction*) _tmp14_);
 #line 342 "../lib/Factories/AbstractMain.vala"
 	_g_object_unref0 (action);
-#line 1721 "AbstractMain.c"
+#line 1736 "AbstractMain.c"
 }
 
 void
@@ -1728,7 +1743,7 @@ plank_abstract_main_create_actions (PlankAbstractMain* self)
 	g_return_if_fail (self != NULL);
 #line 342 "../lib/Factories/AbstractMain.vala"
 	PLANK_ABSTRACT_MAIN_GET_CLASS (self)->create_actions (self);
-#line 1731 "AbstractMain.c"
+#line 1746 "AbstractMain.c"
 }
 
 /**
@@ -1752,7 +1767,7 @@ plank_abstract_main_is_launcher_for_dock (PlankAbstractMain* self,
 	result = g_str_has_suffix (launcher, _tmp0_);
 #line 384 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 1755 "AbstractMain.c"
+#line 1770 "AbstractMain.c"
 }
 
 /**
@@ -1766,7 +1781,7 @@ __lambda36_ (PlankAbstractMain* self)
 	_tmp0_ = self->priv->about_dlg;
 #line 424 "../lib/Factories/AbstractMain.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 1769 "AbstractMain.c"
+#line 1784 "AbstractMain.c"
 }
 
 static void
@@ -1776,7 +1791,7 @@ ___lambda36__gtk_dialog_response (GtkDialog* _sender,
 {
 #line 423 "../lib/Factories/AbstractMain.vala"
 	__lambda36_ ((PlankAbstractMain*) self);
-#line 1779 "AbstractMain.c"
+#line 1794 "AbstractMain.c"
 }
 
 static void
@@ -1791,7 +1806,7 @@ __lambda37_ (PlankAbstractMain* self)
 	_g_object_unref0 (self->priv->about_dlg);
 #line 429 "../lib/Factories/AbstractMain.vala"
 	self->priv->about_dlg = NULL;
-#line 1794 "AbstractMain.c"
+#line 1809 "AbstractMain.c"
 }
 
 static void
@@ -1800,7 +1815,7 @@ ___lambda37__gtk_widget_hide (GtkWidget* _sender,
 {
 #line 427 "../lib/Factories/AbstractMain.vala"
 	__lambda37_ ((PlankAbstractMain*) self);
-#line 1803 "AbstractMain.c"
+#line 1818 "AbstractMain.c"
 }
 
 static void
@@ -1867,7 +1882,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 	_tmp0_ = self->priv->about_dlg;
 #line 392 "../lib/Factories/AbstractMain.vala"
 	if (_tmp0_ != NULL) {
-#line 1870 "AbstractMain.c"
+#line 1885 "AbstractMain.c"
 		GtkAboutDialog* _tmp1_;
 #line 393 "../lib/Factories/AbstractMain.vala"
 		_tmp1_ = self->priv->about_dlg;
@@ -1875,7 +1890,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		gtk_widget_show_all ((GtkWidget*) _tmp1_);
 #line 394 "../lib/Factories/AbstractMain.vala"
 		return;
-#line 1878 "AbstractMain.c"
+#line 1893 "AbstractMain.c"
 	}
 #line 397 "../lib/Factories/AbstractMain.vala"
 	_tmp2_ = (GtkAboutDialog*) gtk_about_dialog_new ();
@@ -1977,7 +1992,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 	_tmp34__length1 = _tmp32__length1;
 #line 411 "../lib/Factories/AbstractMain.vala"
 	if (_tmp34_ != NULL) {
-#line 1980 "AbstractMain.c"
+#line 1995 "AbstractMain.c"
 		gchar** _tmp35_;
 		gint _tmp35__length1;
 		gint _tmp36_ = 0;
@@ -1993,15 +2008,15 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp37__length1 = _tmp35__length1;
 #line 411 "../lib/Factories/AbstractMain.vala"
 		_tmp31_ = _tmp37__length1 > 0;
-#line 1996 "AbstractMain.c"
+#line 2011 "AbstractMain.c"
 	} else {
 #line 411 "../lib/Factories/AbstractMain.vala"
 		_tmp31_ = FALSE;
-#line 2000 "AbstractMain.c"
+#line 2015 "AbstractMain.c"
 	}
 #line 411 "../lib/Factories/AbstractMain.vala"
 	if (_tmp31_) {
-#line 2004 "AbstractMain.c"
+#line 2019 "AbstractMain.c"
 		GtkAboutDialog* _tmp38_;
 		gchar** _tmp39_;
 		gint _tmp39__length1;
@@ -2020,7 +2035,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp41__length1 = _tmp39__length1;
 #line 412 "../lib/Factories/AbstractMain.vala"
 		gtk_about_dialog_set_authors (_tmp38_, _tmp41_);
-#line 2023 "AbstractMain.c"
+#line 2038 "AbstractMain.c"
 	}
 #line 413 "../lib/Factories/AbstractMain.vala"
 	_tmp43_ = plank_abstract_main_get_about_documenters (self, &_tmp44_);
@@ -2032,7 +2047,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 	_tmp45__length1 = _tmp43__length1;
 #line 413 "../lib/Factories/AbstractMain.vala"
 	if (_tmp45_ != NULL) {
-#line 2035 "AbstractMain.c"
+#line 2050 "AbstractMain.c"
 		gchar** _tmp46_;
 		gint _tmp46__length1;
 		gint _tmp47_ = 0;
@@ -2048,15 +2063,15 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp48__length1 = _tmp46__length1;
 #line 413 "../lib/Factories/AbstractMain.vala"
 		_tmp42_ = _tmp48__length1 > 0;
-#line 2051 "AbstractMain.c"
+#line 2066 "AbstractMain.c"
 	} else {
 #line 413 "../lib/Factories/AbstractMain.vala"
 		_tmp42_ = FALSE;
-#line 2055 "AbstractMain.c"
+#line 2070 "AbstractMain.c"
 	}
 #line 413 "../lib/Factories/AbstractMain.vala"
 	if (_tmp42_) {
-#line 2059 "AbstractMain.c"
+#line 2074 "AbstractMain.c"
 		GtkAboutDialog* _tmp49_;
 		gchar** _tmp50_;
 		gint _tmp50__length1;
@@ -2075,7 +2090,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp52__length1 = _tmp50__length1;
 #line 414 "../lib/Factories/AbstractMain.vala"
 		gtk_about_dialog_set_documenters (_tmp49_, _tmp52_);
-#line 2078 "AbstractMain.c"
+#line 2093 "AbstractMain.c"
 	}
 #line 415 "../lib/Factories/AbstractMain.vala"
 	_tmp54_ = plank_abstract_main_get_about_artists (self, &_tmp55_);
@@ -2087,7 +2102,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 	_tmp56__length1 = _tmp54__length1;
 #line 415 "../lib/Factories/AbstractMain.vala"
 	if (_tmp56_ != NULL) {
-#line 2090 "AbstractMain.c"
+#line 2105 "AbstractMain.c"
 		gchar** _tmp57_;
 		gint _tmp57__length1;
 		gint _tmp58_ = 0;
@@ -2103,15 +2118,15 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp59__length1 = _tmp57__length1;
 #line 415 "../lib/Factories/AbstractMain.vala"
 		_tmp53_ = _tmp59__length1 > 0;
-#line 2106 "AbstractMain.c"
+#line 2121 "AbstractMain.c"
 	} else {
 #line 415 "../lib/Factories/AbstractMain.vala"
 		_tmp53_ = FALSE;
-#line 2110 "AbstractMain.c"
+#line 2125 "AbstractMain.c"
 	}
 #line 415 "../lib/Factories/AbstractMain.vala"
 	if (_tmp53_) {
-#line 2114 "AbstractMain.c"
+#line 2129 "AbstractMain.c"
 		GtkAboutDialog* _tmp60_;
 		gchar** _tmp61_;
 		gint _tmp61__length1;
@@ -2130,27 +2145,27 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp63__length1 = _tmp61__length1;
 #line 416 "../lib/Factories/AbstractMain.vala"
 		gtk_about_dialog_set_artists (_tmp60_, _tmp63_);
-#line 2133 "AbstractMain.c"
+#line 2148 "AbstractMain.c"
 	}
 #line 417 "../lib/Factories/AbstractMain.vala"
 	_tmp65_ = self->priv->_about_translators;
 #line 417 "../lib/Factories/AbstractMain.vala"
 	if (_tmp65_ != NULL) {
-#line 2139 "AbstractMain.c"
+#line 2154 "AbstractMain.c"
 		const gchar* _tmp66_;
 #line 417 "../lib/Factories/AbstractMain.vala"
 		_tmp66_ = self->priv->_about_translators;
 #line 417 "../lib/Factories/AbstractMain.vala"
 		_tmp64_ = g_strcmp0 (_tmp66_, "") != 0;
-#line 2145 "AbstractMain.c"
+#line 2160 "AbstractMain.c"
 	} else {
 #line 417 "../lib/Factories/AbstractMain.vala"
 		_tmp64_ = FALSE;
-#line 2149 "AbstractMain.c"
+#line 2164 "AbstractMain.c"
 	}
 #line 417 "../lib/Factories/AbstractMain.vala"
 	if (_tmp64_) {
-#line 2153 "AbstractMain.c"
+#line 2168 "AbstractMain.c"
 		GtkAboutDialog* _tmp67_;
 		const gchar* _tmp68_;
 #line 418 "../lib/Factories/AbstractMain.vala"
@@ -2159,14 +2174,14 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 		_tmp68_ = self->priv->_about_translators;
 #line 418 "../lib/Factories/AbstractMain.vala"
 		gtk_about_dialog_set_translator_credits (_tmp67_, _tmp68_);
-#line 2162 "AbstractMain.c"
+#line 2177 "AbstractMain.c"
 	} else {
 		GtkAboutDialog* _tmp69_;
 #line 420 "../lib/Factories/AbstractMain.vala"
 		_tmp69_ = self->priv->about_dlg;
 #line 420 "../lib/Factories/AbstractMain.vala"
 		gtk_about_dialog_set_translator_credits (_tmp69_, _ ("translator-credits"));
-#line 2169 "AbstractMain.c"
+#line 2184 "AbstractMain.c"
 	}
 #line 421 "../lib/Factories/AbstractMain.vala"
 	_tmp70_ = self->priv->about_dlg;
@@ -2186,7 +2201,7 @@ plank_abstract_main_show_about (PlankAbstractMain* self)
 	_tmp74_ = self->priv->about_dlg;
 #line 432 "../lib/Factories/AbstractMain.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp74_);
-#line 2189 "AbstractMain.c"
+#line 2204 "AbstractMain.c"
 }
 
 /**
@@ -2201,7 +2216,7 @@ __lambda33_ (PlankAbstractMain* self)
 	_g_object_unref0 (self->priv->preferences_dlg);
 #line 453 "../lib/Factories/AbstractMain.vala"
 	self->priv->preferences_dlg = NULL;
-#line 2204 "AbstractMain.c"
+#line 2219 "AbstractMain.c"
 }
 
 static void
@@ -2210,7 +2225,7 @@ ___lambda33__gtk_widget_destroy (GtkWidget* _sender,
 {
 #line 452 "../lib/Factories/AbstractMain.vala"
 	__lambda33_ ((PlankAbstractMain*) self);
-#line 2213 "AbstractMain.c"
+#line 2228 "AbstractMain.c"
 }
 
 static void
@@ -2225,7 +2240,7 @@ __lambda34_ (PlankAbstractMain* self)
 	_g_object_unref0 (self->priv->preferences_dlg);
 #line 458 "../lib/Factories/AbstractMain.vala"
 	self->priv->preferences_dlg = NULL;
-#line 2228 "AbstractMain.c"
+#line 2243 "AbstractMain.c"
 }
 
 static void
@@ -2234,7 +2249,7 @@ ___lambda34__gtk_widget_hide (GtkWidget* _sender,
 {
 #line 456 "../lib/Factories/AbstractMain.vala"
 	__lambda34_ ((PlankAbstractMain*) self);
-#line 2237 "AbstractMain.c"
+#line 2252 "AbstractMain.c"
 }
 
 static void
@@ -2257,7 +2272,7 @@ plank_abstract_main_show_preferences (PlankAbstractMain* self,
 	_tmp0_ = self->priv->preferences_dlg;
 #line 442 "../lib/Factories/AbstractMain.vala"
 	if (_tmp0_ != NULL) {
-#line 2260 "AbstractMain.c"
+#line 2275 "AbstractMain.c"
 		PlankPreferencesWindow* _tmp1_;
 		PlankPreferencesWindow* _tmp2_;
 		PlankDockWindow* _tmp3_;
@@ -2281,7 +2296,7 @@ plank_abstract_main_show_preferences (PlankAbstractMain* self,
 		gtk_widget_show ((GtkWidget*) _tmp5_);
 #line 446 "../lib/Factories/AbstractMain.vala"
 		return;
-#line 2284 "AbstractMain.c"
+#line 2299 "AbstractMain.c"
 	}
 #line 449 "../lib/Factories/AbstractMain.vala"
 	_tmp6_ = plank_preferences_window_new (controller);
@@ -2311,7 +2326,7 @@ plank_abstract_main_show_preferences (PlankAbstractMain* self,
 	_tmp12_ = self->priv->preferences_dlg;
 #line 461 "../lib/Factories/AbstractMain.vala"
 	gtk_widget_show ((GtkWidget*) _tmp12_);
-#line 2314 "AbstractMain.c"
+#line 2329 "AbstractMain.c"
 }
 
 PlankAbstractMain*
@@ -2322,7 +2337,7 @@ plank_abstract_main_construct (GType object_type)
 	self = (PlankAbstractMain*) g_object_new (object_type, NULL);
 #line 26 "../lib/Factories/AbstractMain.vala"
 	return self;
-#line 2325 "AbstractMain.c"
+#line 2340 "AbstractMain.c"
 }
 
 const gchar*
@@ -2338,7 +2353,7 @@ plank_abstract_main_get_build_data_dir (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 55 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2341 "AbstractMain.c"
+#line 2356 "AbstractMain.c"
 }
 
 static void
@@ -2352,7 +2367,7 @@ plank_abstract_main_set_build_data_dir (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_build_data_dir (self);
 #line 55 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2355 "AbstractMain.c"
+#line 2370 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 55 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2362,7 +2377,7 @@ plank_abstract_main_set_build_data_dir (PlankAbstractMain* self,
 		self->priv->_build_data_dir = _tmp0_;
 #line 55 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_DATA_DIR_PROPERTY]);
-#line 2365 "AbstractMain.c"
+#line 2380 "AbstractMain.c"
 	}
 }
 
@@ -2379,7 +2394,7 @@ plank_abstract_main_get_build_pkg_data_dir (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 59 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2382 "AbstractMain.c"
+#line 2397 "AbstractMain.c"
 }
 
 static void
@@ -2393,7 +2408,7 @@ plank_abstract_main_set_build_pkg_data_dir (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_build_pkg_data_dir (self);
 #line 59 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2396 "AbstractMain.c"
+#line 2411 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 59 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2403,7 +2418,7 @@ plank_abstract_main_set_build_pkg_data_dir (PlankAbstractMain* self,
 		self->priv->_build_pkg_data_dir = _tmp0_;
 #line 59 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_PKG_DATA_DIR_PROPERTY]);
-#line 2406 "AbstractMain.c"
+#line 2421 "AbstractMain.c"
 	}
 }
 
@@ -2420,7 +2435,7 @@ plank_abstract_main_get_build_release_name (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 63 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2423 "AbstractMain.c"
+#line 2438 "AbstractMain.c"
 }
 
 static void
@@ -2434,7 +2449,7 @@ plank_abstract_main_set_build_release_name (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_build_release_name (self);
 #line 63 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2437 "AbstractMain.c"
+#line 2452 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 63 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2444,7 +2459,7 @@ plank_abstract_main_set_build_release_name (PlankAbstractMain* self,
 		self->priv->_build_release_name = _tmp0_;
 #line 63 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_RELEASE_NAME_PROPERTY]);
-#line 2447 "AbstractMain.c"
+#line 2462 "AbstractMain.c"
 	}
 }
 
@@ -2461,7 +2476,7 @@ plank_abstract_main_get_build_version (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 67 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2464 "AbstractMain.c"
+#line 2479 "AbstractMain.c"
 }
 
 static void
@@ -2475,7 +2490,7 @@ plank_abstract_main_set_build_version (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_build_version (self);
 #line 67 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2478 "AbstractMain.c"
+#line 2493 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 67 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2485,7 +2500,7 @@ plank_abstract_main_set_build_version (PlankAbstractMain* self,
 		self->priv->_build_version = _tmp0_;
 #line 67 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_VERSION_PROPERTY]);
-#line 2488 "AbstractMain.c"
+#line 2503 "AbstractMain.c"
 	}
 }
 
@@ -2502,7 +2517,7 @@ plank_abstract_main_get_build_version_info (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 71 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2505 "AbstractMain.c"
+#line 2520 "AbstractMain.c"
 }
 
 static void
@@ -2516,7 +2531,7 @@ plank_abstract_main_set_build_version_info (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_build_version_info (self);
 #line 71 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2519 "AbstractMain.c"
+#line 2534 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 71 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2526,7 +2541,7 @@ plank_abstract_main_set_build_version_info (PlankAbstractMain* self,
 		self->priv->_build_version_info = _tmp0_;
 #line 71 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_VERSION_INFO_PROPERTY]);
-#line 2529 "AbstractMain.c"
+#line 2544 "AbstractMain.c"
 	}
 }
 
@@ -2543,7 +2558,7 @@ plank_abstract_main_get_program_name (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 76 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2546 "AbstractMain.c"
+#line 2561 "AbstractMain.c"
 }
 
 static void
@@ -2557,7 +2572,7 @@ plank_abstract_main_set_program_name (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_program_name (self);
 #line 76 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2560 "AbstractMain.c"
+#line 2575 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 76 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2567,7 +2582,7 @@ plank_abstract_main_set_program_name (PlankAbstractMain* self,
 		self->priv->_program_name = _tmp0_;
 #line 76 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_PROGRAM_NAME_PROPERTY]);
-#line 2570 "AbstractMain.c"
+#line 2585 "AbstractMain.c"
 	}
 }
 
@@ -2584,7 +2599,7 @@ plank_abstract_main_get_exec_name (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 80 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2587 "AbstractMain.c"
+#line 2602 "AbstractMain.c"
 }
 
 static void
@@ -2598,7 +2613,7 @@ plank_abstract_main_set_exec_name (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_exec_name (self);
 #line 80 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2601 "AbstractMain.c"
+#line 2616 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 80 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2608,7 +2623,7 @@ plank_abstract_main_set_exec_name (PlankAbstractMain* self,
 		self->priv->_exec_name = _tmp0_;
 #line 80 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_EXEC_NAME_PROPERTY]);
-#line 2611 "AbstractMain.c"
+#line 2626 "AbstractMain.c"
 	}
 }
 
@@ -2625,7 +2640,7 @@ plank_abstract_main_get_app_copyright (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 85 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2628 "AbstractMain.c"
+#line 2643 "AbstractMain.c"
 }
 
 static void
@@ -2639,7 +2654,7 @@ plank_abstract_main_set_app_copyright (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_app_copyright (self);
 #line 85 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2642 "AbstractMain.c"
+#line 2657 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 85 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2649,7 +2664,7 @@ plank_abstract_main_set_app_copyright (PlankAbstractMain* self,
 		self->priv->_app_copyright = _tmp0_;
 #line 85 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_COPYRIGHT_PROPERTY]);
-#line 2652 "AbstractMain.c"
+#line 2667 "AbstractMain.c"
 	}
 }
 
@@ -2666,7 +2681,7 @@ plank_abstract_main_get_app_dbus (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 89 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2669 "AbstractMain.c"
+#line 2684 "AbstractMain.c"
 }
 
 static void
@@ -2680,7 +2695,7 @@ plank_abstract_main_set_app_dbus (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_app_dbus (self);
 #line 89 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2683 "AbstractMain.c"
+#line 2698 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 89 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2690,7 +2705,7 @@ plank_abstract_main_set_app_dbus (PlankAbstractMain* self,
 		self->priv->_app_dbus = _tmp0_;
 #line 89 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_DBUS_PROPERTY]);
-#line 2693 "AbstractMain.c"
+#line 2708 "AbstractMain.c"
 	}
 }
 
@@ -2707,7 +2722,7 @@ plank_abstract_main_get_app_icon (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 93 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2710 "AbstractMain.c"
+#line 2725 "AbstractMain.c"
 }
 
 static void
@@ -2721,7 +2736,7 @@ plank_abstract_main_set_app_icon (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_app_icon (self);
 #line 93 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2724 "AbstractMain.c"
+#line 2739 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 93 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2731,7 +2746,7 @@ plank_abstract_main_set_app_icon (PlankAbstractMain* self,
 		self->priv->_app_icon = _tmp0_;
 #line 93 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_ICON_PROPERTY]);
-#line 2734 "AbstractMain.c"
+#line 2749 "AbstractMain.c"
 	}
 }
 
@@ -2748,7 +2763,7 @@ plank_abstract_main_get_app_launcher (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 97 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2751 "AbstractMain.c"
+#line 2766 "AbstractMain.c"
 }
 
 static void
@@ -2762,7 +2777,7 @@ plank_abstract_main_set_app_launcher (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_app_launcher (self);
 #line 97 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2765 "AbstractMain.c"
+#line 2780 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 97 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2772,7 +2787,7 @@ plank_abstract_main_set_app_launcher (PlankAbstractMain* self,
 		self->priv->_app_launcher = _tmp0_;
 #line 97 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_LAUNCHER_PROPERTY]);
-#line 2775 "AbstractMain.c"
+#line 2790 "AbstractMain.c"
 	}
 }
 
@@ -2789,7 +2804,7 @@ plank_abstract_main_get_main_url (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 102 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2792 "AbstractMain.c"
+#line 2807 "AbstractMain.c"
 }
 
 void
@@ -2803,7 +2818,7 @@ plank_abstract_main_set_main_url (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_main_url (self);
 #line 102 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2806 "AbstractMain.c"
+#line 2821 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 102 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2813,7 +2828,7 @@ plank_abstract_main_set_main_url (PlankAbstractMain* self,
 		self->priv->_main_url = _tmp0_;
 #line 102 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_MAIN_URL_PROPERTY]);
-#line 2816 "AbstractMain.c"
+#line 2831 "AbstractMain.c"
 	}
 }
 
@@ -2830,7 +2845,7 @@ plank_abstract_main_get_help_url (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 106 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2833 "AbstractMain.c"
+#line 2848 "AbstractMain.c"
 }
 
 void
@@ -2844,7 +2859,7 @@ plank_abstract_main_set_help_url (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_help_url (self);
 #line 106 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2847 "AbstractMain.c"
+#line 2862 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 106 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2854,7 +2869,7 @@ plank_abstract_main_set_help_url (PlankAbstractMain* self,
 		self->priv->_help_url = _tmp0_;
 #line 106 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_HELP_URL_PROPERTY]);
-#line 2857 "AbstractMain.c"
+#line 2872 "AbstractMain.c"
 	}
 }
 
@@ -2871,7 +2886,7 @@ plank_abstract_main_get_translate_url (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 110 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2874 "AbstractMain.c"
+#line 2889 "AbstractMain.c"
 }
 
 void
@@ -2885,7 +2900,7 @@ plank_abstract_main_set_translate_url (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_translate_url (self);
 #line 110 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 2888 "AbstractMain.c"
+#line 2903 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 110 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -2895,7 +2910,7 @@ plank_abstract_main_set_translate_url (PlankAbstractMain* self,
 		self->priv->_translate_url = _tmp0_;
 #line 110 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_TRANSLATE_URL_PROPERTY]);
-#line 2898 "AbstractMain.c"
+#line 2913 "AbstractMain.c"
 	}
 }
 
@@ -2922,13 +2937,13 @@ plank_abstract_main_get_about_authors (PlankAbstractMain* self,
 	if (result_length1) {
 #line 115 "../lib/Factories/AbstractMain.vala"
 		*result_length1 = _tmp1__length1;
-#line 2925 "AbstractMain.c"
+#line 2940 "AbstractMain.c"
 	}
 #line 115 "../lib/Factories/AbstractMain.vala"
 	result = _tmp1_;
 #line 115 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 2931 "AbstractMain.c"
+#line 2946 "AbstractMain.c"
 }
 
 static gchar**
@@ -2937,28 +2952,28 @@ _vala_array_dup3 (gchar** self,
 {
 #line 115 "../lib/Factories/AbstractMain.vala"
 	if (length >= 0) {
-#line 2940 "AbstractMain.c"
+#line 2955 "AbstractMain.c"
 		gchar** result;
 		gint i;
 #line 115 "../lib/Factories/AbstractMain.vala"
 		result = g_new0 (gchar*, length + 1);
 #line 115 "../lib/Factories/AbstractMain.vala"
 		for (i = 0; i < length; i++) {
-#line 2947 "AbstractMain.c"
+#line 2962 "AbstractMain.c"
 			gchar* _tmp0_;
 #line 115 "../lib/Factories/AbstractMain.vala"
 			_tmp0_ = g_strdup (self[i]);
 #line 115 "../lib/Factories/AbstractMain.vala"
 			result[i] = _tmp0_;
-#line 2953 "AbstractMain.c"
+#line 2968 "AbstractMain.c"
 		}
 #line 115 "../lib/Factories/AbstractMain.vala"
 		return result;
-#line 2957 "AbstractMain.c"
+#line 2972 "AbstractMain.c"
 	}
 #line 115 "../lib/Factories/AbstractMain.vala"
 	return NULL;
-#line 2961 "AbstractMain.c"
+#line 2976 "AbstractMain.c"
 }
 
 void
@@ -2974,7 +2989,7 @@ plank_abstract_main_set_about_authors (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_about_authors (self, &old_value_length);
 #line 115 "../lib/Factories/AbstractMain.vala"
 	if (old_value != value) {
-#line 2977 "AbstractMain.c"
+#line 2992 "AbstractMain.c"
 		gchar** _tmp0_;
 		gint _tmp0__length1;
 #line 115 "../lib/Factories/AbstractMain.vala"
@@ -2991,7 +3006,7 @@ plank_abstract_main_set_about_authors (PlankAbstractMain* self,
 		self->priv->__about_authors_size_ = self->priv->_about_authors_length1;
 #line 115 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_AUTHORS_PROPERTY]);
-#line 2994 "AbstractMain.c"
+#line 3009 "AbstractMain.c"
 	}
 }
 
@@ -3018,13 +3033,13 @@ plank_abstract_main_get_about_documenters (PlankAbstractMain* self,
 	if (result_length1) {
 #line 119 "../lib/Factories/AbstractMain.vala"
 		*result_length1 = _tmp1__length1;
-#line 3021 "AbstractMain.c"
+#line 3036 "AbstractMain.c"
 	}
 #line 119 "../lib/Factories/AbstractMain.vala"
 	result = _tmp1_;
 #line 119 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 3027 "AbstractMain.c"
+#line 3042 "AbstractMain.c"
 }
 
 static gchar**
@@ -3033,28 +3048,28 @@ _vala_array_dup4 (gchar** self,
 {
 #line 119 "../lib/Factories/AbstractMain.vala"
 	if (length >= 0) {
-#line 3036 "AbstractMain.c"
+#line 3051 "AbstractMain.c"
 		gchar** result;
 		gint i;
 #line 119 "../lib/Factories/AbstractMain.vala"
 		result = g_new0 (gchar*, length + 1);
 #line 119 "../lib/Factories/AbstractMain.vala"
 		for (i = 0; i < length; i++) {
-#line 3043 "AbstractMain.c"
+#line 3058 "AbstractMain.c"
 			gchar* _tmp0_;
 #line 119 "../lib/Factories/AbstractMain.vala"
 			_tmp0_ = g_strdup (self[i]);
 #line 119 "../lib/Factories/AbstractMain.vala"
 			result[i] = _tmp0_;
-#line 3049 "AbstractMain.c"
+#line 3064 "AbstractMain.c"
 		}
 #line 119 "../lib/Factories/AbstractMain.vala"
 		return result;
-#line 3053 "AbstractMain.c"
+#line 3068 "AbstractMain.c"
 	}
 #line 119 "../lib/Factories/AbstractMain.vala"
 	return NULL;
-#line 3057 "AbstractMain.c"
+#line 3072 "AbstractMain.c"
 }
 
 void
@@ -3070,7 +3085,7 @@ plank_abstract_main_set_about_documenters (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_about_documenters (self, &old_value_length);
 #line 119 "../lib/Factories/AbstractMain.vala"
 	if (old_value != value) {
-#line 3073 "AbstractMain.c"
+#line 3088 "AbstractMain.c"
 		gchar** _tmp0_;
 		gint _tmp0__length1;
 #line 119 "../lib/Factories/AbstractMain.vala"
@@ -3087,7 +3102,7 @@ plank_abstract_main_set_about_documenters (PlankAbstractMain* self,
 		self->priv->__about_documenters_size_ = self->priv->_about_documenters_length1;
 #line 119 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_DOCUMENTERS_PROPERTY]);
-#line 3090 "AbstractMain.c"
+#line 3105 "AbstractMain.c"
 	}
 }
 
@@ -3114,13 +3129,13 @@ plank_abstract_main_get_about_artists (PlankAbstractMain* self,
 	if (result_length1) {
 #line 123 "../lib/Factories/AbstractMain.vala"
 		*result_length1 = _tmp1__length1;
-#line 3117 "AbstractMain.c"
+#line 3132 "AbstractMain.c"
 	}
 #line 123 "../lib/Factories/AbstractMain.vala"
 	result = _tmp1_;
 #line 123 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 3123 "AbstractMain.c"
+#line 3138 "AbstractMain.c"
 }
 
 static gchar**
@@ -3129,28 +3144,28 @@ _vala_array_dup5 (gchar** self,
 {
 #line 123 "../lib/Factories/AbstractMain.vala"
 	if (length >= 0) {
-#line 3132 "AbstractMain.c"
+#line 3147 "AbstractMain.c"
 		gchar** result;
 		gint i;
 #line 123 "../lib/Factories/AbstractMain.vala"
 		result = g_new0 (gchar*, length + 1);
 #line 123 "../lib/Factories/AbstractMain.vala"
 		for (i = 0; i < length; i++) {
-#line 3139 "AbstractMain.c"
+#line 3154 "AbstractMain.c"
 			gchar* _tmp0_;
 #line 123 "../lib/Factories/AbstractMain.vala"
 			_tmp0_ = g_strdup (self[i]);
 #line 123 "../lib/Factories/AbstractMain.vala"
 			result[i] = _tmp0_;
-#line 3145 "AbstractMain.c"
+#line 3160 "AbstractMain.c"
 		}
 #line 123 "../lib/Factories/AbstractMain.vala"
 		return result;
-#line 3149 "AbstractMain.c"
+#line 3164 "AbstractMain.c"
 	}
 #line 123 "../lib/Factories/AbstractMain.vala"
 	return NULL;
-#line 3153 "AbstractMain.c"
+#line 3168 "AbstractMain.c"
 }
 
 void
@@ -3166,7 +3181,7 @@ plank_abstract_main_set_about_artists (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_about_artists (self, &old_value_length);
 #line 123 "../lib/Factories/AbstractMain.vala"
 	if (old_value != value) {
-#line 3169 "AbstractMain.c"
+#line 3184 "AbstractMain.c"
 		gchar** _tmp0_;
 		gint _tmp0__length1;
 #line 123 "../lib/Factories/AbstractMain.vala"
@@ -3183,7 +3198,7 @@ plank_abstract_main_set_about_artists (PlankAbstractMain* self,
 		self->priv->__about_artists_size_ = self->priv->_about_artists_length1;
 #line 123 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_ARTISTS_PROPERTY]);
-#line 3186 "AbstractMain.c"
+#line 3201 "AbstractMain.c"
 	}
 }
 
@@ -3200,7 +3215,7 @@ plank_abstract_main_get_about_translators (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 127 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 3203 "AbstractMain.c"
+#line 3218 "AbstractMain.c"
 }
 
 void
@@ -3214,7 +3229,7 @@ plank_abstract_main_set_about_translators (PlankAbstractMain* self,
 	old_value = plank_abstract_main_get_about_translators (self);
 #line 127 "../lib/Factories/AbstractMain.vala"
 	if (g_strcmp0 (value, old_value) != 0) {
-#line 3217 "AbstractMain.c"
+#line 3232 "AbstractMain.c"
 		gchar* _tmp0_;
 #line 127 "../lib/Factories/AbstractMain.vala"
 		_tmp0_ = g_strdup (value);
@@ -3224,7 +3239,7 @@ plank_abstract_main_set_about_translators (PlankAbstractMain* self,
 		self->priv->_about_translators = _tmp0_;
 #line 127 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_TRANSLATORS_PROPERTY]);
-#line 3227 "AbstractMain.c"
+#line 3242 "AbstractMain.c"
 	}
 }
 
@@ -3241,7 +3256,7 @@ plank_abstract_main_get_about_license_type (PlankAbstractMain* self)
 	result = _tmp0_;
 #line 131 "../lib/Factories/AbstractMain.vala"
 	return result;
-#line 3244 "AbstractMain.c"
+#line 3259 "AbstractMain.c"
 }
 
 void
@@ -3259,7 +3274,7 @@ plank_abstract_main_set_about_license_type (PlankAbstractMain* self,
 		self->priv->_about_license_type = value;
 #line 131 "../lib/Factories/AbstractMain.vala"
 		g_object_notify_by_pspec ((GObject *) self, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_LICENSE_TYPE_PROPERTY]);
-#line 3262 "AbstractMain.c"
+#line 3277 "AbstractMain.c"
 	}
 }
 
@@ -3304,7 +3319,7 @@ plank_abstract_main_constructor (GType type,
 	g_application_add_main_option_entries ((GApplication*) self, PLANK_ABSTRACT_MAIN_options);
 #line 140 "../lib/Factories/AbstractMain.vala"
 	return obj;
-#line 3307 "AbstractMain.c"
+#line 3322 "AbstractMain.c"
 }
 
 static void
@@ -3312,7 +3327,7 @@ _plank_abstract_main_sig_handler_sighandler_t (gint signal)
 {
 #line 48 "../lib/Factories/AbstractMain.vala"
 	plank_abstract_main_sig_handler (signal);
-#line 3315 "AbstractMain.c"
+#line 3330 "AbstractMain.c"
 }
 
 static void
@@ -3345,115 +3360,115 @@ plank_abstract_main_class_init (PlankAbstractMainClass * klass,
 	G_OBJECT_CLASS (klass)->constructor = plank_abstract_main_constructor;
 #line 26 "../lib/Factories/AbstractMain.vala"
 	G_OBJECT_CLASS (klass)->finalize = plank_abstract_main_finalize;
-#line 3348 "AbstractMain.c"
+#line 3363 "AbstractMain.c"
 	/**
 	 * Should be Build.DATADIR
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_BUILD_DATA_DIR_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_DATA_DIR_PROPERTY] = g_param_spec_string ("build-data-dir", "build-data-dir", "build-data-dir", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3354 "AbstractMain.c"
+#line 3369 "AbstractMain.c"
 	/**
 	 * Should be Build.PKGDATADIR
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_BUILD_PKG_DATA_DIR_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_PKG_DATA_DIR_PROPERTY] = g_param_spec_string ("build-pkg-data-dir", "build-pkg-data-dir", "build-pkg-data-dir", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3360 "AbstractMain.c"
+#line 3375 "AbstractMain.c"
 	/**
 	 * Should be Build.RELEASE_NAME
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_BUILD_RELEASE_NAME_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_RELEASE_NAME_PROPERTY] = g_param_spec_string ("build-release-name", "build-release-name", "build-release-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3366 "AbstractMain.c"
+#line 3381 "AbstractMain.c"
 	/**
 	 * Should be Build.VERSION
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_BUILD_VERSION_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_VERSION_PROPERTY] = g_param_spec_string ("build-version", "build-version", "build-version", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3372 "AbstractMain.c"
+#line 3387 "AbstractMain.c"
 	/**
 	 * Should be Build.VERSION_INFO
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_BUILD_VERSION_INFO_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_BUILD_VERSION_INFO_PROPERTY] = g_param_spec_string ("build-version-info", "build-version-info", "build-version-info", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3378 "AbstractMain.c"
+#line 3393 "AbstractMain.c"
 	/**
 	 * The displayed name of the program.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_PROGRAM_NAME_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_PROGRAM_NAME_PROPERTY] = g_param_spec_string ("program-name", "program-name", "program-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3384 "AbstractMain.c"
+#line 3399 "AbstractMain.c"
 	/**
 	 * The executable name of the program.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_EXEC_NAME_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_EXEC_NAME_PROPERTY] = g_param_spec_string ("exec-name", "exec-name", "exec-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3390 "AbstractMain.c"
+#line 3405 "AbstractMain.c"
 	/**
 	 * The copyright year(s).
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_APP_COPYRIGHT_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_COPYRIGHT_PROPERTY] = g_param_spec_string ("app-copyright", "app-copyright", "app-copyright", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3396 "AbstractMain.c"
+#line 3411 "AbstractMain.c"
 	/**
 	 * The (unique) dbus path for this program.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_APP_DBUS_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_DBUS_PROPERTY] = g_param_spec_string ("app-dbus", "app-dbus", "app-dbus", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3402 "AbstractMain.c"
+#line 3417 "AbstractMain.c"
 	/**
 	 * The name of this program's icon.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_APP_ICON_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_ICON_PROPERTY] = g_param_spec_string ("app-icon", "app-icon", "app-icon", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3408 "AbstractMain.c"
+#line 3423 "AbstractMain.c"
 	/**
 	 * The name of the launcher (.desktop file) for this program.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_APP_LAUNCHER_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_APP_LAUNCHER_PROPERTY] = g_param_spec_string ("app-launcher", "app-launcher", "app-launcher", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-#line 3414 "AbstractMain.c"
+#line 3429 "AbstractMain.c"
 	/**
 	 * The URL for this program's website.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_MAIN_URL_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_MAIN_URL_PROPERTY] = g_param_spec_string ("main-url", "main-url", "main-url", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3420 "AbstractMain.c"
+#line 3435 "AbstractMain.c"
 	/**
 	 * The URL for this program's help.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_HELP_URL_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_HELP_URL_PROPERTY] = g_param_spec_string ("help-url", "help-url", "help-url", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3426 "AbstractMain.c"
+#line 3441 "AbstractMain.c"
 	/**
 	 * The URL for translating this program.
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_TRANSLATE_URL_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_TRANSLATE_URL_PROPERTY] = g_param_spec_string ("translate-url", "translate-url", "translate-url", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3432 "AbstractMain.c"
+#line 3447 "AbstractMain.c"
 	/**
 	 * The list of authors (to show in about dialog).
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_ABOUT_AUTHORS_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_AUTHORS_PROPERTY] = g_param_spec_boxed ("about-authors", "about-authors", "about-authors", G_TYPE_STRV, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3438 "AbstractMain.c"
+#line 3453 "AbstractMain.c"
 	/**
 	 * The list of documenters (to show in about dialog).
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_ABOUT_DOCUMENTERS_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_DOCUMENTERS_PROPERTY] = g_param_spec_boxed ("about-documenters", "about-documenters", "about-documenters", G_TYPE_STRV, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3444 "AbstractMain.c"
+#line 3459 "AbstractMain.c"
 	/**
 	 * The list of artists (to show in about dialog).
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_ABOUT_ARTISTS_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_ARTISTS_PROPERTY] = g_param_spec_boxed ("about-artists", "about-artists", "about-artists", G_TYPE_STRV, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3450 "AbstractMain.c"
+#line 3465 "AbstractMain.c"
 	/**
 	 * The list of translators (to show in about dialog).
 	 */
 #line 26 "../lib/Factories/AbstractMain.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), PLANK_ABSTRACT_MAIN_ABOUT_TRANSLATORS_PROPERTY, plank_abstract_main_properties[PLANK_ABSTRACT_MAIN_ABOUT_TRANSLATORS_PROPERTY] = g_param_spec_string ("about-translators", "about-translators", "about-translators", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT));
-#line 3456 "AbstractMain.c"
+#line 3471 "AbstractMain.c"
 	/**
 	 * The license of this program (to show in about dialog).
 	 */
@@ -3463,7 +3478,7 @@ plank_abstract_main_class_init (PlankAbstractMainClass * klass,
 	signal (SIGINT, _plank_abstract_main_sig_handler_sighandler_t);
 #line 49 "../lib/Factories/AbstractMain.vala"
 	signal (SIGTERM, _plank_abstract_main_sig_handler_sighandler_t);
-#line 3466 "AbstractMain.c"
+#line 3481 "AbstractMain.c"
 }
 
 static void
@@ -3479,7 +3494,7 @@ plank_abstract_main_instance_init (PlankAbstractMain * self,
 	_tmp0_ = g_strdup ("");
 #line 133 "../lib/Factories/AbstractMain.vala"
 	self->priv->dock_name = _tmp0_;
-#line 3482 "AbstractMain.c"
+#line 3497 "AbstractMain.c"
 }
 
 static void
@@ -3536,7 +3551,7 @@ plank_abstract_main_finalize (GObject * obj)
 	_g_object_unref0 (self->priv->docks);
 #line 26 "../lib/Factories/AbstractMain.vala"
 	G_OBJECT_CLASS (plank_abstract_main_parent_class)->finalize (obj);
-#line 3539 "AbstractMain.c"
+#line 3554 "AbstractMain.c"
 }
 
 /**
@@ -3661,34 +3676,34 @@ _vala_plank_abstract_main_get_property (GObject * object,
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_AUTHORS_PROPERTY:
-#line 3664 "AbstractMain.c"
+#line 3679 "AbstractMain.c"
 		{
 			int length;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			g_value_set_boxed (value, plank_abstract_main_get_about_authors (self, &length));
-#line 3669 "AbstractMain.c"
+#line 3684 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_DOCUMENTERS_PROPERTY:
-#line 3675 "AbstractMain.c"
+#line 3690 "AbstractMain.c"
 		{
 			int length;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			g_value_set_boxed (value, plank_abstract_main_get_about_documenters (self, &length));
-#line 3680 "AbstractMain.c"
+#line 3695 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_ARTISTS_PROPERTY:
-#line 3686 "AbstractMain.c"
+#line 3701 "AbstractMain.c"
 		{
 			int length;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			g_value_set_boxed (value, plank_abstract_main_get_about_artists (self, &length));
-#line 3691 "AbstractMain.c"
+#line 3706 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
@@ -3704,13 +3719,13 @@ _vala_plank_abstract_main_get_property (GObject * object,
 		g_value_set_enum (value, plank_abstract_main_get_about_license_type (self));
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
-#line 3707 "AbstractMain.c"
+#line 3722 "AbstractMain.c"
 		default:
 #line 26 "../lib/Factories/AbstractMain.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
-#line 3713 "AbstractMain.c"
+#line 3728 "AbstractMain.c"
 	}
 }
 
@@ -3810,40 +3825,40 @@ _vala_plank_abstract_main_set_property (GObject * object,
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_AUTHORS_PROPERTY:
-#line 3813 "AbstractMain.c"
+#line 3828 "AbstractMain.c"
 		{
 			gpointer boxed;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			boxed = g_value_get_boxed (value);
 #line 26 "../lib/Factories/AbstractMain.vala"
 			plank_abstract_main_set_about_authors (self, boxed, (boxed == NULL) ? 0 : g_strv_length (boxed));
-#line 3820 "AbstractMain.c"
+#line 3835 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_DOCUMENTERS_PROPERTY:
-#line 3826 "AbstractMain.c"
+#line 3841 "AbstractMain.c"
 		{
 			gpointer boxed;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			boxed = g_value_get_boxed (value);
 #line 26 "../lib/Factories/AbstractMain.vala"
 			plank_abstract_main_set_about_documenters (self, boxed, (boxed == NULL) ? 0 : g_strv_length (boxed));
-#line 3833 "AbstractMain.c"
+#line 3848 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
 #line 26 "../lib/Factories/AbstractMain.vala"
 		case PLANK_ABSTRACT_MAIN_ABOUT_ARTISTS_PROPERTY:
-#line 3839 "AbstractMain.c"
+#line 3854 "AbstractMain.c"
 		{
 			gpointer boxed;
 #line 26 "../lib/Factories/AbstractMain.vala"
 			boxed = g_value_get_boxed (value);
 #line 26 "../lib/Factories/AbstractMain.vala"
 			plank_abstract_main_set_about_artists (self, boxed, (boxed == NULL) ? 0 : g_strv_length (boxed));
-#line 3846 "AbstractMain.c"
+#line 3861 "AbstractMain.c"
 		}
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
@@ -3859,13 +3874,13 @@ _vala_plank_abstract_main_set_property (GObject * object,
 		plank_abstract_main_set_about_license_type (self, g_value_get_enum (value));
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
-#line 3862 "AbstractMain.c"
+#line 3877 "AbstractMain.c"
 		default:
 #line 26 "../lib/Factories/AbstractMain.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 26 "../lib/Factories/AbstractMain.vala"
 		break;
-#line 3868 "AbstractMain.c"
+#line 3883 "AbstractMain.c"
 	}
 }
 
@@ -3876,7 +3891,7 @@ _vala_array_destroy (gpointer array,
 {
 #line 52 "../lib/Docklets/DockletManager.vala"
 	if ((array != NULL) && (destroy_func != NULL)) {
-#line 3879 "AbstractMain.c"
+#line 3894 "AbstractMain.c"
 		gint i;
 #line 52 "../lib/Docklets/DockletManager.vala"
 		for (i = 0; i < array_length; i = i + 1) {
@@ -3884,7 +3899,7 @@ _vala_array_destroy (gpointer array,
 			if (((gpointer*) array)[i] != NULL) {
 #line 52 "../lib/Docklets/DockletManager.vala"
 				destroy_func (((gpointer*) array)[i]);
-#line 3887 "AbstractMain.c"
+#line 3902 "AbstractMain.c"
 			}
 		}
 	}
@@ -3899,7 +3914,7 @@ _vala_array_free (gpointer array,
 	_vala_array_destroy (array, array_length, destroy_func);
 #line 52 "../lib/Docklets/DockletManager.vala"
 	g_free (array);
-#line 3902 "AbstractMain.c"
+#line 3917 "AbstractMain.c"
 }
 
 static gint
@@ -3913,11 +3928,11 @@ _vala_array_length (gpointer array)
 		while (((gpointer*) array)[length]) {
 #line 52 "../lib/Docklets/DockletManager.vala"
 			length++;
-#line 3916 "AbstractMain.c"
+#line 3931 "AbstractMain.c"
 		}
 	}
 #line 52 "../lib/Docklets/DockletManager.vala"
 	return length;
-#line 3921 "AbstractMain.c"
+#line 3936 "AbstractMain.c"
 }
 

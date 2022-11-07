@@ -62,13 +62,16 @@ namespace Docky
                     lightpad_window.hide ();
                     lightpad_window.wasShowed = false;
                     lightpad_window.refresh_apps ();
+                    //  lightpad_window.hide ();
+                    //  lightpad_window.destroy ();
+                    //  lightpad_window = new LightPadWindow ();
                 } else {
                     print ("Show!\n");
                     // lightpad_window.pages.set_active (0);
                     lightpad_window.searchbar.hint ();
                     lightpad_window.show_all ();
                     lightpad_window.wasShowed = true;
-                    //  this.get_dock ().window.set_type_hint (Gdk.WindowTypeHint.DOCK);
+                    // this.get_dock ().window.set_type_hint (Gdk.WindowTypeHint.DOCK);
                     this.get_dock ().window.set_transient_for (lightpad_window);
                 }
                     

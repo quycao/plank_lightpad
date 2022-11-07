@@ -437,17 +437,17 @@ string_chug (const gchar* self)
 	gchar* _result_ = NULL;
 	gchar* _tmp0_;
 	gchar* result = NULL;
-#line 1351 "glib-2.0.vapi"
+#line 1359 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1352 "glib-2.0.vapi"
+#line 1360 "glib-2.0.vapi"
 	_tmp0_ = g_strdup (self);
-#line 1352 "glib-2.0.vapi"
+#line 1360 "glib-2.0.vapi"
 	_result_ = _tmp0_;
-#line 1353 "glib-2.0.vapi"
+#line 1361 "glib-2.0.vapi"
 	g_strchug (_result_);
-#line 1354 "glib-2.0.vapi"
+#line 1362 "glib-2.0.vapi"
 	result = _result_;
-#line 1354 "glib-2.0.vapi"
+#line 1362 "glib-2.0.vapi"
 	return result;
 #line 453 "ClockDockItem.c"
 }

@@ -198,17 +198,17 @@ string_strip (const gchar* self)
 	gchar* _result_ = NULL;
 	gchar* _tmp0_;
 	gchar* result = NULL;
-#line 1359 "glib-2.0.vapi"
+#line 1367 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1360 "glib-2.0.vapi"
+#line 1368 "glib-2.0.vapi"
 	_tmp0_ = g_strdup (self);
-#line 1360 "glib-2.0.vapi"
+#line 1368 "glib-2.0.vapi"
 	_result_ = _tmp0_;
-#line 1361 "glib-2.0.vapi"
+#line 1369 "glib-2.0.vapi"
 	g_strstrip (_result_);
-#line 1362 "glib-2.0.vapi"
+#line 1370 "glib-2.0.vapi"
 	result = _result_;
-#line 1362 "glib-2.0.vapi"
+#line 1370 "glib-2.0.vapi"
 	return result;
 #line 214 "BatteryDockItem.c"
 }

@@ -908,11 +908,11 @@ static gint
 vala_g_ptr_array_get_length (GPtrArray* self)
 {
 	gint result;
-#line 5309 "glib-2.0.vapi"
+#line 5791 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, 0);
-#line 5310 "glib-2.0.vapi"
+#line 5792 "glib-2.0.vapi"
 	result = (gint) self->len;
-#line 5310 "glib-2.0.vapi"
+#line 5792 "glib-2.0.vapi"
 	return result;
 #line 918 "DockletViewModel.c"
 }
@@ -1445,41 +1445,41 @@ string_to_utf8 (const gchar* self,
 	gchar* _tmp4_;
 	gint _tmp4__length1;
 	gchar* result = NULL;
-#line 1562 "glib-2.0.vapi"
+#line 1570 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 1563 "glib-2.0.vapi"
+#line 1571 "glib-2.0.vapi"
 	_tmp0_ = strlen (self);
-#line 1563 "glib-2.0.vapi"
+#line 1571 "glib-2.0.vapi"
 	_tmp1_ = _tmp0_;
-#line 1563 "glib-2.0.vapi"
+#line 1571 "glib-2.0.vapi"
 	string_length = _tmp1_;
-#line 1564 "glib-2.0.vapi"
+#line 1572 "glib-2.0.vapi"
 	_tmp2_ = g_new0 (gchar, string_length + 1);
-#line 1564 "glib-2.0.vapi"
+#line 1572 "glib-2.0.vapi"
 	_result_ = _tmp2_;
-#line 1564 "glib-2.0.vapi"
+#line 1572 "glib-2.0.vapi"
 	_result__length1 = string_length + 1;
-#line 1564 "glib-2.0.vapi"
+#line 1572 "glib-2.0.vapi"
 	__result__size_ = _result__length1;
-#line 1565 "glib-2.0.vapi"
+#line 1573 "glib-2.0.vapi"
 	_tmp3_ = _result__length1;
-#line 1565 "glib-2.0.vapi"
+#line 1573 "glib-2.0.vapi"
 	_result__length1 = _tmp3_ - 1;
-#line 1566 "glib-2.0.vapi"
+#line 1574 "glib-2.0.vapi"
 	memcpy (_result_, self, (gsize) string_length);
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 	_tmp4_ = _result_;
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 	_tmp4__length1 = _result__length1;
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 	if (result_length1) {
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 		*result_length1 = _tmp4__length1;
 #line 1479 "DockletViewModel.c"
 	}
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 	result = _tmp4_;
-#line 1567 "glib-2.0.vapi"
+#line 1575 "glib-2.0.vapi"
 	return result;
 #line 1485 "DockletViewModel.c"
 }

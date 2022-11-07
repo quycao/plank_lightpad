@@ -572,31 +572,21 @@ public class LightPadWindow : Widgets.CompositedWindow {
     }
 
     public void refresh_apps() {
+        this.apps.clear ();
         // Get all apps
         LightPad.Backend.DesktopEntries.enumerate_apps (this.icons, this.icon_size, user_home, out this.apps);
-
         //  this.populate_grid ();
+        
+        this.pages = new LightPad.Frontend.Indicators ();
+        // this.pages.child_activated.connect ( () => { this.update_grid (this.filtered); } );
+
+        this.pages_wrapper = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        // this.pages_wrapper.set_size_request (-1, 30);
 
         // Find number of pages and populate
         // First order the apps alphabetically
         this.apps.sort ((a, b) => GLib.strcmp (a["name"], b["name"]));
         this.update_pages (this.apps);
-        
-        var childPages = this.pages_wrapper.get_children ();
-        var childIndicators = this.pages.get_children ();
-
-        if (childPages != null) {
-            for (int p = 0; p < childPages.length (); p++) {
-                this.pages_wrapper.remove (childPages.nth_data (p));
-            }
-        }
-
-        if (childIndicators != null) {
-            for (int p = 0; p < childIndicators.length (); p++) {
-                this.pages.remove (childIndicators.nth_data (p));
-            }
-        }
-
         if (this.total_pages > 1) {
             this.pages_wrapper.pack_start (this.pages, true, false, 0);
             for (int p = 1; p <= this.total_pages; p++) {

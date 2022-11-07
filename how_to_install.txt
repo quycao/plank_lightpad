@@ -1,8 +1,11 @@
 How to build and install
 
 * Build
-    - Install meson
-    - Run "meson build" to check and install missing dependencies (must install *-dev packages)
+    - Delete old build dir
+    - Install meson, valac, gcc, cmake, 
+    - Run "meson build" or "cd ./build & reconfigure" to check and install missing dependencies (must install *-dev packages)
+    - Some dependencies: libglib2.0-dev, libgtk-3-dev, libgee-0.8-dev, libbamf3-dev, libwnck-3-dev, libgnome-menu-3-dev,
+    libdbusmenu-glib-dev, libdbusmenu-gtk3-dev, gettext, help2man
     - After install all dependencies, process to build
         $ cd ./build
         $ ninja

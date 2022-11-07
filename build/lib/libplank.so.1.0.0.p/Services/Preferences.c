@@ -2370,13 +2370,13 @@ g_date_time_to_string (GDateTime* self)
 {
 	gchar* _tmp0_;
 	gchar* result = NULL;
-#line 3182 "glib-2.0.vapi"
+#line 3320 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 3183 "glib-2.0.vapi"
+#line 3321 "glib-2.0.vapi"
 	_tmp0_ = g_date_time_format (self, "%FT%H:%M:%S%z");
-#line 3183 "glib-2.0.vapi"
+#line 3321 "glib-2.0.vapi"
 	result = _tmp0_;
-#line 3183 "glib-2.0.vapi"
+#line 3321 "glib-2.0.vapi"
 	return result;
 #line 2378 "Preferences.c"
 }

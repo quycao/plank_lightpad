@@ -486,15 +486,15 @@ string_contains (const gchar* self,
 {
 	gchar* _tmp0_;
 	gboolean result = FALSE;
-#line 1530 "glib-2.0.vapi"
+#line 1538 "glib-2.0.vapi"
 	g_return_val_if_fail (self != NULL, FALSE);
-#line 1530 "glib-2.0.vapi"
+#line 1538 "glib-2.0.vapi"
 	g_return_val_if_fail (needle != NULL, FALSE);
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	_tmp0_ = strstr ((gchar*) self, (gchar*) needle);
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	result = _tmp0_ != NULL;
-#line 1531 "glib-2.0.vapi"
+#line 1539 "glib-2.0.vapi"
 	return result;
 #line 500 "Environment.c"
 }
