@@ -572,30 +572,32 @@ public class LightPadWindow : Widgets.CompositedWindow {
     }
 
     public void refresh_apps() {
-        this.apps.clear ();
         // Get all apps
         LightPad.Backend.DesktopEntries.enumerate_apps (this.icons, this.icon_size, user_home, out this.apps);
-        //  this.populate_grid ();
+        // this.populate_grid ();
         
-        this.pages = new LightPad.Frontend.Indicators ();
+        // this.pages = new LightPad.Frontend.Indicators ();
         // this.pages.child_activated.connect ( () => { this.update_grid (this.filtered); } );
 
-        this.pages_wrapper = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        // this.pages_wrapper = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         // this.pages_wrapper.set_size_request (-1, 30);
 
         // Find number of pages and populate
         // First order the apps alphabetically
         this.apps.sort ((a, b) => GLib.strcmp (a["name"], b["name"]));
+        int total_pages_old = this.total_pages;
         this.update_pages (this.apps);
-        if (this.total_pages > 1) {
-            this.pages_wrapper.pack_start (this.pages, true, false, 0);
-            for (int p = 1; p <= this.total_pages; p++) {
+        //  message ("Number of pages: old - %d, new: - %d", total_pages_old, this.total_pages);
+        if (this.total_pages > total_pages_old) {
+            //  this.pages_wrapper.pack_start (this.pages, true, false, 0);
+            for (int p = 1; p <= this.total_pages - total_pages_old; p++) {
                 // Add the number of pages as text
                 //this.pages.append (p.to_string ());
                 this.pages.append ("⬤");
             }
         }
         this.pages.set_active (0);
+        this.search();
     }
 
 }

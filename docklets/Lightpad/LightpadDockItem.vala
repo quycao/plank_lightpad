@@ -60,8 +60,9 @@ namespace Docky
                 if (lightpad_window.wasShowed == true) {
                     print ("Hide!\n");
                     lightpad_window.hide ();
-                    lightpad_window.wasShowed = false;
+                    lightpad_window.searchbar.hint ();
                     lightpad_window.refresh_apps ();
+                    lightpad_window.wasShowed = false;
                     //  lightpad_window.hide ();
                     //  lightpad_window.destroy ();
                     //  lightpad_window = new LightPadWindow ();

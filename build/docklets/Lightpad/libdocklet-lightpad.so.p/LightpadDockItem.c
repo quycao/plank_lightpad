@@ -170,6 +170,7 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (LightPadFrontendAppItem, g_object_unref)
 GType light_pad_frontend_searchbar_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (LightPadFrontendSearchbar, g_object_unref)
 void light_pad_frontend_searchbar_hint (LightPadFrontendSearchbar* self);
+void light_pad_window_refresh_apps (LightPadWindow* self);
 DockyLightpadDockItem* docky_lightpad_dock_item_new (void);
 DockyLightpadDockItem* docky_lightpad_dock_item_construct (GType object_type);
 static GObject * docky_lightpad_dock_item_constructor (GType type,
@@ -207,7 +208,7 @@ docky_lightpad_dock_item_construct_with_dockitem_file (GType object_type,
 	_g_object_unref0 (_tmp1_);
 #line 15 "../docklets/Lightpad/LightpadDockItem.vala"
 	return self;
-#line 211 "LightpadDockItem.c"
+#line 212 "LightpadDockItem.c"
 }
 
 DockyLightpadDockItem*
@@ -215,7 +216,7 @@ docky_lightpad_dock_item_new_with_dockitem_file (GFile* file)
 {
 #line 15 "../docklets/Lightpad/LightpadDockItem.vala"
 	return docky_lightpad_dock_item_construct_with_dockitem_file (DOCKY_TYPE_LIGHTPAD_DOCK_ITEM, file);
-#line 219 "LightpadDockItem.c"
+#line 220 "LightpadDockItem.c"
 }
 
 static PlankAnimationType
@@ -230,15 +231,18 @@ docky_lightpad_dock_item_real_on_clicked (PlankDockElement* base,
 	self = (DockyLightpadDockItem*) base;
 #line 59 "../docklets/Lightpad/LightpadDockItem.vala"
 	if (button == PLANK_POPUP_BUTTON_LEFT) {
-#line 234 "LightpadDockItem.c"
+#line 235 "LightpadDockItem.c"
 		LightPadWindow* _tmp0_;
 #line 60 "../docklets/Lightpad/LightpadDockItem.vala"
 		_tmp0_ = self->priv->lightpad_window;
 #line 60 "../docklets/Lightpad/LightpadDockItem.vala"
 		if (_tmp0_->wasShowed == TRUE) {
-#line 240 "LightpadDockItem.c"
+#line 241 "LightpadDockItem.c"
 			LightPadWindow* _tmp1_;
 			LightPadWindow* _tmp2_;
+			LightPadFrontendSearchbar* _tmp3_;
+			LightPadWindow* _tmp4_;
+			LightPadWindow* _tmp5_;
 #line 61 "../docklets/Lightpad/LightpadDockItem.vala"
 			g_print ("Hide!\n");
 #line 62 "../docklets/Lightpad/LightpadDockItem.vala"
@@ -248,56 +252,66 @@ docky_lightpad_dock_item_real_on_clicked (PlankDockElement* base,
 #line 63 "../docklets/Lightpad/LightpadDockItem.vala"
 			_tmp2_ = self->priv->lightpad_window;
 #line 63 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp2_->wasShowed = FALSE;
-#line 253 "LightpadDockItem.c"
-		} else {
-			LightPadWindow* _tmp3_;
-			LightPadFrontendSearchbar* _tmp4_;
-			LightPadWindow* _tmp5_;
-			LightPadWindow* _tmp6_;
-			PlankDockController* _tmp7_;
-			PlankDockWindow* _tmp8_;
-			PlankDockWindow* _tmp9_;
-			LightPadWindow* _tmp10_;
-#line 69 "../docklets/Lightpad/LightpadDockItem.vala"
-			g_print ("Show!\n");
-#line 71 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp3_ = self->priv->lightpad_window;
-#line 71 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp4_ = _tmp3_->searchbar;
-#line 71 "../docklets/Lightpad/LightpadDockItem.vala"
-			light_pad_frontend_searchbar_hint (_tmp4_);
-#line 72 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp3_ = _tmp2_->searchbar;
+#line 63 "../docklets/Lightpad/LightpadDockItem.vala"
+			light_pad_frontend_searchbar_hint (_tmp3_);
+#line 64 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp4_ = self->priv->lightpad_window;
+#line 64 "../docklets/Lightpad/LightpadDockItem.vala"
+			light_pad_window_refresh_apps (_tmp4_);
+#line 65 "../docklets/Lightpad/LightpadDockItem.vala"
 			_tmp5_ = self->priv->lightpad_window;
+#line 65 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp5_->wasShowed = FALSE;
+#line 267 "LightpadDockItem.c"
+		} else {
+			LightPadWindow* _tmp6_;
+			LightPadFrontendSearchbar* _tmp7_;
+			LightPadWindow* _tmp8_;
+			LightPadWindow* _tmp9_;
+			PlankDockController* _tmp10_;
+			PlankDockWindow* _tmp11_;
+			PlankDockWindow* _tmp12_;
+			LightPadWindow* _tmp13_;
+#line 70 "../docklets/Lightpad/LightpadDockItem.vala"
+			g_print ("Show!\n");
 #line 72 "../docklets/Lightpad/LightpadDockItem.vala"
-			gtk_widget_show_all ((GtkWidget*) _tmp5_);
-#line 73 "../docklets/Lightpad/LightpadDockItem.vala"
 			_tmp6_ = self->priv->lightpad_window;
+#line 72 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp7_ = _tmp6_->searchbar;
+#line 72 "../docklets/Lightpad/LightpadDockItem.vala"
+			light_pad_frontend_searchbar_hint (_tmp7_);
 #line 73 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp6_->wasShowed = TRUE;
-#line 75 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp7_ = plank_dock_element_get_dock ((PlankDockElement*) self);
-#line 75 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp8_ = plank_dock_controller_get_window (_tmp7_);
-#line 75 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp9_ = _tmp8_;
-#line 75 "../docklets/Lightpad/LightpadDockItem.vala"
-			_tmp10_ = self->priv->lightpad_window;
-#line 75 "../docklets/Lightpad/LightpadDockItem.vala"
-			gtk_window_set_transient_for ((GtkWindow*) _tmp9_, (GtkWindow*) _tmp10_);
-#line 289 "LightpadDockItem.c"
+			_tmp8_ = self->priv->lightpad_window;
+#line 73 "../docklets/Lightpad/LightpadDockItem.vala"
+			gtk_widget_show_all ((GtkWidget*) _tmp8_);
+#line 74 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp9_ = self->priv->lightpad_window;
+#line 74 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp9_->wasShowed = TRUE;
+#line 76 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp10_ = plank_dock_element_get_dock ((PlankDockElement*) self);
+#line 76 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp11_ = plank_dock_controller_get_window (_tmp10_);
+#line 76 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp12_ = _tmp11_;
+#line 76 "../docklets/Lightpad/LightpadDockItem.vala"
+			_tmp13_ = self->priv->lightpad_window;
+#line 76 "../docklets/Lightpad/LightpadDockItem.vala"
+			gtk_window_set_transient_for ((GtkWindow*) _tmp12_, (GtkWindow*) _tmp13_);
+#line 303 "LightpadDockItem.c"
 		}
-#line 78 "../docklets/Lightpad/LightpadDockItem.vala"
+#line 79 "../docklets/Lightpad/LightpadDockItem.vala"
 		result = PLANK_ANIMATION_TYPE_DARKEN;
-#line 78 "../docklets/Lightpad/LightpadDockItem.vala"
+#line 79 "../docklets/Lightpad/LightpadDockItem.vala"
 		return result;
-#line 295 "LightpadDockItem.c"
+#line 309 "LightpadDockItem.c"
 	}
-#line 99 "../docklets/Lightpad/LightpadDockItem.vala"
+#line 100 "../docklets/Lightpad/LightpadDockItem.vala"
 	result = PLANK_ANIMATION_TYPE_NONE;
-#line 99 "../docklets/Lightpad/LightpadDockItem.vala"
+#line 100 "../docklets/Lightpad/LightpadDockItem.vala"
 	return result;
-#line 301 "LightpadDockItem.c"
+#line 315 "LightpadDockItem.c"
 }
 
 DockyLightpadDockItem*
@@ -308,7 +322,7 @@ docky_lightpad_dock_item_construct (GType object_type)
 	self = (DockyLightpadDockItem*) plank_docklet_item_construct (object_type);
 #line 5 "../docklets/Lightpad/LightpadDockItem.vala"
 	return self;
-#line 312 "LightpadDockItem.c"
+#line 326 "LightpadDockItem.c"
 }
 
 DockyLightpadDockItem*
@@ -316,7 +330,7 @@ docky_lightpad_dock_item_new (void)
 {
 #line 5 "../docklets/Lightpad/LightpadDockItem.vala"
 	return docky_lightpad_dock_item_construct (DOCKY_TYPE_LIGHTPAD_DOCK_ITEM);
-#line 320 "LightpadDockItem.c"
+#line 334 "LightpadDockItem.c"
 }
 
 static GObject *
@@ -345,7 +359,7 @@ docky_lightpad_dock_item_constructor (GType type,
 	_tmp0_ = gtk_css_provider_new ();
 #line 32 "../docklets/Lightpad/LightpadDockItem.vala"
 	css_provider = _tmp0_;
-#line 349 "LightpadDockItem.c"
+#line 363 "LightpadDockItem.c"
 	{
 		GtkCssProvider* _tmp1_;
 		GdkScreen* _tmp2_;
@@ -360,7 +374,7 @@ docky_lightpad_dock_item_constructor (GType type,
 		_tmp3_ = css_provider;
 #line 37 "../docklets/Lightpad/LightpadDockItem.vala"
 		gtk_style_context_add_provider_for_screen (_tmp2_, (GtkStyleProvider*) _tmp3_, (guint) GTK_STYLE_PROVIDER_PRIORITY_USER);
-#line 364 "LightpadDockItem.c"
+#line 378 "LightpadDockItem.c"
 	}
 	goto __finally0;
 	__catch0_g_error:
@@ -369,7 +383,7 @@ docky_lightpad_dock_item_constructor (GType type,
 		g_clear_error (&_inner_error0_);
 #line 42 "../docklets/Lightpad/LightpadDockItem.vala"
 		g_warning ("LightpadDockItem.vala:42: Could not load CSS from resource: %s", "application.css");
-#line 373 "LightpadDockItem.c"
+#line 387 "LightpadDockItem.c"
 	}
 	__finally0:
 #line 34 "../docklets/Lightpad/LightpadDockItem.vala"
@@ -380,7 +394,7 @@ docky_lightpad_dock_item_constructor (GType type,
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
 #line 34 "../docklets/Lightpad/LightpadDockItem.vala"
 		g_clear_error (&_inner_error0_);
-#line 384 "LightpadDockItem.c"
+#line 398 "LightpadDockItem.c"
 	}
 #line 45 "../docklets/Lightpad/LightpadDockItem.vala"
 	_tmp4_ = light_pad_window_new ();
@@ -394,7 +408,7 @@ docky_lightpad_dock_item_constructor (GType type,
 	_g_object_unref0 (css_provider);
 #line 20 "../docklets/Lightpad/LightpadDockItem.vala"
 	return obj;
-#line 398 "LightpadDockItem.c"
+#line 412 "LightpadDockItem.c"
 }
 
 static void
@@ -411,7 +425,7 @@ docky_lightpad_dock_item_class_init (DockyLightpadDockItemClass * klass,
 	G_OBJECT_CLASS (klass)->constructor = docky_lightpad_dock_item_constructor;
 #line 5 "../docklets/Lightpad/LightpadDockItem.vala"
 	G_OBJECT_CLASS (klass)->finalize = docky_lightpad_dock_item_finalize;
-#line 415 "LightpadDockItem.c"
+#line 429 "LightpadDockItem.c"
 }
 
 static void
@@ -420,7 +434,7 @@ docky_lightpad_dock_item_instance_init (DockyLightpadDockItem * self,
 {
 #line 5 "../docklets/Lightpad/LightpadDockItem.vala"
 	self->priv = docky_lightpad_dock_item_get_instance_private (self);
-#line 424 "LightpadDockItem.c"
+#line 438 "LightpadDockItem.c"
 }
 
 static void
@@ -434,7 +448,7 @@ docky_lightpad_dock_item_finalize (GObject * obj)
 	_tmp0_ = self->priv->lightpad_window;
 #line 51 "../docklets/Lightpad/LightpadDockItem.vala"
 	if (_tmp0_ == NULL) {
-#line 438 "LightpadDockItem.c"
+#line 452 "LightpadDockItem.c"
 		LightPadWindow* _tmp1_;
 #line 52 "../docklets/Lightpad/LightpadDockItem.vala"
 		_tmp1_ = light_pad_window_new ();
@@ -444,13 +458,13 @@ docky_lightpad_dock_item_finalize (GObject * obj)
 		_g_object_unref0 (self->priv->lightpad_window);
 #line 52 "../docklets/Lightpad/LightpadDockItem.vala"
 		self->priv->lightpad_window = _tmp1_;
-#line 448 "LightpadDockItem.c"
+#line 462 "LightpadDockItem.c"
 	}
 #line 7 "../docklets/Lightpad/LightpadDockItem.vala"
 	_g_object_unref0 (self->priv->lightpad_window);
 #line 5 "../docklets/Lightpad/LightpadDockItem.vala"
 	G_OBJECT_CLASS (docky_lightpad_dock_item_parent_class)->finalize (obj);
-#line 454 "LightpadDockItem.c"
+#line 468 "LightpadDockItem.c"
 }
 
 static GType
