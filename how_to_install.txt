@@ -14,7 +14,7 @@ How to build and install
     - Copy ./build/docklets/Lightpad/docket-lightpad.so to /usr/lib/x86_64-linux-gnu/plank/docklets/
     - Restart Plank
     - Install dbus-x11 if you get error: Failed to execute child process “dbus-launch” (No such file or directory)
-    - 
+    - Copy file in this project folder data/gnome-applications.menu to /etc/xdg/menus/ if you get error: Failed to look up menu_file for "applications.menu"
 
 * Install for coding
     - Install vala-language-server
