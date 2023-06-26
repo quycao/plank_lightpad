@@ -145,11 +145,14 @@ namespace LightPad.Frontend {
             }
             
             if (this.has_focus) {
-                double dark = 0.32;
-                var gradient = new Cairo.Pattern.rgba (this.prominent.R * dark, this.prominent.G * dark, this.prominent.B * dark, 0.8);
-                context.set_source (gradient);
-                LightPad.Frontend.Utilities.draw_rounded_rectangle (context, 10, 0.5, size);
-                context.fill ();
+                // Fix background change on empty grid cell in new version of GTK
+                if (this.label != null) {
+                    double dark = 0.32;
+                    var gradient = new Cairo.Pattern.rgba (this.prominent.R * dark, this.prominent.G * dark, this.prominent.B * dark, 0.8);
+                    context.set_source (gradient);
+                    LightPad.Frontend.Utilities.draw_rounded_rectangle (context, 10, 0.5, size);
+                    context.fill ();
+                }
             }  else  {
                 if (this.current_frame > 1) {
                     var gradient = new Cairo.Pattern.rgba (0.0, 0.0, 0.0, 0.0);
