@@ -315,12 +315,18 @@ public class LightPadWindow : Widgets.CompositedWindow {
                          * So, if the desktop environment is not GNOME we need xterm as dependency
                          * and the way to open apps in terminal is with the following code:
                          */
-                        if (this.filtered.get (app_index)["terminal"] == "true") {
-                            GLib.AppInfo.create_from_commandline (this.filtered.get (app_index)["command"], null, GLib.AppInfoCreateFlags.NEEDS_TERMINAL).launch (null, null);
-                        } else {
-                            var context = new AppLaunchContext ();
-                            new GLib.DesktopAppInfo.from_filename (this.filtered.get(app_index)["desktop_file"]).launch (null, context);
-                        }
+
+			message ("The app_index is: %d", app_index);
+			// Fix error crash when click on empty cell in grid
+			if (app_index < this.filtered.size) {
+	                        if (this.filtered.get (app_index)["terminal"] == "true") {
+	                            GLib.AppInfo.create_from_commandline (this.filtered.get (app_index)["command"], null, GLib.AppInfoCreateFlags.NEEDS_TERMINAL).launch (null, null);
+	                        } else {
+	                            var context = new AppLaunchContext ();
+	                            new GLib.DesktopAppInfo.from_filename (this.filtered.get(app_index)["desktop_file"]).launch (null, context);
+	                        }
+			}
+
                         this.hide ();
                         this.wasShowed = false;
                         this.pages.set_active (0);
